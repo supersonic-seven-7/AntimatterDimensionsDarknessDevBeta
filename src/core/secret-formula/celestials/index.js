@@ -14,7 +14,7 @@ import { pelleStrikes } from "./strikes";
 import { teresa } from "./teresa";
 import { quotes } from "./quotes";
 import { v } from "./v";
-import { Alpha } from "./alpha";
+import { alpha } from "./alpha";
 
 export const celestials = {
   effarig: {
