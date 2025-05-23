@@ -1,3 +1,5 @@
+import { BitUpgradeState } from "../game-mechanics";
+
 import { Quotes } from "./quotes";
 
 export const Alpha = {
