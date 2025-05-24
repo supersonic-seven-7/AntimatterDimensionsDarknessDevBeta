@@ -125,6 +125,7 @@ function applyNDMultipliers(mult, tier) {
   }
 
   multiplier = multiplier.timesEffectsOf(
+    tier > 1 ? Achievement(11) : null,
     tier === 8 ? Achievement(23) : null,
     tier < 8 ? Achievement(34) : null,
     tier <= 4 ? Achievement(64) : null,
