@@ -91,11 +91,11 @@ export default {
     },
     challengeDisplay() {
       if (this.inPelle && this.activeChallengeNames.length > 0) {
-        return `${this.activeChallengeNames.join(" + ")} in a Doomed Reality. Good luck.`;
+        return `${this.activeChallengeNames.join(" + ")} in a Doomed Reality in the Dark Universe. Are you questioning life yet?`;
       }
-      if (this.inPelle) return "a Doomed Reality. Good luck.";
+      if (this.inPelle) return "a Doomed Reality. Are you questioning life yet?";
       if (this.activeChallengeNames.length === 0) {
-        return "the Antimatter Universe (no active challenges)";
+        return "the Dark Universe (no active challenges). Good luck.";
       }
       return this.activeChallengeNames.join(" + ");
     },
