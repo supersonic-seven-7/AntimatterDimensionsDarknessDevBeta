@@ -640,6 +640,7 @@ export const AntimatterDimensions = {
 
     mult = mult.timesEffectsOf(
       InfinityUpgrade.buy10Mult,
+      InfinityUpgrade.galaxyBoost,
       Achievement(58),
       Achievement(143)
     ).times(getAdjustedGlyphEffect("powerbuy10"));
