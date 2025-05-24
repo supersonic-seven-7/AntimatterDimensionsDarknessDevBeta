@@ -6,6 +6,8 @@ export const normalAchievements = [
     name: "You gotta start somewhere",
     description: "Buy a 1st Antimatter Dimension.",
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
+    get reward() { return `Multiply all Dimensions except the first by ${formatInt(10)}.`; },
+    effect: 10
   },
   {
     id: 12,
