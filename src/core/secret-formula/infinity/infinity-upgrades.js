@@ -104,8 +104,9 @@ export const infinityUpgrades = {
     id: "galaxyBoost",
     cost: 2,
     checkRequirement: () => InfinityUpgrade.dim45mult.isBought,
-    description: "All Galaxies are twice as strong",
-    effect: 2,
+    description: "Multiply the Buy 10 Antimatter Dimension multiplier",
+    effect: 1.2,
+    formatEffect: () => `${formatX(1.2, 0, 1)}`,
     charged: {
       description: "All Galaxies are stronger based on Teresa level",
       effect: () => 2 + Math.sqrt(Ra.pets.teresa.level) / 100,
@@ -145,8 +146,8 @@ export const infinityUpgrades = {
     cost: 7,
     checkRequirement: () => InfinityUpgrade.unspentIPMult.isBought,
     description: "Increase Dimension Boost multiplier",
-    effect: () => 2.5,
-    formatEffect: () => `${formatX(2, 0, 1)} ➜ ${formatX(2.5, 0, 1)}`,
+    effect: () => 3.75,
+    formatEffect: () => `${formatX(3, 0, 1)} ➜ ${formatX(3.75, 0, 1)}`,
     charged: {
       description: "Dimension Boost multiplier gains a power effect based on Teresa level",
       effect: () => 1 + Ra.pets.teresa.level / 200,
