@@ -175,7 +175,7 @@ export const normalAchievements = [
     id: 36,
     name: "Limited Speed",
     get description() {
-      return `Infinity with just ${formatInt(10)} Dimension Boosts. (Your Dimension Boosts are reset on Infinity.)`;
+      return `Infinity with no more than ${formatInt(10)} Dimension Boosts. (Your Dimension Boosts are reset on Infinity.)`;
     },
     checkRequirement: () => DimBoost.purchasedBoosts <= 10,
     checkEvent: GAME_EVENT.BIG_CRUNCH_BEFORE,
