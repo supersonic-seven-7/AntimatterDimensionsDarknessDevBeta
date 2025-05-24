@@ -19,7 +19,7 @@ export class DimBoost {
     }
 
     let boost = Effects.max(
-      2,
+      8,
       InfinityUpgrade.dimboostMult,
       InfinityChallenge(7).reward,
       InfinityChallenge(7),
@@ -29,6 +29,7 @@ export class DimBoost {
       .timesEffectsOf(
         TimeStudy(83),
         TimeStudy(231),
+        Achievement(86),
         Achievement(117),
         Achievement(142),
         GlyphEffect.dimBoostPower,
