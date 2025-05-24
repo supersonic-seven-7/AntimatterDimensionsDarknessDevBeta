@@ -176,8 +176,8 @@ export const normalTimeStudies = [
     cost: 4,
     requirement: [71],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: () => `Base Dimension Boost power becomes ${formatX(10)}`,
-    effect: 10
+    description: () => `Base Dimension Boost power becomes ${formatX(15)}`,
+    effect: 15
   },
   {
     id: 82,
