@@ -639,7 +639,8 @@ export const AntimatterDimensions = {
 
     mult = mult.timesEffectsOf(
       InfinityUpgrade.buy10Mult,
-      Achievement(58)
+      Achievement(58),
+      Achievement(143)
     ).times(getAdjustedGlyphEffect("powerbuy10"));
 
     mult = mult.pow(getAdjustedGlyphEffect("effarigforgotten")).powEffectOf(InfinityUpgrade.buy10Mult.chargedEffect);
