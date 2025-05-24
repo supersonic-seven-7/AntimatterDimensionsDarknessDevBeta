@@ -19,7 +19,7 @@ export class DimBoost {
     }
 
     let boost = Effects.max(
-      4,
+      3,
       InfinityUpgrade.dimboostMult,
       InfinityChallenge(7).reward,
       InfinityChallenge(7),
