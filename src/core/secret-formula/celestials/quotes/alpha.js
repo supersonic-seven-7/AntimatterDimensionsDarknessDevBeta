@@ -1,7 +1,7 @@
 export const alphaQuotes = {
   beginning: {
     id: 0,
-    requirement: () => player.records.totalAntimatter.exponent = 1,
+    requirement: () => Time.totalTimePlayed.totalDays > 0,
     lines: [
       "...",
       "Hi.",
