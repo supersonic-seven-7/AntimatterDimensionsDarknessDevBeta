@@ -125,7 +125,6 @@ function applyNDMultipliers(mult, tier) {
   }
 
   multiplier = multiplier.timesEffectsOf(
-    tier > 1 ? Achievement(11) : null,
     tier === 8 ? Achievement(23) : null,
     tier < 8 ? Achievement(34) : null,
     tier <= 4 ? Achievement(64) : null,
@@ -133,6 +132,11 @@ function applyNDMultipliers(mult, tier) {
     tier === 8 ? TimeStudy(214) : null,
     tier > 1 && tier < 8 ? InfinityChallenge(8).reward : null
   );
+  
+  if (Achievement(11).isUnlocked) {
+    multiplier = multiplier.times(tier);
+  }
+  
   if (Achievement(43).isUnlocked) {
     multiplier = multiplier.times(1 + tier / 100);
   }
