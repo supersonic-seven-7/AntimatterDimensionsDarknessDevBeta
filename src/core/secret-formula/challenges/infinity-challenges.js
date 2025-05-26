@@ -17,7 +17,7 @@ export const infinityChallenges = [
   {
     id: 2,
     description: `The Tickspeed Autobuyer challenge (C9) and the Automated Dimboosts Challenge (C10) are active at the same time.`,
-    goal: DC.E1050,
+    goal: DC.E9000,
     isQuickResettable: true,
     reward: {
       description: () => `Improve the Infinity Power Conversion Rate based on Dimboosts`,
