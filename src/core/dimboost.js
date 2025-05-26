@@ -34,10 +34,9 @@ export class DimBoost {
         Achievement(142),
         GlyphEffect.dimBoostPower,
         PelleRifts.recursion.milestones[0]
-      ).powEffectsOf(
-        BreakInfinityUpgrade.postGalaxy,
-        InfinityUpgrade.dimboostMult.chargedEffect
-      );
+      ).powEffectsOf(InfinityUpgrade.dimboostMult.chargedEffect);
+    if (BreakInfinityUpgrade.postGalaxy.isBought) boost = boost.pow(3);
+    return boost;
     if (GlyphAlteration.isAdded("effarig")) boost = boost.pow(getSecondaryGlyphEffect("effarigforgotten"));
     return boost;
   }
