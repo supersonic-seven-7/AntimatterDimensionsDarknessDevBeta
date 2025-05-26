@@ -9,6 +9,22 @@ export const changelog = [
    * }
    */
   {
+    date: [2025, 5, 26],
+    name: "Darkness",
+    info: `
+<b>Added things:</b><br>
+<ul>
+<li>Began the game in removing Galaxies</li>
+<li>Rebalanced Achievements</li>
+<li>Let you begin with Antitables</li>
+<li>Rebalanced Infinity/Break Upgrades</li>
+<li>Rebalanced Early Infinity Dimensions/Challenges</li>
+<li>Content is currently up to the 5e10 Break Upgrade, but is receiving frequent updates</li>
+</ul>
+<br>
+`
+  },
+  {
     date: [2024, 8, 12],
     name: "Hi Ra",
     info: `
