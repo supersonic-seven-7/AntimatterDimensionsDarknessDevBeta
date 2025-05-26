@@ -76,7 +76,7 @@ export const infinityChallenges = [
     description:
       `buying Antimatter Dimensions 1-4 causes all cheaper AD costs to increase.
       Buying Antimatter Dimensions 5-8 causes all more expensive AD costs to increase.`,
-    goal: DC.E18000,
+    goal: DC.E20000,
     isQuickResettable: true,
     reward: {
       description: () =>
@@ -84,7 +84,7 @@ export const infinityChallenges = [
         by ${formatInt(1)}, and get a small Tickspeed buff`,
       effect: 2
     },
-    unlockAM: DC.E20000,
+    unlockAM: DC.E21000,
   },
   {
     id: 7,
