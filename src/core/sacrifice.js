@@ -31,7 +31,7 @@ export class Sacrifice {
     if (f("Challenge8isRunning", NormalChallenge(8).isRunning)) {
       factor = 1;
       base = "x";
-    } else if (f("InfinityChallenge2isCompleted", InfinityChallenge(2).isCompleted)) {
+    } else if (f("InfinityChallenge2isCompleted", InfinityChallenge(3).isCompleted)) {
       factor = 1 / 120;
       places = 3;
       base = "AD1";
@@ -58,7 +58,7 @@ export class Sacrifice {
     // C8 seems weaker, but it actually follows its own formula which ends up being stronger based on how it stacks
     if (NormalChallenge(8).isRunning) base = 1;
     // Pre-Reality this was 100; having ach32/57 results in 1.2x, which is brought back in line by changing to 120
-    else if (InfinityChallenge(2).isCompleted) base = 1 / 120;
+    else if (InfinityChallenge(3).isCompleted) base = 1 / 120;
     else base = 2;
 
     // All the factors which go into the multiplier have to combine this way in order to replicate legacy behavior
@@ -81,7 +81,7 @@ export class Sacrifice {
     if (NormalChallenge(8).isRunning) {
       prePowerSacrificeMult = nd1Amount.pow(0.05).dividedBy(sacrificed.pow(0.04)).clampMin(1)
         .times(nd1Amount.pow(0.05).dividedBy(sacrificed.plus(nd1Amount).pow(0.04)));
-    } else if (InfinityChallenge(2).isCompleted) {
+    } else if (InfinityChallenge(3).isCompleted) {
       prePowerSacrificeMult = nd1Amount.dividedBy(sacrificed);
     } else {
       prePowerSacrificeMult = new Decimal((nd1Amount.log10() / 10) / Math.max(sacrificed.log10() / 10, 1));
@@ -100,7 +100,7 @@ export class Sacrifice {
 
     let prePowerBoost;
 
-    if (InfinityChallenge(2).isCompleted) {
+    if (InfinityChallenge(3).isCompleted) {
       prePowerBoost = player.sacrificed;
     } else {
       prePowerBoost = new Decimal(player.sacrificed.log10() / 10);
