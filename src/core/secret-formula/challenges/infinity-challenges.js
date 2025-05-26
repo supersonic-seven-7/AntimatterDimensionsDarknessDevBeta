@@ -17,7 +17,7 @@ export const infinityChallenges = [
   {
     id: 2,
     description: `all Normal Challenge restrictions are active at once except only the Big Crunch Autobuyer (C12) Challenge.`,
-    goal: DC.E9000,
+    goal: DC.E1350,
     isQuickResettable: true,
     reward: {
       description: () => `Improve the Infinity Power Conversion Rate based on Dimboosts`,
