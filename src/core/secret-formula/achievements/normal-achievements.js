@@ -1111,10 +1111,10 @@ export const normalAchievements = [
     id: 151,
     name: "You really didn't need it anyway",
     get description() {
-      return `Get ${formatInt(800)} Antimatter Galaxies without
+      return `Get ${formatInt(69420)} Dimension Boosts without
       buying 8th Antimatter Dimensions in your current Infinity.`;
     },
-    checkRequirement: () => player.galaxies >= 800 && player.requirementChecks.infinity.noAD8,
+    checkRequirement: () => DimBoost.purchasedBoosts >= 69420 && player.requirementChecks.infinity.noAD8,
     checkEvent: GAME_EVENT.GALAXY_RESET_AFTER,
     reward: "Unlock V, the Celestial of Achievements."
   },
