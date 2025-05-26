@@ -57,7 +57,7 @@ export class Galaxy {
     }
 
     amount -= Effects.sum(InfinityUpgrade.resetBoost);
-    if (InfinityChallenge(5).isCompleted) amount -= 1;
+    if (InfinityChallenge(6).isCompleted) amount -= 1;
 
     if (GlyphAlteration.isAdded("power")) amount *= getSecondaryGlyphEffect("powerpow");
 
@@ -80,7 +80,7 @@ export class Galaxy {
 
   static get canBeBought() {
     if (EternityChallenge(6).isRunning && !Enslaved.isRunning) return false;
-    if (NormalChallenge(8).isRunning || InfinityChallenge(7).isRunning) return false;
+    if (NormalChallenge(8).isRunning || InfinityChallenge(8).isRunning) return false;
     if (player.records.thisInfinity.maxAM.gt(Player.infinityGoal) &&
        (!player.break || Player.isInAntimatterChallenge)) return false;
     return false;
@@ -89,7 +89,7 @@ export class Galaxy {
   static get lockText() {
     if (this.canBeBought) return "The Physics of this Timeline do not allow for the purchase of Galaxies. Good luck, weak little fool!";
     if (EternityChallenge(6).isRunning) return "Locked (Eternity Challenge 6)";
-    if (InfinityChallenge(7).isRunning) return "Locked (Infinity Challenge 7)";
+    if (InfinityChallenge(8).isRunning) return "Locked (Infinity Challenge 7)";
     if (InfinityChallenge(1).isRunning) return "Locked (Infinity Challenge 1)";
     if (NormalChallenge(8).isRunning) return "Locked (8th Antimatter Dimension Autobuyer Challenge)";
     return "The Physics of this Timeline do not allow for the purchase of Galaxies. Good luck, weak little fool!";
