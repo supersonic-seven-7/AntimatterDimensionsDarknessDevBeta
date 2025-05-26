@@ -21,8 +21,8 @@ export class DimBoost {
     let boost = Effects.max(
       3,
       InfinityUpgrade.dimboostMult,
-      InfinityChallenge(7).reward,
-      InfinityChallenge(7),
+      InfinityChallenge(8).reward,
+      InfinityChallenge(8),
       TimeStudy(81)
     )
       .toDecimal()
@@ -72,6 +72,9 @@ export class DimBoost {
       // more boosts than this; it's just that boosts beyond this are pointless.
       return 2;
     }
+    if (InfinityChallenge(2).isRunning) {
+      return 2;
+    }
     if (NormalChallenge(8).isRunning) {
       // See above. It's important we check for this after checking for IC1 since otherwise
       // this case would trigger when we're in IC1.
@@ -118,7 +121,7 @@ export class DimBoost {
     }
 
     amount -= Effects.sum(InfinityUpgrade.resetBoost);
-    if (InfinityChallenge(5).isCompleted) amount -= 1;
+    if (InfinityChallenge(6).isCompleted) amount -= 1;
 
     amount *= InfinityUpgrade.resetBoost.chargedEffect.effectOrDefault(1);
 
