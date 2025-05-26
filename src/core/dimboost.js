@@ -72,9 +72,6 @@ export class DimBoost {
       // more boosts than this; it's just that boosts beyond this are pointless.
       return 2;
     }
-    if (InfinityChallenge(2).isRunning) {
-      return 2;
-    }
     if (NormalChallenge(8).isRunning) {
       // See above. It's important we check for this after checking for IC1 since otherwise
       // this case would trigger when we're in IC1.
