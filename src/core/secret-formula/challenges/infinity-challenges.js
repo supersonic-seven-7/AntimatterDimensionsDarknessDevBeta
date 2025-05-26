@@ -76,15 +76,15 @@ export const infinityChallenges = [
     description:
       `buying Antimatter Dimensions 1-4 causes all cheaper AD costs to increase.
       Buying Antimatter Dimensions 5-8 causes all more expensive AD costs to increase.`,
-    goal: DC.E16500,
+    goal: DC.E18000,
     isQuickResettable: true,
     reward: {
       description: () =>
-        `All Galaxies are ${formatPercents(0.1)} stronger and reduce the requirements for them
-        and Dimension Boosts by ${formatInt(1)}`,
-      effect: 1.1
+        `All Dimension Boosts are ${formatX(2)} stronger, reduce the requirements for them
+        by ${formatInt(1)}, and get a small Tickspeed buff`,
+      effect: 2
     },
-    unlockAM: DC.E18000,
+    unlockAM: DC.E20000,
   },
   {
     id: 7,
@@ -100,7 +100,7 @@ export const infinityChallenges = [
       effect: () => Tickspeed.perSecond.pow(0.0005),
       formatEffect: value => formatX(value, 2, 2)
     },
-    unlockAM: DC.E22500,
+    unlockAM: DC.E28000,
   },
   {
     id: 8,
@@ -124,7 +124,7 @@ export const infinityChallenges = [
       description: () => `Dimension Boost multiplier is increased to a minimum of ${formatX(6)}`,
       effect: 6
     },
-    unlockAM: DC.E23000,
+    unlockAM: DC.E30000,
   },
   {
     id: 9,
@@ -141,6 +141,6 @@ export const infinityChallenges = [
       effect: () => AntimatterDimension(1).multiplier.times(AntimatterDimension(8).multiplier).pow(0.02),
       formatEffect: value => formatX(value, 2, 2)
     },
-    unlockAM: DC.E28000,
+    unlockAM: DC.E45000,
   },
 ];
