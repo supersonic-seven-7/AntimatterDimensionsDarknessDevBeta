@@ -30,14 +30,14 @@ export const infinityChallenges = [
     id: 3,
     description: () => `Dimensional Sacrifice happens automatically every ${formatInt(400)} milliseconds once you have
       an 8th Antimatter Dimension.`,
-    goal: DC.E10500,
+    goal: DC.E5000,
     isQuickResettable: false,
     reward: {
       description: () => `Dimensional Sacrifice autobuyer and stronger Dimensional Sacrifice
         ${Sacrifice.getSacrificeDescription({ "InfinityChallenge2isCompleted": false })} ➜
         ${Sacrifice.getSacrificeDescription({ "InfinityChallenge2isCompleted": true })}`,
     },
-    unlockAM: DC.E11000,
+    unlockAM: DC.E5500,
   },
   {
     id: 4,
