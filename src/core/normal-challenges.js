@@ -2,7 +2,7 @@ import { DC } from "./constants";
 import { GameMechanicState } from "./game-mechanics";
 
 export function updateNormalAndInfinityChallenges(diff) {
-  if (NormalChallenge(11).isRunning || InfinityChallenge(6).isRunning) {
+  if (NormalChallenge(11).isRunning || InfinityChallenge(7).isRunning) {
     if (AntimatterDimension(2).amount.neq(0)) {
       Currency.matter.bumpTo(1);
       // These caps are values which occur at approximately e308 IP
@@ -26,7 +26,7 @@ export function updateNormalAndInfinityChallenges(diff) {
     player.chall2Pow = Math.min(player.chall2Pow + diff / 100 / 1800, 1);
   }
 
-  if (InfinityChallenge(2).isRunning) {
+  if (InfinityChallenge(3).isRunning) {
     if (player.ic2Count >= 400) {
       if (AntimatterDimension(8).amount.gt(0)) {
         sacrificeReset();
@@ -47,6 +47,11 @@ class NormalChallengeState extends GameMechanicState {
   get isRunning() {
     const isPartOfIC1 = this.id !== 9 && this.id !== 12;
     return player.challenge.normal.current === this.id || (isPartOfIC1 && InfinityChallenge(1).isRunning);
+  }
+  
+  get isRunning() {
+    const isPartOfIC2 = this.id === 9 && this.id === 10;
+    return player.challenge.normal.current === this.id || (isPartOfIC2 && InfinityChallenge(2).isRunning);
   }
 
   get isOnlyActiveChallenge() {
