@@ -191,7 +191,7 @@ function onBuyDimension(tier) {
   if (player.speedrun.isActive && !player.speedrun.hasStarted) Speedrun.startTimer();
 
   if (NormalChallenge(2).isRunning) player.chall2Pow = 0;
-  if (NormalChallenge(4).isRunning || InfinityChallenge(1).isRunning || InfinityChallenge(2).isRunning) {
+  if (NormalChallenge(4).isRunning || InfinityChallenge(1).isRunning) {
     AntimatterDimensions.resetAmountUpToTier(tier - 1);
   }
 
