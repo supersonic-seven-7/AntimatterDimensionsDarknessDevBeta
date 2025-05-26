@@ -80,7 +80,7 @@ export const infinityChallenges = [
     isQuickResettable: true,
     reward: {
       description: () =>
-        `All Dimension Boosts are ${formatX(2)} stronger, reduce the requirements for them
+        `All Dimension Boosts are ${formatX(2, 0, 0)} stronger, reduce the requirements for them
         by ${formatInt(1)}, and get a small Tickspeed buff`,
       effect: 2
     },
