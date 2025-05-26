@@ -63,6 +63,11 @@ export default {
         icon="fa-solid fa-file-lines"
         show-modal="changelog"
       />
+      <InformationModalButton
+        name="AD: Endgame (for more information on the creator)"
+        icon="fa-solid fa-file-lines"
+        link="https://supersonic-seven.github.io/AntimatterDimensionsEndgameUpdate/"
+      />
     </div>
   </div>
 </template>
