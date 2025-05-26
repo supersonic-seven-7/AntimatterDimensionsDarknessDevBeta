@@ -62,14 +62,14 @@ export const infinityChallenges = [
     description: () =>
       `only the latest bought Antimatter Dimension's production is normal. All other Antimatter Dimensions
       produce less (${formatPow(0.25, 2, 2)}).`,
-    goal: DC.E13000,
+    goal: DC.E11000,
     isQuickResettable: true,
     effect: 0.25,
     reward: {
-      description: () => `All Antimatter Dimension multipliers become multiplier${formatPow(1.05, 2, 2)}`,
-      effect: 1.05
+      description: () => `All Antimatter Dimension multipliers become multiplier${formatPow(1.2, 2, 2)}`,
+      effect: 1.2
     },
-    unlockAM: DC.E14000,
+    unlockAM: DC.E12000,
   },
   {
     id: 6,
