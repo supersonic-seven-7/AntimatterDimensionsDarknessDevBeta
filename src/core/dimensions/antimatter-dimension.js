@@ -548,8 +548,7 @@ class AntimatterDimensionState extends DimensionState {
 
   challengeCostBump() {
     if (InfinityChallenge(6).isRunning) this.multiplyIC5Costs();
-    else if (NormalChallenge(9).isRunning) this.multiplySameCosts();
-    else if (InfinityChallenge(2).isRunning) this.multiplySameCosts();
+    else if (NormalChallenge(9).isRunning || InfinityChallenge(2).isRunning) this.multiplySameCosts();
   }
 
   multiplySameCosts() {
