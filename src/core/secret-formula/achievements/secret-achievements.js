@@ -117,8 +117,8 @@ export const secretAchievements = [
   },
   {
     id: 33,
-    name: "A sound financial decision",
-    description: "Click on the button to purchase STD coins."
+    name: "Welcome to the Endgame",
+    description: "Reach the current Endgame. (Insert AD: Endgame reference here)"
   },
   {
     id: 34,
