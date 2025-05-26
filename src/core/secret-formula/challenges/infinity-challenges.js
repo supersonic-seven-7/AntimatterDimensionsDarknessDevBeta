@@ -16,6 +16,18 @@ export const infinityChallenges = [
   },
   {
     id: 2,
+    description: `The Tickspeed Autobuyer challenge (C9) and the Automated Dimboosts Challenge (C10) are active at the same time.`,
+    goal: DC.E9000,
+    isQuickResettable: true,
+    reward: {
+      description: () => `Improve the Infinity Power Conversion Rate based on Dimboosts`,
+      effect: () => Math.pow(DimBoost.purchasedBoosts * 10, 0.2),
+      formatEffect: value => formatX(value, 2, 2)
+    },
+    unlockAM: DC.E3000,
+  },
+  {
+    id: 3,
     description: () => `Dimensional Sacrifice happens automatically every ${formatInt(400)} milliseconds once you have
       an 8th Antimatter Dimension.`,
     goal: DC.E10500,
@@ -28,7 +40,7 @@ export const infinityChallenges = [
     unlockAM: DC.E11000,
   },
   {
-    id: 3,
+    id: 4,
     description: () =>
       `Tickspeed upgrades are always ${formatX(1)}. For every Tickspeed upgrade purchase, you instead get a static
       multiplier on all Antimatter Dimensions which increases based on Antimatter Galaxies.`,
@@ -46,7 +58,7 @@ export const infinityChallenges = [
     unlockAM: DC.E12000,
   },
   {
-    id: 4,
+    id: 5,
     description: () =>
       `only the latest bought Antimatter Dimension's production is normal. All other Antimatter Dimensions
       produce less (${formatPow(0.25, 2, 2)}).`,
@@ -60,7 +72,7 @@ export const infinityChallenges = [
     unlockAM: DC.E14000,
   },
   {
-    id: 5,
+    id: 6,
     description:
       `buying Antimatter Dimensions 1-4 causes all cheaper AD costs to increase.
       Buying Antimatter Dimensions 5-8 causes all more expensive AD costs to increase.`,
@@ -75,7 +87,7 @@ export const infinityChallenges = [
     unlockAM: DC.E18000,
   },
   {
-    id: 6,
+    id: 7,
     description: () =>
       `exponentially rising matter divides the multiplier on all of your Antimatter Dimensions
       once you have at least ${formatInt(1)} 2nd Antimatter Dimension.`,
@@ -91,7 +103,7 @@ export const infinityChallenges = [
     unlockAM: DC.E22500,
   },
   {
-    id: 7,
+    id: 8,
     description: () => {
       // Copied from DimBoost.power; this is the base amount before any multipliers. Post-eternity this isn't
       // necessarily 2.5x by the time the player sees this challenge; it's probably most accurate to say what it
@@ -115,7 +127,7 @@ export const infinityChallenges = [
     unlockAM: DC.E23000,
   },
   {
-    id: 8,
+    id: 9,
     description: () =>
       `AD production rapidly and continually drops over time. Purchasing Antimatter Dimension or Tickspeed
         upgrades sets production back to ${formatPercents(1)} before it starts dropping again.`,
