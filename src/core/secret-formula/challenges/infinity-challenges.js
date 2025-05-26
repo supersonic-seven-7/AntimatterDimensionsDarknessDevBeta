@@ -5,11 +5,11 @@ export const infinityChallenges = [
     id: 1,
     description: `all Normal Challenge restrictions are active at once, with the exception of the
       Tickspeed (C9) and Big Crunch (C12) Challenges.`,
-    goal: DC.E650,
+    goal: DC.E6500,
     isQuickResettable: true,
     reward: {
-      description: () => `${formatX(1.3, 1, 1)} on all Infinity Dimensions for each Infinity Challenge completed`,
-      effect: () => Math.pow(1.3, InfinityChallenges.completed.length),
+      description: () => `${formatX(16.9, 1, 1)} on all Infinity Dimensions for each Infinity Challenge completed`,
+      effect: () => Math.pow(16.9, InfinityChallenges.completed.length),
       formatEffect: value => formatX(value, 1, 1)
     },
     unlockAM: DC.E1500,
