@@ -14,6 +14,7 @@ export class BreakInfinityUpgradeState extends SetPurchasableMechanicState {
     if (this.id === "postGalaxy") {
       SpeedrunMilestones(7).tryComplete();
       PelleStrikes.powerGalaxies.trigger();
+      SecretAchievement(33).unlock();
     }
   }
 }
