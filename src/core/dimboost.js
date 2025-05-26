@@ -105,7 +105,6 @@ export class DimBoost {
     const tier = Math.min(targetResets + 3, this.maxDimensionsUnlockable);
     let amount = 20;
     const discount = Effects.sum(
-      BreakInfinityUpgrade.postGalaxy,
       TimeStudy(211),
       TimeStudy(222)
     );
