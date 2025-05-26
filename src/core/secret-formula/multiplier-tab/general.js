@@ -83,11 +83,11 @@ export const general = {
   },
   infinityChallenge: {
     name: ic => `Infinity Challenge ${ic}`,
-    displayOverride: ic => (ic === 4 ? formatPow(InfinityChallenge(5).reward.effectValue, 0, 3) : ""),
+    displayOverride: ic => (ic === 5 ? formatPow(InfinityChallenge(5).reward.effectValue, 0, 3) : ""),
     multValue: (ic, dim) => {
       // We cheat here by actually giving IC4 a multiplier of a value equal to its effect on the final
       // value in order to represent its proportion accurately. It's hidden by displayOverride
-      if (ic === 4) {
+      if (ic === 5) {
         const ic4Pow = InfinityChallenge(5).reward.effectValue;
         const mults = AntimatterDimensions.all.map(ad => ad.multiplier.pow((ic4Pow - 1) / ic4Pow));
         if (dim?.length === 2) return mults.reduce((x, y) => x.times(y), DC.D1);
