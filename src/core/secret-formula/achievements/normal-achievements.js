@@ -1060,7 +1060,7 @@ export const normalAchievements = [
       return true;
     },
     checkEvent: GAME_EVENT.ETERNITY_RESET_AFTER,
-    get reward() { return `The Buy 10 multiplier is multiplied by ${formatInt(1.1)}.`; },
+    get reward() { return `The Buy 10 multiplier is multiplied by ${format(1.1, 0, 1)}.`; },
     effect: 1.1,
   },
   {
