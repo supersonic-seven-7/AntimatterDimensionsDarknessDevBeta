@@ -63,7 +63,7 @@ export class DimBoost {
       // when giving initial boosts, so the player will still get those.
       return 0;
     }
-    if (InfinityChallenge(1).isRunning) {
+    if (InfinityChallenge(1).isRunning || InfinityChallenge(2).isRunning) {
       // Usually, in Challenge 8, the only boosts that are useful are the first 5
       // (the fifth unlocks sacrifice). In IC1 (Challenge 8 and Challenge 10
       // combined, among other things), only the first 2 are useful
