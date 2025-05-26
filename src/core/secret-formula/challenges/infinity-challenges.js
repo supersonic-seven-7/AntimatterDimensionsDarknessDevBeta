@@ -8,8 +8,8 @@ export const infinityChallenges = [
     goal: DC.E850,
     isQuickResettable: true,
     reward: {
-      description: () => `${formatX(16.9, 1, 1)} on all Infinity Dimensions for each Infinity Challenge completed`,
-      effect: () => Math.pow(16.9, InfinityChallenges.completed.length),
+      description: () => `${formatX(30.3, 1, 1)} on all Infinity Dimensions for each Infinity Challenge completed`,
+      effect: () => Math.pow(30.3, InfinityChallenges.completed.length),
       formatEffect: value => formatX(value, 1, 1)
     },
     unlockAM: DC.E1500,
