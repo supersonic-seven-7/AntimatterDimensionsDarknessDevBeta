@@ -12,7 +12,7 @@ export const infinityChallenges = [
       effect: () => Math.pow(1.3, InfinityChallenges.completed.length),
       formatEffect: value => formatX(value, 1, 1)
     },
-    unlockAM: DC.E2000,
+    unlockAM: DC.E1500,
   },
   {
     id: 2,
