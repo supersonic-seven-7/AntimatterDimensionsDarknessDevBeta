@@ -5,7 +5,7 @@ export const infinityChallenges = [
     id: 1,
     description: `all Normal Challenge restrictions are active at once, with the exception of the
       Tickspeed (C9) and Big Crunch (C12) Challenges.`,
-    goal: DC.E6500,
+    goal: DC.E9000,
     isQuickResettable: true,
     reward: {
       description: () => `${formatX(16.9, 1, 1)} on all Infinity Dimensions for each Infinity Challenge completed`,
