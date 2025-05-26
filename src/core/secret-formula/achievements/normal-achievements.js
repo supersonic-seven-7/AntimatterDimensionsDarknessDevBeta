@@ -6,7 +6,7 @@ export const normalAchievements = [
     name: "You gotta start somewhere",
     description: "Buy a 1st Antimatter Dimension.",
     checkEvent: GAME_EVENT.ACHIEVEMENT_EVENT_OTHER,
-    get reward() { return `Multiply each Antimatter Dimensions by its Dimension number.`; },
+    get reward() { return `Multiply each Antimatter Dimension by its Dimension number.`; },
   },
   {
     id: 12,
@@ -453,7 +453,7 @@ export const normalAchievements = [
     name: "ERROR 909: Dimension not found",
     description:
       `Get to Infinity with only a single 1st Antimatter Dimension without Dimension Boosts
-      or Antimatter Galaxies, while in the 2nd Antimatter Dimension Autobuyer Challenge.`,
+      while in the 2nd Antimatter Dimension Autobuyer Challenge.`,
     checkRequirement: () =>
       NormalChallenge(2).isOnlyActiveChallenge &&
       AntimatterDimension(1).amount.eq(1) &&
@@ -580,7 +580,7 @@ export const normalAchievements = [
     get description() { return `Reach ${format(DC.E100)} ticks per second.`; },
     checkRequirement: () => Tickspeed.current.exponent <= -97,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
-    get reward() { return `Your Galaxy is ${formatPercents(0.5)} stronger, and Dimboosts are ${formatX(1.5)} more powerful.`; },
+    get reward() { return `Your Galaxy is ${formatPercents(0.5)} stronger, and Dimboosts are ${formatX(1.5, 1, 1)} more powerful.`; },
     effect: 1.5
   },
   {
@@ -739,7 +739,7 @@ export const normalAchievements = [
   {
     id: 106,
     name: "The swarm",
-    get description() { return `Get ${formatInt(10)} Replicanti Galaxies in ${formatInt(15)} seconds.`; },
+    get description() { return `Get ${formatInt(10)} Replicanti Boosters in ${formatInt(15)} seconds.`; },
     checkRequirement: () => Replicanti.galaxies.total >= 10 && Time.thisInfinity.totalSeconds <= 15,
     checkEvent: GAME_EVENT.REPLICANTI_TICK_AFTER
   },
