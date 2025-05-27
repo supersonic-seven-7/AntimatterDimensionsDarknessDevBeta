@@ -81,9 +81,9 @@ export const infinityChallenges = [
     reward: {
       description: () =>
         `Reduce the requirements for Dimension Boosts by ${formatInt(1)} and multiply all Infinity Dimensions
-        based on Dimension Boosts`,
+        based on Dimboosts`,
       effect: () => Math.pow((DimBoost.purchasedBoosts + 1), 3),
-      formatEffect: value => format(value, 2, 2),
+      formatEffect: value => formatX(value, 2, 2),
     },
     unlockAM: DC.E21000,
   },
