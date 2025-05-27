@@ -84,7 +84,7 @@ export default {
     // IC4 is the first time the player sees a power-based effect, not counting how infinity power is handled.
     // This doesn't need to be reactive because completing IC4 for the first time forces a tab switch
     hasSeenPowers() {
-      return InfinityChallenge(4).isCompleted || PlayerProgress.eternityUnlocked();
+      return InfinityChallenge(5).isCompleted || PlayerProgress.eternityUnlocked();
     },
     // While infinity power is a power-based effect, we want to disallow showing that as an equivalent multiplier
     // since that it doesn't make a whole lot of sense to do that. We also want to hide this for entries related
