@@ -82,7 +82,7 @@ export default {
       return new ReplicantiUpgradeButtonSetup(
         upgrade,
         value => {
-          let description = `Max Replicanti Galaxies: `;
+          let description = `Max Replicanti Boosters: `;
           const extra = upgrade.extra;
           if (extra > 0) {
             const total = value + extra;
