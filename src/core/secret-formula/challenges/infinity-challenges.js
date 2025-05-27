@@ -151,7 +151,7 @@ export const infinityChallenges = [
     isQuickResettable: false,
     reward: {
       description:
-        "Infinity Power Conversion Rate is improved based on Achievements.",
+        "Infinity Power Conversion Rate is improved based on Achievements",
       effect: () => Math.pow(Achievements.effectiveCount / 50, 5),
       formatEffect: value => `+${format(value, 2, 2)}`
     },
@@ -165,7 +165,7 @@ export const infinityChallenges = [
     isQuickResettable: true,
     reward: {
       description:
-        "Dimension Boosts multiply the power of Replicanti Boosters.",
+        "Dimension Boosts multiply the power of Replicanti Boosters",
       effect: () => Math.pow(DimBoost.purchasedBoosts + 1, 0.1),
       formatEffect: value => formatX(value, 2, 2)
     },
@@ -178,8 +178,9 @@ export const infinityChallenges = [
     goal: DC.E1E15,
     isQuickResettable: true,
     reward: {
-      description: `Unlock Eternity (set Eternity requirement to ${format(Decimal.NUMBER_MAX_VALUE, 1, 0)}`,
-      effect: () => Decimal.NUMBER_MAX_VALUE
+      description: `Unlock Eternity (set Eternity requirement to ${format(Decimal.NUMBER_MAX_VALUE, 1, 0)})`,
+      effect: () => Math.pow(2, 1024),
+      formatEffect: value => formatX(value, 2, 2)
     },
     unlockAM: DC.E6E6,
   },
