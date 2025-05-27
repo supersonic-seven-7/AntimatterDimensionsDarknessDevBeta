@@ -116,11 +116,11 @@ export const infinityChallenges = [
         TimeStudy(81)
       );
       return `Base Dimension Boost multiplier is decreased to a maximum
-        of ${formatX(2.5)}. (Current base multiplier: ${formatX(mult, 2, 1)})`;
+        of ${formatX(1)}. (Current base multiplier: ${formatX(mult, 2, 1)})`;
     },
     goal: DC.E210000,
     isQuickResettable: false,
-    effect: 0.666666666666666666667,
+    effect: 0.375,
     reward: {
       description: () => `Dimension Boost multiplier is increased to a minimum of ${formatX(6)}`,
       effect: 6
