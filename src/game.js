@@ -155,7 +155,7 @@ export function gainedEternityPoints() {
 
 export function requiredIPForEP(epAmount) {
   return Decimal.pow10(308 * (Decimal.log(Decimal.divide(epAmount, totalEPMult()), 5) + 0.7))
-    .clampMin(Number.MAX_VALUE);
+    .clampMin(DC.E1E15);
 }
 
 export function gainedGlyphLevel() {
