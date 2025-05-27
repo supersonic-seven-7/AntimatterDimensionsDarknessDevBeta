@@ -70,7 +70,7 @@ export default {
       class="o-primary-btn--replicanti-galaxy"
       @click="handleClick"
     >
-      {{ resetActionDisplay }} for a Replicanti Galaxy
+      {{ resetActionDisplay }} for a Replicanti Booster
       <br>
       {{ galaxyCountDisplay }}
     </PrimaryButton>
