@@ -44,7 +44,7 @@ export const infinityChallenges = [
     description: () =>
       `Tickspeed upgrades are always ${formatX(1)}. For every Tickspeed upgrade purchase, you instead get a static
       multiplier on all Antimatter Dimensions.`,
-    goal: DC.E10000,
+    goal: DC.E9000,
     isQuickResettable: false,
     effect: () => Decimal.pow(1.05, player.totalTickBought),
     formatEffect: value => formatX(value, 2, 2),
@@ -55,7 +55,7 @@ export const infinityChallenges = [
         : Decimal.pow(1.05, player.totalTickBought)),
       formatEffect: value => formatX(value, 2, 2),
     },
-    unlockAM: DC.E22500,
+    unlockAM: DC.E10000,
   },
   {
     id: 5,
