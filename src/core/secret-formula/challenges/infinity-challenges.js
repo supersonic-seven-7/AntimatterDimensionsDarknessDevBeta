@@ -131,7 +131,7 @@ export const infinityChallenges = [
     description: () =>
       `AD production rapidly and continually drops over time. Purchasing Antimatter Dimension or Tickspeed
         upgrades sets production back to ${formatPercents(1)} before it starts dropping again.`,
-    goal: DC.E500000,
+    goal: DC.E175000,
     isQuickResettable: true,
     effect: () => DC.D0_8446303389034288.pow(
       Math.max(0, player.records.thisInfinity.time - player.records.thisInfinity.lastBuyTime)),
@@ -142,5 +142,45 @@ export const infinityChallenges = [
       formatEffect: value => formatX(value, 2, 2)
     },
     unlockAM: DC.E175000,
+  },
+  {
+    id: 10,
+    description: () =>
+      `Dimboosts are disabled.`,
+    goal: DC.E1E6,
+    isQuickResettable: false,
+    reward: {
+      description:
+        "Infinity Power Conversion Rate is improved based on Achievements.",
+      effect: () => Math.pow(Achievements.effectiveCount / 50, 5),
+      formatEffect: value => `+${format(value, 2, 2)}`
+    },
+    unlockAM: DC.E1E6,
+  },
+  {
+    id: 11,
+    description: () =>
+      `You are in IC4 and IC5 at the same time.`,
+    goal: DC.E3E6,
+    isQuickResettable: true,
+    reward: {
+      description:
+        "Dimension Boosts multiply the power of Replicanti Boosters.",
+      effect: () => Math.pow(DimBoost.purchasedBoosts + 1, 0.1),
+      formatEffect: value => formatX(value, 2, 2)
+    },
+    unlockAM: DC.E3E6,
+  },
+  {
+    id: 12,
+    description: () =>
+      `You are in IC1, IC4 and IC5 all at the same time.`,
+    goal: DC.E1E15,
+    isQuickResettable: true,
+    reward: {
+      description: `Unlock Eternity (set Eternity requirement to ${format(Decimal.NUMBER_MAX_VALUE, 1, 0)}`,
+      effect: () => Decimal.NUMBER_MAX_VALUE
+    },
+    unlockAM: DC.E6E6,
   },
 ];
