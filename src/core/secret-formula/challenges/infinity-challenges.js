@@ -120,7 +120,7 @@ export const infinityChallenges = [
     },
     goal: DC.E10000,
     isQuickResettable: false,
-    effect: 2.5,
+    effect: 0.666666666666666666667,
     reward: {
       description: () => `Dimension Boost multiplier is increased to a minimum of ${formatX(6)}`,
       effect: 6
