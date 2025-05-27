@@ -19,11 +19,15 @@ export class DimBoost {
     }
 
     let boost = Effects.max(
-      3,
-      InfinityUpgrade.dimboostMult,
-      InfinityChallenge(8).reward,
-      InfinityChallenge(8),
-      TimeStudy(81)
+      if (InfinityChallenge(8).isRunning) {
+        InfinityChallenge(8)
+      },
+      else if (!InfinityChallenge(8).isRunning) {
+        3,
+        InfinityUpgrade.dimboostMult,
+        InfinityChallenge(8).reward,
+        TimeStudy(81)
+      }
     )
       .toDecimal()
       .timesEffectsOf(
@@ -32,7 +36,6 @@ export class DimBoost {
         Achievement(86),
         Achievement(117),
         Achievement(142),
-        InfinityChallenge(6).reward,
         GlyphEffect.dimBoostPower,
         PelleRifts.recursion.milestones[0]
       ).powEffectsOf(
