@@ -33,8 +33,8 @@ export default {
       if (!this.keepAntimatter && !this.perkANRBought) resetResouces.push("Antimatter");
       const resetList = makeEnumeration(resetResouces);
       let tickspeedFixed = "";
-      if (InfinityChallenge(3).isRunning) {
-        tickspeedFixed = `Infinity Challenge ${InfinityChallenge(3).id}`;
+      if (InfinityChallenge(4).isRunning) {
+        tickspeedFixed = `Infinity Challenge ${InfinityChallenge(4).id}`;
       } else if (Ra.isRunning) {
         tickspeedFixed = `${Ra.displayName}'s Reality`;
       }
