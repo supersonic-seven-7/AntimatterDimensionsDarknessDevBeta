@@ -80,9 +80,10 @@ export const infinityChallenges = [
     isQuickResettable: true,
     reward: {
       description: () =>
-        `All Dimension Boosts are ${formatX(2, 0, 0)} stronger, reduce the requirements for them
-        by ${formatInt(1)}, and get a small Tickspeed buff`,
-      effect: 2
+        `Reduce the requirements for Dimension Boosts by ${formatInt(1)} and multiply all Infinity Dimensions
+        based on Dimension Boosts`,
+      effect: () => Math.pow((DimBoost.purchasedBoosts + 1), 3),
+      formatEffect: value => format(value, 2, 2),
     },
     unlockAM: DC.E21000,
   },
