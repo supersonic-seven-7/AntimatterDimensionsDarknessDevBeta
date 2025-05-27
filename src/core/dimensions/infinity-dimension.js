@@ -46,8 +46,8 @@ class InfinityDimensionState extends DimensionState {
       DC.E5000,
       DC.E30000,
       DC.E60000,
-      DC.E100000,
       DC.E200000,
+      DC.E500000,
     ];
     this._unlockRequirement = UNLOCK_REQUIREMENTS[tier];
     const COST_MULTS = [null, 1e3, 1e6, 1e8, 1e10, 1e15, 1e20, 1e25, 1e30];
