@@ -152,36 +152,9 @@ export const infinityChallenges = [
     reward: {
       description:
         "Infinity Power Conversion Rate is improved based on Achievements",
-      effect: () => Math.pow(Achievements.effectiveCount / 50, 5),
+      effect: () => Math.pow(Achievements.effectiveCount * 0.02, 5),
       formatEffect: value => `+${format(value, 2, 2)}`
     },
     unlockAM: DC.E1E6,
-  },
-  {
-    id: 11,
-    description: () =>
-      `You are in IC4 and IC5 at the same time.`,
-    goal: DC.E3E6,
-    isQuickResettable: true,
-    reward: {
-      description:
-        "Dimension Boosts multiply the power of Replicanti Boosters",
-      effect: () => Math.pow(DimBoost.purchasedBoosts + 1, 0.1),
-      formatEffect: value => formatX(value, 2, 2)
-    },
-    unlockAM: DC.E3E6,
-  },
-  {
-    id: 12,
-    description: () =>
-      `You are in IC1, IC4 and IC5 all at the same time.`,
-    goal: DC.E1E15,
-    isQuickResettable: true,
-    reward: {
-      description: `Unlock Eternity (set Eternity requirement to ${format(Decimal.NUMBER_MAX_VALUE, 1, 0)})`,
-      effect: () => Math.pow(2, 1024),
-      formatEffect: value => formatX(value, 2, 2)
-    },
-    unlockAM: DC.E6E6,
   },
 ];
