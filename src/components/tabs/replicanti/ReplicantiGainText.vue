@@ -90,12 +90,12 @@ export default {
       if (Replicanti.galaxies.max > 0) {
         // If the player has max RGs, don't display the "You are gaining blah" text
         if (player.replicanti.galaxies === Replicanti.galaxies.max) {
-          this.galaxyText = "You have reached the maximum amount of Replicanti Galaxies";
+          this.galaxyText = "You have reached the maximum amount of Replicanti Boosters";
         } else {
-          this.galaxyText = `You are gaining a Replicanti Galaxy every
+          this.galaxyText = `You are gaining a Replicanti Booster every
             ${TimeSpan.fromSeconds(secondsPerGalaxy.toNumber())}`;
           if (galaxiesPerSecond.gte(1)) {
-            this.galaxyText = `You are gaining ${quantify("Replicanti Galaxy", galaxiesPerSecond, 2, 1)} per second`;
+            this.galaxyText = `You are gaining ${quantify("Replicanti Booster", galaxiesPerSecond, 2, 1)} per second`;
           }
           // Take the total time from zero replicanti to max RG + e308 replicanti and then subtract away the time which
           // has already elapsed. The time elapsed is calculated from your current RG total (including the current one)
