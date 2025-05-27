@@ -59,7 +59,7 @@ export class DimBoost {
   }
 
   static get maxBoosts() {
-    if (Ra.isRunning) {
+    if (Ra.isRunning || InfinityChallenge(10).isRunning) {
       // Ra makes boosting impossible. Note that this function isn't called
       // when giving initial boosts, so the player will still get those.
       return 0;
