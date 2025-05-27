@@ -20,7 +20,7 @@ export function effectiveBaseGalaxies() {
 }
 
 export function getTickSpeedMultiplier() {
-  if (InfinityChallenge(3).isRunning) return DC.D1;
+  if (InfinityChallenge(4).isRunning) return DC.D1;
   if (Ra.isRunning) return DC.C1D1_1245;
   let galaxies = effectiveBaseGalaxies();
   const effects = Effects.product(
@@ -31,7 +31,6 @@ export function getTickSpeedMultiplier() {
     TimeStudy(232),
     Achievement(86),
     Achievement(178),
-    InfinityChallenge(5).reward,
     PelleUpgrade.galaxyPower,
     PelleRifts.decay.milestones[1]
   );
