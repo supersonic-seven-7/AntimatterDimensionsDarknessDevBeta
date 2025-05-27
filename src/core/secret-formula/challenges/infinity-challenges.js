@@ -55,7 +55,7 @@ export const infinityChallenges = [
         : Decimal.pow(1.05, player.totalTickBought)),
       formatEffect: value => formatX(value, 2, 2),
     },
-    unlockAM: DC.E22000,
+    unlockAM: DC.E22500,
   },
   {
     id: 5,
