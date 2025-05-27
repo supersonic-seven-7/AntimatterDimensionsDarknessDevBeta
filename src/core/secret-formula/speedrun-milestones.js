@@ -50,17 +50,17 @@ export const speedrunMilestones = [
   {
     id: 7,
     key: "upgrade5e11IP",
-    get name() { return `${format(5e11)} IP Upgrade`; },
-    description: () => `Purchase the ${formatPercents(0.5)} stronger Galaxies upgrade`,
+    get name() { return `${format(5e10)} IP Upgrade`; },
+    description: () => `Purchase the cube Dimboost mult upgrade`,
     checkRequirement: () => true,
     // This is checked within BreakInfinityUpgrade.onPurchased
   },
   {
     id: 8,
     key: "completeIC5",
-    name: "Infinity Challenge 5",
-    description: "Complete Infinity Challenge 5",
-    checkRequirement: () => InfinityChallenge(5).isCompleted,
+    name: "Infinity Challenge 6",
+    description: "Complete Infinity Challenge 6",
+    checkRequirement: () => InfinityChallenge(6).isCompleted,
     checkEvent: GAME_EVENT.BIG_CRUNCH_AFTER,
   },
   {
