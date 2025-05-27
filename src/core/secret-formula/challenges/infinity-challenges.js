@@ -118,14 +118,14 @@ export const infinityChallenges = [
       return `Base Dimension Boost multiplier is decreased to a maximum
         of ${formatX(2.5)}. (Current base multiplier: ${formatX(mult, 2, 1)})`;
     },
-    goal: DC.E10000,
+    goal: DC.E210000,
     isQuickResettable: false,
     effect: 0.666666666666666666667,
     reward: {
       description: () => `Dimension Boost multiplier is increased to a minimum of ${formatX(6)}`,
       effect: 6
     },
-    unlockAM: DC.E200000,
+    unlockAM: DC.E100000,
   },
   {
     id: 9,
