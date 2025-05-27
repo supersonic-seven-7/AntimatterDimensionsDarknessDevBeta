@@ -155,6 +155,6 @@ export const infinityChallenges = [
       effect: () => Math.pow(Achievements.effectiveCount * 0.02, 5),
       formatEffect: value => `+${format(value, 2, 2)}`
     },
-    unlockAM: DC.E1E6,
+    unlockAM: DC.E300000,
   },
 ];
