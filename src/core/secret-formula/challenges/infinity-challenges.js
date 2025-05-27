@@ -117,7 +117,7 @@ export const infinityChallenges = [
       );
       return `Base Dimension Boost multiplier is divided by ${formatInt(10)}. (Current base multiplier: ${formatX(mult, 2, 1)})`;
     },
-    goal: DC.E210000,
+    goal: DC.E92000,
     isQuickResettable: false,
     effect: 0.1,
     reward: {
