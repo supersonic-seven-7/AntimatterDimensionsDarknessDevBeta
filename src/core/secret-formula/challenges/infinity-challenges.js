@@ -69,7 +69,7 @@ export const infinityChallenges = [
       description: () => `All Antimatter Dimension multipliers become multiplier${formatPow(1.2, 2, 2)}`,
       effect: 1.2
     },
-    unlockAM: DC.E23000,
+    unlockAM: DC.E12000,
   },
   {
     id: 6,
