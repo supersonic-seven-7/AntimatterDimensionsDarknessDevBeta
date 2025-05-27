@@ -216,7 +216,7 @@ export default {
         ({{ capMultText }})
         <br>
         {{ quantifyInt("extra Replicanti Galaxy", effarigInfinityBonusRG) }}
-        (Next Replicanti Galaxy at {{ format(nextEffarigRGThreshold, 2) }} cap)
+        (Next Replicanti Booster at {{ format(nextEffarigRGThreshold, 2) }} cap)
       </div>
       <p class="c-replicanti-description">
         You have
@@ -245,10 +245,10 @@ export default {
         <ReplicantiUpgradeButton :setup="maxGalaxySetup" />
       </div>
       <div>
-        The Max Replicanti Galaxy upgrade can be purchased endlessly, but costs increase
+        The Max Replicanti Booster upgrade can be purchased endlessly, but costs increase
         <br>
-        more rapidly above {{ formatInt(distantRG) }} Replicanti Galaxies
-        and even more so above {{ formatInt(remoteRG) }} Replicanti Galaxies.
+        more rapidly above {{ formatInt(distantRG) }} Replicanti Boosters
+        and even more so above {{ formatInt(remoteRG) }} Replicanti Boosters.
       </div>
       <br><br>
       <ReplicantiGainText />
