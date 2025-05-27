@@ -85,7 +85,7 @@ export const infinityChallenges = [
       effect: () => Math.pow((DimBoost.purchasedBoosts + 1), 3),
       formatEffect: value => formatX(value, 2, 2),
     },
-    unlockAM: DC.E27000,
+    unlockAM: DC.E21000,
   },
   {
     id: 7,
