@@ -95,7 +95,7 @@ export default {
           this.galaxyText = `You are gaining a Replicanti Booster every
             ${TimeSpan.fromSeconds(secondsPerGalaxy.toNumber())}`;
           if (galaxiesPerSecond.gte(1)) {
-            this.galaxyText = `You are gaining ${quantify("Replicanti Galaxy", galaxiesPerSecond, 2, 1)} (Replicanti Boosters) per second`;
+            this.galaxyText = `You are gaining ${quantify("Replicanti Booster", galaxiesPerSecond, 2, 1)} (Replicanti Boosters) per second`;
           }
           // Take the total time from zero replicanti to max RG + e308 replicanti and then subtract away the time which
           // has already elapsed. The time elapsed is calculated from your current RG total (including the current one)
