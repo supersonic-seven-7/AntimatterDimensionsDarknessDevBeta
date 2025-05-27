@@ -125,7 +125,7 @@ export const infinityChallenges = [
       description: () => `Dimension Boost multiplier is increased to a minimum of ${formatX(6)}`,
       effect: 6
     },
-    unlockAM: DC.E54000,
+    unlockAM: DC.E200000,
   },
   {
     id: 9,
@@ -142,6 +142,6 @@ export const infinityChallenges = [
       effect: () => AntimatterDimension(1).multiplier.times(AntimatterDimension(8).multiplier).pow(0.02),
       formatEffect: value => formatX(value, 2, 2)
     },
-    unlockAM: DC.E60000,
+    unlockAM: DC.E210000,
   },
 ];
