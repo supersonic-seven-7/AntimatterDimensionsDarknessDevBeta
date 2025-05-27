@@ -112,7 +112,7 @@ export const infinityChallenges = [
       const mult = Effects.max(
         3,
         InfinityUpgrade.dimboostMult,
-        InfinityChallenge(7).reward,
+        InfinityChallenge(8).reward,
         TimeStudy(81)
       );
       return `Base Dimension Boost multiplier is decreased to a maximum
