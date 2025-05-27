@@ -30,14 +30,14 @@ export const infinityChallenges = [
     id: 3,
     description: () => `Dimensional Sacrifice happens automatically every ${formatInt(400)} milliseconds once you have
       an 8th Antimatter Dimension.`,
-    goal: DC.E5000,
+    goal: DC.E8000,
     isQuickResettable: false,
     reward: {
       description: () => `Dimensional Sacrifice autobuyer and stronger Dimensional Sacrifice
         ${Sacrifice.getSacrificeDescription({ "InfinityChallenge2isCompleted": false })} ➜
         ${Sacrifice.getSacrificeDescription({ "InfinityChallenge2isCompleted": true })}`,
     },
-    unlockAM: DC.E5500,
+    unlockAM: DC.E8000,
   },
   {
     id: 4,
@@ -55,7 +55,7 @@ export const infinityChallenges = [
         : Decimal.pow(1.05, player.totalTickBought)),
       formatEffect: value => formatX(value, 2, 2),
     },
-    unlockAM: DC.E10000,
+    unlockAM: DC.E22000,
   },
   {
     id: 5,
@@ -69,7 +69,7 @@ export const infinityChallenges = [
       description: () => `All Antimatter Dimension multipliers become multiplier${formatPow(1.2, 2, 2)}`,
       effect: 1.2
     },
-    unlockAM: DC.E12000,
+    unlockAM: DC.E23000,
   },
   {
     id: 6,
@@ -85,7 +85,7 @@ export const infinityChallenges = [
       effect: () => Math.pow((DimBoost.purchasedBoosts + 1), 3),
       formatEffect: value => formatX(value, 2, 2),
     },
-    unlockAM: DC.E21000,
+    unlockAM: DC.E27000,
   },
   {
     id: 7,
