@@ -92,7 +92,7 @@ export const infinityChallenges = [
     description: () =>
       `exponentially rising matter divides the multiplier on all of your Antimatter Dimensions
       once you have at least ${formatInt(1)} 2nd Antimatter Dimension.`,
-    goal: DC.D2E22222,
+    goal: DC.E24000,
     isQuickResettable: true,
     effect: () => Currency.matter.value.clampMin(1),
     formatEffect: value => `/${format(value, 1, 2)}`,
@@ -101,7 +101,7 @@ export const infinityChallenges = [
       effect: () => Tickspeed.perSecond.pow(0.0005),
       formatEffect: value => formatX(value, 2, 2)
     },
-    unlockAM: DC.E28000,
+    unlockAM: DC.E24500,
   },
   {
     id: 8,
