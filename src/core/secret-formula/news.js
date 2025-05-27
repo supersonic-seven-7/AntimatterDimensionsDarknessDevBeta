@@ -3072,13 +3072,13 @@ export const news = [
     id: "l68",
     get text() {
       let protestText = "";
-      if (InfinityChallenge(4).isRunning)
+      if (InfinityChallenge(5).isRunning)
         protestText =
           `Let's take it to this guy, who's part of the side that believes it's Infinity Challenge 4. What do you have
           to say? "Obviously Infinity Challenge 4 is the worst one, I mean, what am I even supposed to do? I keep
           trying but every time I keep getting stuck and nowhere close to the end! How are you even supposed to do it?"
           What a passionate man. This is your local news host, and we'll come back with further information later.`;
-      else if (InfinityChallenge(5).isRunning)
+      else if (InfinityChallenge(6).isRunning)
         protestText =
           `So up next let's talk to this guy is holding a sign that says "IC5 Unfair". What is the point your group
           is trying to make? "Can't you read the sign? If your comprehension is that bad then Infinity Challenge 5
