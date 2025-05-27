@@ -534,8 +534,8 @@ export const normalAchievements = [
   {
     id: 81,
     name: "Game Design Is My Passion",
-    get description() { return `Beat Infinity Challenge 5 in ${formatInt(15)} seconds or less.`; },
-    checkRequirement: () => InfinityChallenge(5).isRunning && Time.thisInfinityRealTime.totalSeconds <= 15,
+    get description() { return `Beat Infinity Challenge 6 in ${formatInt(15)} seconds or less.`; },
+    checkRequirement: () => InfinityChallenge(6).isRunning && Time.thisInfinityRealTime.totalSeconds <= 15,
     checkEvent: GAME_EVENT.BIG_CRUNCH_BEFORE
   },
   {
@@ -1336,8 +1336,8 @@ export const normalAchievements = [
   {
     id: 183,
     name: "Déjà vOoM",
-    description: "Complete Infinity Challenge 5 while Doomed.",
-    checkRequirement: () => Pelle.isDoomed && InfinityChallenge(5).isCompleted,
+    description: "Complete Infinity Challenge 6 while Doomed.",
+    checkRequirement: () => Pelle.isDoomed && InfinityChallenge(6).isCompleted,
     checkEvent: GAME_EVENT.INFINITY_CHALLENGE_COMPLETED,
     // Weirdly specific reward? Yes, its V's ST bonus because we forgot to disable it
     // when balancing Pelle and only realised too late.
