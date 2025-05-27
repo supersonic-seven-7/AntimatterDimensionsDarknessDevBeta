@@ -235,14 +235,14 @@ export const AD = {
     name: dim => (dim ? `Infinity Challenges (AD ${dim})` : "Infinity Challenges"),
     multValue: dim => {
       const allMult = DC.D1.timesEffectsOf(
-        InfinityChallenge(3),
-        InfinityChallenge(3).reward,
+        InfinityChallenge(4),
+        InfinityChallenge(4).reward,
       );
 
       const dimMults = Array.repeat(DC.D1, 9);
       for (let tier = 1; tier <= 8; tier++) {
         dimMults[tier] = dimMults[tier].timesEffectsOf(
-          tier > 1 && tier < 8 ? InfinityChallenge(8).reward : null
+          tier > 1 && tier < 8 ? InfinityChallenge(9).reward : null
         );
       }
 
@@ -253,7 +253,7 @@ export const AD = {
       }
       return totalMult;
     },
-    powValue: () => InfinityChallenge(4).reward.effectOrDefault(1),
+    powValue: () => InfinityChallenge(5).reward.effectOrDefault(1),
     isActive: () => player.break && !EternityChallenge(11).isRunning,
     icon: MultiplierTabIcons.CHALLENGE("infinity"),
   },
@@ -435,16 +435,16 @@ export const AD = {
     name: dim => (dim ? `Infinity Challenge Nerf (AD ${dim})` : "Infinity Challenge Nerf"),
     multValue: dim => {
       let dimMults = Array.repeat(DC.D1, 9);
-      if (InfinityChallenge(4).isRunning) {
+      if (InfinityChallenge(5).isRunning) {
         for (let tier = 1; tier <= 8; tier++) {
           if (player.postC4Tier !== tier) {
-            dimMults[tier] = dimMults[tier].pow(1 - InfinityChallenge(4).effectValue).reciprocal();
+            dimMults[tier] = dimMults[tier].pow(1 - InfinityChallenge(5).effectValue).reciprocal();
           }
         }
-      } else if (InfinityChallenge(6).isRunning) {
-        dimMults = Array.repeat(DC.D1.dividedByEffectOf(InfinityChallenge(6)), 9);
-      } else if (InfinityChallenge(8).isRunning) {
-        dimMults = Array.repeat(DC.D1.timesEffectsOf(InfinityChallenge(8)), 9);
+      } else if (InfinityChallenge(7).isRunning) {
+        dimMults = Array.repeat(DC.D1.dividedByEffectOf(InfinityChallenge(7)), 9);
+      } else if (InfinityChallenge(9).isRunning) {
+        dimMults = Array.repeat(DC.D1.timesEffectsOf(InfinityChallenge(9)), 9);
       }
 
       if (dim) return dimMults[dim];
