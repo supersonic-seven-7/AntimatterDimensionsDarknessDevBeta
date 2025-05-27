@@ -147,7 +147,7 @@ export const infinityChallenges = [
     id: 10,
     description: () =>
       `Dimboosts are disabled.`,
-    goal: DC.E1E6,
+    goal: DC.E80000,
     isQuickResettable: false,
     reward: {
       description:
