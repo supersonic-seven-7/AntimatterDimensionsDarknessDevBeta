@@ -131,7 +131,7 @@ export const infinityChallenges = [
     description: () =>
       `AD production rapidly and continually drops over time. Purchasing Antimatter Dimension or Tickspeed
         upgrades sets production back to ${formatPercents(1)} before it starts dropping again.`,
-    goal: DC.E27000,
+    goal: DC.E500000,
     isQuickResettable: true,
     effect: () => DC.D0_8446303389034288.pow(
       Math.max(0, player.records.thisInfinity.time - player.records.thisInfinity.lastBuyTime)),
@@ -141,6 +141,6 @@ export const infinityChallenges = [
       effect: () => AntimatterDimension(1).multiplier.times(AntimatterDimension(8).multiplier).pow(0.02),
       formatEffect: value => formatX(value, 2, 2)
     },
-    unlockAM: DC.E210000,
+    unlockAM: DC.E175000,
   },
 ];
