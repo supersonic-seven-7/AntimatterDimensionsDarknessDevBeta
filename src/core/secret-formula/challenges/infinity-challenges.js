@@ -101,7 +101,7 @@ export const infinityChallenges = [
       effect: () => Tickspeed.perSecond.pow(0.01),
       formatEffect: value => formatX(value, 2, 2)
     },
-    unlockAM: DC.E24500,
+    unlockAM: DC.E28000,
   },
   {
     id: 8,
