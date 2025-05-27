@@ -267,6 +267,7 @@ export function replicantiMult() {
   return Decimal.pow(Decimal.log2(Replicanti.amount.clampMin(1)), 2)
     .plusEffectOf(TimeStudy(21))
     .timesEffectOf(TimeStudy(102))
+    .timesEffectOf(Math.pow(2, player.replicanti.galaxies))
     .clampMin(1)
     .pow(getAdjustedGlyphEffect("replicationpow"));
 }
