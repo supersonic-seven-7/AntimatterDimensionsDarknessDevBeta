@@ -157,4 +157,18 @@ export const infinityChallenges = [
     },
     unlockAM: DC.E300000,
   },
+  {
+    id: 11,
+    description: () =>
+      `You are in IC4 and IC5 at the same time.`,
+    goal: DC.E1E15,
+    isQuickResettable: false,
+    reward: {
+      description:
+        "Buff Replicanti Speed and Replicanti Boosters based on Dimboosts",
+      effect: () => Math.pow(DimBoost.purchasedBoosts + 1, 0.3),
+      formatEffect: value => formatX(value, 2, 2)
+    },
+    unlockAM: DC.E750000,
+  },
 ];
