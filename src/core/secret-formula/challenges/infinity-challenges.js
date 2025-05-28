@@ -98,7 +98,9 @@ export const infinityChallenges = [
     formatEffect: value => `/${format(value, 1, 2)}`,
     reward: {
       description: "Dimboost multiplier based on tickspeed",
-      effect: () => Math.min(Tickspeed.perSecond.pow(0.01), 100),
+      effect: () => (Tickspeed.perSecond.pow(0.01) > 100
+        ? 100
+        : Tickspeed.perSecond.pow(0.01)),
       formatEffect: value => formatX(value, 2, 2)
     },
     unlockAM: DC.E42000,
