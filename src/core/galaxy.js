@@ -92,6 +92,7 @@ export class Galaxy {
     if (InfinityChallenge(8).isRunning) return "Locked (Infinity Challenge 8)";
     if (InfinityChallenge(1).isRunning) return "Locked (Infinity Challenge 1)";
     if (InfinityChallenge(2).isRunning) return "Locked (Infinity Challenge 2)";
+    if (InfinityChallenge(12).isRunning) return "Locked (Infinity Challenge 12)";
     if (NormalChallenge(8).isRunning) return "Locked (8th Antimatter Dimension Autobuyer Challenge)";
     return "The Physics of this Timeline do not allow for the purchase of Galaxies. Good luck, weak little fool!";
   }
