@@ -162,7 +162,7 @@ export const infinityChallenges = [
     description: () =>
       `You are trapped in IC5 and IC6 at the same time.`,
     goal: DC.E1E15,
-    isQuickResettable: false,
+    isQuickResettable: true,
     reward: {
       description:
         "Buff Replicanti Speed and Replicanti Boosters based on Dimboosts",
