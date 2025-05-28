@@ -9,6 +9,22 @@ export const changelog = [
    * }
    */
   {
+    date: [2025, 5, 28],
+    name: "Darkness+1",
+    info: `
+<b>Things changed:</b><br>
+<ul>
+<li>Added 4 new ICs (12 total)</li>
+<li>Rebalanced Infinity Dimensions/Challenges as a whole</li>
+<li>Replaced Replicanti Galaxird with Replicanti Boosters</li>
+<li>Fixed many errors</li>
+<li>Locked off Eternity until the next update</li>
+<li>Content is currently up to Eternity, and I'll be taking a break for a while</li>
+</ul>
+<br>
+`
+  },
+  {
     date: [2025, 5, 26],
     name: "Darkness",
     info: `
