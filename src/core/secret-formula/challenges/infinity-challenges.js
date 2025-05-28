@@ -161,7 +161,7 @@ export const infinityChallenges = [
     id: 11,
     description: () =>
       `You are trapped in IC5 and IC6 at the same time.`,
-    goal: DC.E1E15,
+    goal: DC.E620000,
     isQuickResettable: true,
     reward: {
       description:
