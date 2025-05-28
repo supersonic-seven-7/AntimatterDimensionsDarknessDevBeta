@@ -44,7 +44,7 @@ export const breakInfinityUpgrades = {
   galaxyBoost: {
     id: "postGalaxy",
     cost: 5e10,
-    description: () => `Apply a cube to the Dimboost Multiplier and a small buff to Tickspeed (current Endgame)`,
+    description: () => `Apply a cube to the Dimboost Multiplier and a small buff to Tickspeed`,
     effect: 3
   },
   infinitiedMult: {
