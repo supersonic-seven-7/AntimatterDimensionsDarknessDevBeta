@@ -151,7 +151,7 @@ function applyNDPowers(mult, tier) {
   const glyphPowMultiplier = getAdjustedGlyphEffect("powerpow");
   const glyphEffarigPowMultiplier = getAdjustedGlyphEffect("effarigdimensions");
 
-  if ((InfinityChallenge(5).isRunning || InfinityChallenge(11).isRunning) && player.postC4Tier !== tier) {
+  if ((InfinityChallenge(5).isRunning || InfinityChallenge(11).isRunning || InfinityChallenge(12).isRunning) && player.postC4Tier !== tier) {
     multiplier = multiplier.pow(InfinityChallenge(5).effectValue);
   }
   if (InfinityChallenge(5).isCompleted) {
@@ -547,7 +547,7 @@ class AntimatterDimensionState extends DimensionState {
   }
 
   challengeCostBump() {
-    if (InfinityChallenge(6).isRunning || InfinityChallenge(11).isRunning) this.multiplyIC5Costs();
+    if (InfinityChallenge(6).isRunning || InfinityChallenge(11).isRunning || InfinityChallenge(12).isRunning) this.multiplyIC5Costs();
     else if (NormalChallenge(9).isRunning || InfinityChallenge(2).isRunning) this.multiplySameCosts();
   }
 
