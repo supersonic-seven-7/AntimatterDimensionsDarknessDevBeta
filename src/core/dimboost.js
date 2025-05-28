@@ -64,7 +64,7 @@ export class DimBoost {
       // when giving initial boosts, so the player will still get those.
       return 0;
     }
-    if (InfinityChallenge(1).isRunning || InfinityChallenge(2).isRunning) {
+    if (InfinityChallenge(1).isRunning || InfinityChallenge(2).isRunning || InfinityChallenge(12).isRunning) {
       // Usually, in Challenge 8, the only boosts that are useful are the first 5
       // (the fifth unlocks sacrifice). In IC1 (Challenge 8 and Challenge 10
       // combined, among other things), only the first 2 are useful
@@ -93,6 +93,7 @@ export class DimBoost {
       if (Ra.isRunning) return "Locked (Ra's Reality)";
       if (InfinityChallenge(1).isRunning) return "Locked (Infinity Challenge 1)";
       if (InfinityChallenge(2).isRunning) return "Locked (Infinity Challenge 2)";
+      if (InfinityChallenge(12).isRunning) return "Locked (Infinity Challenge 12)";
       if (NormalChallenge(8).isRunning) return "Locked (8th Antimatter Dimension Autobuyer Challenge)";
     }
     return null;
