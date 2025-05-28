@@ -118,7 +118,9 @@ export const secretAchievements = [
   {
     id: 33,
     name: "Welcome to the Endgame",
-    description: "Reach the current Endgame. (Insert AD: Endgame reference here)"
+    description: "Reach the current Endgame. (Insert AD: Endgame reference here)",
+    checkRequirement: () => InfinityChallenge(12).isRunning,
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER
   },
   {
     id: 34,
