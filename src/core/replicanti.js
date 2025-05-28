@@ -139,6 +139,7 @@ export function totalReplicantiSpeedMult(overCap) {
   const preCelestialEffects = Effects.product(
     TimeStudy(62),
     TimeStudy(213),
+    InfinityChallenge(11).reward,
     RealityUpgrade(2),
     RealityUpgrade(6),
     RealityUpgrade(23),
@@ -267,7 +268,7 @@ export function replicantiMult() {
   return Decimal.pow(Decimal.log2(Replicanti.amount.clampMin(1)), 2)
     .plusEffectOf(TimeStudy(21))
     .timesEffectOf(TimeStudy(102))
-    .times(Math.max(Math.pow(2, player.replicanti.galaxies), 1))
+    .times(Math.max(Math.pow(2 * InfinityChallenge(11).reward, player.replicanti.galaxies), 1))
     .clampMin(1)
     .pow(getAdjustedGlyphEffect("replicationpow"));
 }
