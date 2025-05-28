@@ -152,7 +152,7 @@ export const infinityChallenges = [
     reward: {
       description:
         "Infinity Power Conversion Rate is improved based on Achievements",
-      effect: () => Math.pow(Achievements.effectiveCount * 0.02, 5),
+      effect: () => Math.pow(Achievements.effectiveCount * 0.02, 2.5),
       formatEffect: value => `+${format(value, 2, 2)}`
     },
     unlockAM: DC.E300000,
