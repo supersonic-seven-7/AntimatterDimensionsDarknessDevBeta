@@ -16,7 +16,7 @@ export const changelog = [
 <ul>
 <li>Added 4 new ICs (12 total)</li>
 <li>Rebalanced Infinity Dimensions/Challenges as a whole</li>
-<li>Replaced Replicanti Galaxird with Replicanti Boosters</li>
+<li>Replaced Replicanti Galaxies with Replicanti Boosters</li>
 <li>Fixed many errors</li>
 <li>Locked off Eternity until the next update</li>
 <li>Content is currently up to Eternity, and I'll be taking a break for a while</li>
