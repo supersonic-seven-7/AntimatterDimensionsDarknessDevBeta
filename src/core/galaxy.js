@@ -178,6 +178,3 @@ function maxBuyGalaxies(limit = Number.MAX_VALUE) {
   Tutorial.turnOffEffect(TUTORIAL_STATE.GALAXY);
   return true;
 }
-if (player.galaxies >= 0) {
-  Tutorial.turnOffEffect(TUTORIAL_STATE.GALAXY);
-}
