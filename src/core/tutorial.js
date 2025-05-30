@@ -3,8 +3,7 @@ export const TUTORIAL_STATE = {
   DIM2: 1,
   TICKSPEED: 2,
   DIMBOOST: 3,
-  GALAXY: 4,
-  AUTOMATOR: 5
+  AUTOMATOR: 4
 };
 
 // Tutorial has two ways of moving on, either by Tutorial.moveOn() or by having it's condition be true. This
@@ -27,10 +26,6 @@ const tutorialStates = [
   {
     id: TUTORIAL_STATE.DIMBOOST,
     condition: () => AntimatterDimension(4).amount.gte(20)
-  },
-  {
-    id: TUTORIAL_STATE.GALAXY,
-    condition: () => AntimatterDimension(8).amount.gte(80)
   },
   {
     id: TUTORIAL_STATE.AUTOMATOR,
