@@ -20,7 +20,8 @@ export default {
         ? `Eternity will reset everything except Achievements, Challenge records, and anything under the General header
           on the Statistics tab.`
         : `Eternity will reset everything except Achievements, Challenge records, and anything under the General header
-          on the Statistics tab. You will also gain an Eternity Point and unlock various upgrades.`;
+          on the Statistics tab. You will also gain an Eternity Point and unlock various upgrades. HOWEVER, several aspects
+          of your game will be nerfed and/or softcapped. You have to be absolutely sure you want to become Eternal.`;
     },
     gainedEPOnEternity() {
       return `You will gain ${quantify("Eternity", this.gainedEternities, 2)} 
