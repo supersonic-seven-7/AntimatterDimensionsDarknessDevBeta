@@ -137,8 +137,8 @@ export const normalChallenges = [
     id: 13,
     legacyId: 13,
     isQuickResettable: true,
-    description: () => `You are locked inside all Normal Challenges AT THE SAME TIME. This includes C${formatInt(9)}
-    and C${formatInt(12)}.`,
+    description: () => `You are locked inside all Normal Challenges AT THE SAME TIME. This includes
+    Challenge ${formatInt(9)} and Challenge ${formatInt(12)}.`,
     name: "THE ULTIMATE CHALLENGE I",
     reward: "You can Break Infinity",
     lockedAt() {
