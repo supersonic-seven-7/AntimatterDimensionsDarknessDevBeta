@@ -137,7 +137,7 @@ function totalEPMult() {
 
 export function gainedEternityPoints() {
   let ep = DC.D5.pow(player.records.thisEternity.maxIP.plus(
-    gainedInfinityPoints()).log10() / (308 - PelleRifts.recursion.effectValue.toNumber()) - 0.7).times(totalEPMult());
+    gainedInfinityPoints()).log10() / (3083 - PelleRifts.recursion.effectValue.toNumber()) - 0.7).times(totalEPMult());
 
   if (Teresa.isRunning) {
     ep = ep.pow(0.55);
@@ -154,8 +154,12 @@ export function gainedEternityPoints() {
 }
 
 export function requiredIPForEP(epAmount) {
-  return Decimal.pow10(308 * (Decimal.log(Decimal.divide(epAmount, totalEPMult()), 5) + 0.7))
-    .clampMin(DC.E1E15);
+  let epThresh = DC.E1E15;
+  if (InfinityChallenge(12).isCompleted) {
+    epThresh = DC.E3000;
+  }
+  return Decimal.pow10(3083 * (Decimal.log(Decimal.divide(epAmount, totalEPMult()), 5) + 0.7))
+    .clampMin(epThresh);
 }
 
 export function gainedGlyphLevel() {
