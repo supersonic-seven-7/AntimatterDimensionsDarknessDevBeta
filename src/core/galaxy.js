@@ -67,15 +67,15 @@ export class Galaxy {
   }
 
   static get costMult() {
-    return Effects.min((NormalChallenge(10).isRunning || NormalChallenge(13).isRunning) ? 90 : 60, TimeStudy(42));
+    return Effects.min(NormalChallenge(10).isRunning ? 90 : 60, TimeStudy(42));
   }
 
   static get baseCost() {
-    return (NormalChallenge(10).isRunning || NormalChallenge(13).isRunning) ? 99 : 80;
+    return NormalChallenge(10).isRunning ? 99 : 80;
   }
 
   static get requiredTier() {
-    return (NormalChallenge(10).isRunning || NormalChallenge(13).isRunning) ? 6 : 8;
+    return NormalChallenge(10).isRunning ? 6 : 8;
   }
 
   static get canBeBought() {
