@@ -50,7 +50,7 @@ export const normalTimeStudies = [
   },
   {
     id: 21,
-    cost: 3,
+    cost: 6,
     requirement: [11],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => `Improve Replicanti multiplier formula to
@@ -67,7 +67,7 @@ export const normalTimeStudies = [
   },
   {
     id: 22,
-    cost: 2,
+    cost: 3,
     requirement: [11],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => `Base Replicanti interval limit ${formatInt(50)}ms ➜ ${formatInt(1)}ms`,
@@ -75,7 +75,7 @@ export const normalTimeStudies = [
   },
   {
     id: 31,
-    cost: 3,
+    cost: 2,
     requirement: [21],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => `Powers up multipliers that are based on your Infinities (Bonuses${formatPow(4)})`,
@@ -83,7 +83,7 @@ export const normalTimeStudies = [
   },
   {
     id: 32,
-    cost: 2,
+    cost: 4,
     requirement: [22],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: `You gain more Infinities based on Dimension Boosts`,
@@ -92,32 +92,31 @@ export const normalTimeStudies = [
   },
   {
     id: 33,
-    cost: 2,
+    cost: 5,
     requirement: [22],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: "You keep half of your Replicanti Galaxies on Infinity"
+    description: "You keep half of your Replicanti Boosters on Infinity"
   },
   {
     id: 41,
     cost: 4,
     requirement: [31],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: () => `All Galaxies give a ${formatX(DC.D1_2, 1, 1)} multiplier to Infinity Points gained`,
+    description: () => `Replicanti Boosters give a ${formatX(DC.D1_2, 1, 1)} multiplier to Infinity Points gained`,
     effect: () => DC.D1_2.pow(Replicanti.galaxies.total + player.galaxies + player.dilation.totalTachyonGalaxies),
     formatEffect: value => formatX(value, 2, 1)
   },
   {
     id: 42,
-    cost: 6,
+    cost: 5,
     requirement: [32],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: () => `Antimatter Galaxy requirement increases by ${formatInt(52)}
-      8th Dimensions instead of ${formatInt(60)}`,
-    effect: 52
+    description: () => `Increase the Infinity Power Conversion Rate by +1`,
+    effect: 1
   },
   {
     id: 51,
-    cost: 3,
+    cost: 5,
     requirement: [41, 42],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => `You gain ${formatX(1e15)} more Infinity Points`,
@@ -125,7 +124,7 @@ export const normalTimeStudies = [
   },
   {
     id: 61,
-    cost: 3,
+    cost: 8,
     requirement: [51],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => `You gain ${formatX(15)} more Eternity Points`,
@@ -133,7 +132,7 @@ export const normalTimeStudies = [
   },
   {
     id: 62,
-    cost: 3,
+    cost: 10,
     requirement: [42, () => Perk.bypassEC5Lock.isBought || EternityChallenge(5).completions > 0],
     reqType: TS_REQUIREMENT_TYPE.ALL,
     description: () => `You gain Replicanti ${formatInt(3)} times faster`,
@@ -141,7 +140,7 @@ export const normalTimeStudies = [
   },
   {
     id: 71,
-    cost: 4,
+    cost: 6,
     requirement: [61, () => Perk.studyECRequirement.isBought || !EternityChallenge(12).isUnlocked],
     reqType: TS_REQUIREMENT_TYPE.DIMENSION_PATH,
     description: "Dimensional Sacrifice affects all other Antimatter Dimensions with reduced effect",
@@ -151,7 +150,7 @@ export const normalTimeStudies = [
   },
   {
     id: 72,
-    cost: 6,
+    cost: 8,
     requirement: [61,
       () => Perk.studyECRequirement.isBought ||
         (!EternityChallenge(11).isUnlocked && !EternityChallenge(12).isUnlocked)],
@@ -163,7 +162,7 @@ export const normalTimeStudies = [
   },
   {
     id: 73,
-    cost: 5,
+    cost: 9,
     requirement: [61, () => Perk.studyECRequirement.isBought || !EternityChallenge(11).isUnlocked],
     reqType: TS_REQUIREMENT_TYPE.DIMENSION_PATH,
     description: "Dimensional Sacrifice affects 3rd Time Dimension with greatly reduced effect",
@@ -173,7 +172,7 @@ export const normalTimeStudies = [
   },
   {
     id: 81,
-    cost: 4,
+    cost: 6,
     requirement: [71],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => `Base Dimension Boost power becomes ${formatX(15)}`,
@@ -181,7 +180,7 @@ export const normalTimeStudies = [
   },
   {
     id: 82,
-    cost: 6,
+    cost: 8,
     requirement: [72],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: "Dimension Boosts affect Infinity Dimensions",
@@ -191,7 +190,7 @@ export const normalTimeStudies = [
   },
   {
     id: 83,
-    cost: 5,
+    cost: 9,
     requirement: [73],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: "Dimension Boost multiplier based on tick upgrades gained from TDs",
@@ -201,7 +200,7 @@ export const normalTimeStudies = [
   },
   {
     id: 91,
-    cost: 4,
+    cost: 6,
     requirement: [81],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: "Antimatter Dimension multiplier based on time spent in this Eternity",
@@ -211,7 +210,7 @@ export const normalTimeStudies = [
   },
   {
     id: 92,
-    cost: 5,
+    cost: 8,
     requirement: [82],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: "Infinity Dimension multiplier based on fastest Eternity time",
@@ -221,7 +220,7 @@ export const normalTimeStudies = [
   },
   {
     id: 93,
-    cost: 7,
+    cost: 9,
     requirement: [83],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: "Time Dimension multiplier based on tick upgrades gained",
@@ -230,7 +229,7 @@ export const normalTimeStudies = [
   },
   {
     id: 101,
-    cost: 4,
+    cost: 6,
     requirement: [91],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: "Antimatter Dimension multiplier equal to Replicanti amount",
@@ -239,7 +238,7 @@ export const normalTimeStudies = [
   },
   {
     id: 102,
-    cost: 6,
+    cost: 8,
     requirement: [92],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: "Replicanti Galaxies boost Replicanti multiplier",
@@ -248,7 +247,7 @@ export const normalTimeStudies = [
   },
   {
     id: 103,
-    cost: 6,
+    cost: 9,
     requirement: [93],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: "Time Dimension multiplier equal to Replicanti Galaxy amount",
@@ -257,7 +256,7 @@ export const normalTimeStudies = [
   },
   {
     id: 111,
-    cost: 12,
+    cost: 30,
     requirement: [101, 102, 103],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => (Achievement(103).canBeApplied
