@@ -179,7 +179,7 @@ export const infinityChallenges = [
     isQuickResettable: true,
     reward: {
       description:
-        "Unlock Eternity (NYI)"
+        "Unlock Eternity"
     },
     unlockAM: DC.E1E6,
   },
