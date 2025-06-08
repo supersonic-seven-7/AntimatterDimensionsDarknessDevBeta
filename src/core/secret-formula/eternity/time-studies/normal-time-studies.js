@@ -260,9 +260,9 @@ export const normalTimeStudies = [
     requirement: [101, 102, 103],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => (Achievement(103).canBeApplied
-      ? `Make the Infinity Point formula better based on Dimboosts log(x)/${formatFloat(307.8, 1)} ➜ log(x)/${formatFloat(307.8 / (1+(Math.pow(Math.log10(DimBoost.totalBoosts), 2)/100)),2)}`
-      : `Make the Infinity Point formula better based on Dimboosts log(x)/${formatInt(308)} ➜ log(x)/${formatFloat(308 / (1+(Math.pow(Math.log10(DimBoost.totalBoosts), 2)/100)),2)}`),
-    effect: 307.8 / (1+(Math.pow(Math.log10(DimBoost.totalBoosts), 2)/100))
+      ? `Make the Infinity Point formula better based on Dimboosts log(x)/${formatFloat(307.8, 1)} ➜ log(x)/${formatFloat(307.8 / (1+(Math.pow(DimBoost.totalBoosts.log10(), 2)/100)),2)}`
+      : `Make the Infinity Point formula better based on Dimboosts log(x)/${formatInt(308)} ➜ log(x)/${formatFloat(308 / (1+(Math.pow(DimBoost.totalBoosts.log10(), 2)/100)),2)}`),
+    effect: 307.8 / (1+(Math.pow(DimBoost.totalBoosts.log10(), 2)/100))
   },
   {
     id: 121,
