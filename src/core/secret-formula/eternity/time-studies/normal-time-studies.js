@@ -241,7 +241,7 @@ export const normalTimeStudies = [
     cost: 13,
     requirement: [92],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: "Replicanti Galaxies boost Replicanti multiplier",
+    description: "Replicanti Boosters boost Replicanti multiplier",
     effect: () => DC.D5.pow(player.replicanti.galaxies),
     formatEffect: value => formatX(value, 2, 1)
   },
@@ -250,7 +250,7 @@ export const normalTimeStudies = [
     cost: 15,
     requirement: [93],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: "Time Dimension multiplier equal to Replicanti Galaxy amount",
+    description: "Time Dimension multiplier equal to Replicanti Booster amount",
     effect: () => Math.max(player.replicanti.galaxies, 1),
     formatEffect: value => formatX(value, 2, 0)
   },
@@ -316,8 +316,8 @@ export const normalTimeStudies = [
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [132, 133],
     description: () => (Achievement(138).isUnlocked
-      ? `You can get ${formatPercents(0.5)} more Replicanti Galaxies`
-      : `Automatic Replicanti Galaxies are disabled, but you can get ${formatPercents(0.5)} more`),
+      ? `You can get ${formatPercents(0.5)} more Replicanti Boosters`
+      : `Automatic Replicanti Boosters are disabled, but you can get ${formatPercents(0.5)} more`),
     effect: () => Math.floor(player.replicanti.boughtGalaxyCap / 2)
   },
   {
@@ -328,8 +328,8 @@ export const normalTimeStudies = [
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [131, 133],
     description: () => (Pelle.isDoomed
-      ? `Replicanti Galaxies are ${formatPercents(0.4)} stronger`
-      : `Replicanti Galaxies are ${formatPercents(0.4)} stronger and Replicanti are 
+      ? `Replicanti Boosters are ${formatPercents(0.4)} stronger`
+      : `Replicanti Boosters are ${formatPercents(0.4)} stronger and Replicanti are 
         ${Perk.studyPassive.isBought ? formatX(3) : formatX(1.5, 1, 1)} faster`),
     effect: 0.4
   },
@@ -341,9 +341,9 @@ export const normalTimeStudies = [
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [131, 132],
     description: () => (Achievement(138).isUnlocked
-      ? `Replicanti Galaxies are ${formatPercents(0.5)} stronger`
+      ? `Replicanti Boosters are ${formatPercents(0.5)} stronger`
       : `Replicanti are ${formatX(10)} slower until ${format(Number.MAX_VALUE, 2)}` +
-    `, but Replicanti Galaxies are ${formatPercents(0.5)} stronger`),
+    `, but Replicanti Boosters are ${formatPercents(0.5)} stronger`),
     effect: 0.5
   },
   {
