@@ -67,7 +67,7 @@ export class Galaxy {
   }
 
   static get costMult() {
-    return Effects.min(NormalChallenge(10).isRunning ? 90 : 60, TimeStudy(42));
+    return Effects.min(NormalChallenge(10).isRunning ? 90 : 60);
   }
 
   static get baseCost() {
