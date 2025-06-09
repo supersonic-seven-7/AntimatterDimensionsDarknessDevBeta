@@ -788,8 +788,8 @@ export const normalAchievements = [
     get description() { return `Eternity in under ${formatInt(250)}ms.`; },
     checkRequirement: () => Time.thisEternity.totalMilliseconds <= 250,
     checkEvent: GAME_EVENT.ETERNITY_RESET_BEFORE,
-    get reward() { return `Gain ${formatX(2)} more Eternities.`; },
-    effect: 2,
+    get reward() { return `Gain ${formatX(5)} more Eternities.`; },
+    effect: 5,
   },
   {
     id: 114,
@@ -813,7 +813,7 @@ export const normalAchievements = [
     checkRequirement: () => Currency.infinities.lte(1),
     checkEvent: GAME_EVENT.ETERNITY_RESET_BEFORE,
     reward: "Multiplier to Infinity Points based on Infinities.",
-    effect: () => Decimal.pow(Currency.infinitiesTotal.value.clampMin(1), LOG10_2 / 4).powEffectOf(TimeStudy(31)),
+    effect: () => Decimal.pow(Currency.infinitiesTotal.value.clampMin(1), 3).powEffectOf(TimeStudy(31)),
     cap: () => Effarig.eternityCap,
     formatEffect: value => {
       // Since TS31 is already accounted for in the effect prop, we need to "undo" it to display the base value here
