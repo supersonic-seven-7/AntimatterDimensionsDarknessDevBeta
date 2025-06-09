@@ -111,8 +111,8 @@ export const normalTimeStudies = [
     cost: 18,
     requirement: [32],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: () => `Increase the Infinity Power Conversion Rate based on Eternities`,
-    effect: Math.pow(Currency.eternities.value.clampMax(1e100), 0.01),
+    description: () => `Increase the Infinity Power Conversion Rate based on Replicanti Boosters`,
+    effect: Math.pow(Replicanti.galaxies.total, 0.03),
     formatEffect: value => `+${format(value, 0, 2)}`
   },
   {
