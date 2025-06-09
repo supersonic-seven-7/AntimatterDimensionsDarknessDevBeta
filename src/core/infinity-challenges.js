@@ -144,7 +144,7 @@ export const InfinityChallenges = {
    */
   notifyICUnlock(value) {
     // Disable the popup if the user will automatically complete the IC.
-    if (EternityMilestone.autoIC.isReached) return;
+    if (EternityMilestone.autoIC.isReached && InfinityChallenges.nextIC !== 13) return;
     if (InfinityChallenges.nextIC === undefined) return;
     for (const ic of InfinityChallenges.all) {
       if (ic.isUnlocked || ic.isCompleted) continue;
