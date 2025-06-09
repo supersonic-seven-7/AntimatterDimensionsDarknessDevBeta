@@ -33,8 +33,8 @@ export const eternityUpgrades = {
     description: "Infinity Dimension multiplier based on sum of Infinity Challenge times",
     // The cap limits this at a lower value, but we also need an explicit cap here because very old versions have
     // allowed EC12 to make all the challenge records sum to zero (causing a division by zero here)
-    effect: () => DC.D2.pow(30 / Math.clampMin(Time.infinityChallengeSum.totalSeconds, 0.1)),
-    cap: DC.D2P30D0_61,
+    effect: () => DC.E1.pow(184.8 / Math.clampMin(Time.infinityChallengeSum.totalSeconds, 0.6)),
+    cap: DC.E300,
     formatEffect: value => formatX(value, 2, 1)
   },
   tdMultAchs: {
