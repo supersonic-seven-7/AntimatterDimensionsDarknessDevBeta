@@ -183,4 +183,16 @@ export const infinityChallenges = [
     },
     unlockAM: DC.E1E6,
   },
+  {
+    id: 13,
+    description: () =>
+      `You are trapped in every Infinity Challenge AT THE SAME TIME.`,
+    goal: DC.E1E15,
+    isQuickResettable: true,
+    reward: {
+      description:
+        "???"
+    },
+    unlockAM: DC.E3E6,
+  },
 ];
