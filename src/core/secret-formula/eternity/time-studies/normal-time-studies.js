@@ -112,7 +112,7 @@ export const normalTimeStudies = [
     requirement: [32],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => `Increase the Infinity Power Conversion Rate based on Replicanti Boosters`,
-    effect: () => Math.pow(player.replicanti.galaxies.plus(1).log10(), 0.3),
+    effect: () => Math.pow(player.replicanti.galaxies, 0.1),
     formatEffect: value => `+${format(value, 0, 2)}`
   },
   {
