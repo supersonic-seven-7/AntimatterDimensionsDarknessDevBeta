@@ -193,6 +193,6 @@ export const infinityChallenges = [
       description:
         "???"
     },
-    unlockAM: DC.E4E6,
+    unlockAM: DC.E3_6E6,
   },
 ];
