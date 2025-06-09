@@ -401,16 +401,16 @@ export const normalTimeStudies = [
     cost: 11,
     requirement: [151],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: () => `${formatX(DC.E616)} multiplier on all Antimatter Dimensions`,
-    effect: () => DC.E616
+    description: () => `${formatX(DC.E10000)} multiplier on all Antimatter Dimensions`,
+    effect: () => DC.E10000
   },
   {
     id: 162,
     cost: 11,
     requirement: [151],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: () => `${formatX(1e11)} multiplier on all Infinity Dimensions`,
-    effect: 1e11
+    description: () => `${formatX(1e100)} multiplier on all Infinity Dimensions`,
+    effect: 1e100
   },
   {
     id: 171,
