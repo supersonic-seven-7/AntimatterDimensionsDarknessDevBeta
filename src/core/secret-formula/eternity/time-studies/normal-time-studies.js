@@ -112,7 +112,7 @@ export const normalTimeStudies = [
     requirement: [32],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => `Increase the Infinity Power Conversion Rate based on Eternities`,
-    effect: Math.pow(Math.log(Currency.eternities.value), 0.3),
+    effect: Math.pow(Currency.eternities.value, 0.01).clampMax(5),
     formatEffect: value => `+${format(value, 0, 3)}`
   },
   {
