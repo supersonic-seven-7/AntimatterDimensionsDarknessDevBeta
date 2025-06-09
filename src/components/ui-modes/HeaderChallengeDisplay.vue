@@ -94,7 +94,7 @@ export default {
         return `${this.activeChallengeNames.join(" + ")} in a Doomed Reality in the Dark Universe. Are you questioning life yet?`;
       }
       if (this.inPelle) return "a Doomed Reality. Are you questioning life yet?";
-      if (InfinityChallenge(13).isRunning) {
+      if (player.challenge.infinity.current === 13) {
         return "THE ULTIMATE CHALLENGE II";
       }
       if (this.activeChallengeNames.length === 0) {
