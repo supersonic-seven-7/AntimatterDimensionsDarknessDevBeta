@@ -50,7 +50,7 @@ export default {
         {
           name: token => `Infinity Challenge ${token}`,
           isActive: token => token > 0,
-          activityToken: () => player.challenge.infinity.current
+          activityToken: () => player.challenge.infinity.current != 13
         },
         {
           name: token => `Infinity Challenge ${token} (THE ULTIMATE CHALLENGE II)`,
