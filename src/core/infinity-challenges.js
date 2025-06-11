@@ -1,7 +1,7 @@
 import { GameMechanicState } from "./game-mechanics";
 
 export function tryCompleteInfinityChallenges() {
-  if (EternityMilestone.autoIC.isReached && InfinityChallenges.nextIC !== 13) {
+  if (EternityMilestone.autoIC.isReached && InfinityChallenges.nextIC !== 13 && InfinityChallenges.nextIC !== undefined) {
     const toComplete = InfinityChallenges.all.filter(x => x.isUnlocked && !x.isCompleted);
     for (const challenge of toComplete) challenge.complete();
   }
@@ -144,7 +144,7 @@ export const InfinityChallenges = {
    */
   notifyICUnlock(value) {
     // Disable the popup if the user will automatically complete the IC.
-    if (EternityMilestone.autoIC.isReached && InfinityChallenges.nextIC !== 13) return;
+    if (EternityMilestone.autoIC.isReached && InfinityChallenges.nextIC !== 13 && InfinityChallenges.nextIC !== undefined) return;
     if (InfinityChallenges.nextIC === undefined) return;
     for (const ic of InfinityChallenges.all) {
       if (ic.isUnlocked || ic.isCompleted) continue;
@@ -152,12 +152,7 @@ export const InfinityChallenges = {
       // This has a reasonably high likelihood of happening when the player isn't looking at the game, so
       // we also give it a tab notification
       TabNotification.ICUnlock.clearTrigger();
-      if (InfinityChallenges.nextIC !== 13) {
-        GameUI.notify.infinity(`You have unlocked Infinity Challenge ${ic.id}`, 7000);
-      }
-      if (InfinityChallenges.nextIC === 13) {
-        GameUI.notify.infinity(`You have unlocked THE ULTIMATE CHALLENGE II`, 20000);
-      }
+      GameUI.notify.infinity(`You have unlocked Infinity Challenge ${ic.id}`, 7000);
       TabNotification.ICUnlock.tryTrigger();
     }
   },
