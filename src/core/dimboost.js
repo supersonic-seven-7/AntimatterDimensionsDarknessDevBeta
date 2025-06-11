@@ -60,7 +60,7 @@ export class DimBoost {
   }
 
   static get maxBoosts() {
-    if (Ra.isRunning || InfinityChallenge(10).isRunning) {
+    if (Ra.isRunning || InfinityChallenge(10).isRunning || InfinityChallenge(13).isRunning) {
       // Ra makes boosting impossible. Note that this function isn't called
       // when giving initial boosts, so the player will still get those.
       return 0;
@@ -94,7 +94,9 @@ export class DimBoost {
       if (Ra.isRunning) return "Locked (Ra's Reality)";
       if (InfinityChallenge(1).isRunning) return "Locked (Infinity Challenge 1)";
       if (InfinityChallenge(2).isRunning) return "Locked (Infinity Challenge 2)";
+      if (InfinityChallenge(10).isRunning) return "Locked (Infinity Challenge 10)";
       if (InfinityChallenge(12).isRunning) return "Locked (Infinity Challenge 12)";
+      if (InfinityChallenge(13).isRunning) return "Locked (THE ULTIMATE CHALLENGE II)";
       if (NormalChallenge(8).isRunning) return "Locked (8th Antimatter Dimension Autobuyer Challenge)";
     }
     return null;
