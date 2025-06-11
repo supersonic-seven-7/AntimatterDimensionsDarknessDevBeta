@@ -33,13 +33,13 @@ export class DimBoost {
         Achievement(142),
         InfinityChallenge(7).reward,
         InfinityChallenge(8),
-        InfinityChallenge(13).effectIC8,
         GlyphEffect.dimBoostPower,
         PelleRifts.recursion.milestones[0]
       ).powEffectsOf(
         InfinityUpgrade.dimboostMult.chargedEffect,
         BreakInfinityUpgrade.galaxyBoost
       );
+    if (InfinityChallenge(13).isRunning) boost = boost.times(0.1);
     if (GlyphAlteration.isAdded("effarig")) boost = boost.pow(getSecondaryGlyphEffect("effarigforgotten"));
     return boost;
   }
