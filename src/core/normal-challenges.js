@@ -26,7 +26,7 @@ export function updateNormalAndInfinityChallenges(diff) {
     player.chall2Pow = Math.min(player.chall2Pow + diff / 100 / 1800, 1);
   }
 
-  if (InfinityChallenge(3).isRunning) {
+  if (InfinityChallenge(3).isRunning || InfinityChallenge(13).isRunning) {
     if (player.ic2Count >= 400) {
       if (AntimatterDimension(8).amount.gt(0)) {
         sacrificeReset();
