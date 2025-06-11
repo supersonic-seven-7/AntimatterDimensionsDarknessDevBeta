@@ -33,6 +33,7 @@ export class DimBoost {
         Achievement(142),
         InfinityChallenge(7).reward,
         InfinityChallenge(8),
+        InfinityChallenge(13).effectIC8,
         GlyphEffect.dimBoostPower,
         PelleRifts.recursion.milestones[0]
       ).powEffectsOf(
