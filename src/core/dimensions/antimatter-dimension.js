@@ -38,14 +38,15 @@ export function antimatterDimensionCommonMultiplier() {
     InfinityChallenge(4),
     InfinityChallenge(4).reward,
     InfinityChallenge(9),
-    InfinityChallenge(13),
+    InfinityChallenge(13).effectIC4,
+    InfinityChallenge(13).effectIC9,
     EternityChallenge(10),
     AlchemyResource.dimensionality,
     PelleUpgrade.antimatterDimensionMult
   );
 
   multiplier = multiplier.dividedByEffectOf(InfinityChallenge(7));
-  multiplier = multiplier.dividedByEffectOf(InfinityChallenge(13));
+  multiplier = multiplier.dividedByEffectOf(InfinityChallenge(13).effectIC7);
   multiplier = multiplier.times(getAdjustedGlyphEffect("powermult"));
   multiplier = multiplier.times(Currency.realityMachines.value.powEffectOf(AlchemyResource.force));
 
