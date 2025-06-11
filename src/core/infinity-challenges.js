@@ -144,15 +144,20 @@ export const InfinityChallenges = {
    */
   notifyICUnlock(value) {
     // Disable the popup if the user will automatically complete the IC.
-    if (EternityMilestone.autoIC.isReached && InfinityChallenges.nextIC !== 13 && InfinityChallenges.nextIC !== undefined) return;
-    if (InfinityChallenges.nextIC === undefined) return;
+    if (EternityMilestone.autoIC.isReached && InfinityChallenges.nextIC !== undefined) return;
+    if (InfinityChallenges.nextIC === undefined) continue;
     for (const ic of InfinityChallenges.all) {
       if (ic.isUnlocked || ic.isCompleted) continue;
       if (value.lt(ic.unlockAM)) break;
       // This has a reasonably high likelihood of happening when the player isn't looking at the game, so
       // we also give it a tab notification
       TabNotification.ICUnlock.clearTrigger();
-      GameUI.notify.infinity(`You have unlocked Infinity Challenge ${ic.id}`, 7000);
+      if (InfinityChallenges.nextIC !== undefined) {
+        GameUI.notify.infinity(`You have unlocked Infinity Challenge ${ic.id}`, 7000);
+      }
+      if (InfinityChallenges.nextIC === undefined) {
+        GameUI.notify.infinity(`You have unlocked THE ULTIMATE CHALLENGE II`, 20000);
+      }
       TabNotification.ICUnlock.tryTrigger();
     }
   },
