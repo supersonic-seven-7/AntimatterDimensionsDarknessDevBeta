@@ -901,7 +901,7 @@ export const normalAchievements = [
     id: 126,
     name: "Popular music",
     get description() { return `Have ${formatInt(45)} times more Replicanti Boosters than Dimension Boosts.`; },
-    checkRequirement: () => Replicanti.galaxies.total >= 180 * player.galaxies && player.galaxies > 0,
+    checkRequirement: () => Replicanti.galaxies.total >= 45 * DimBoost.purchasedBoosts && DimBoost.purchasedBoosts > 0,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     get reward() {
       return `Replicanti Boosters divide your Replicanti by ${format(Decimal.NUMBER_MAX_VALUE, 1, 0)}
