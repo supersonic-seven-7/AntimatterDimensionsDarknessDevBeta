@@ -80,7 +80,7 @@ export class Galaxy {
 
   static get canBeBought() {
     if (EternityChallenge(6).isRunning && !Enslaved.isRunning) return false;
-    if (NormalChallenge(8).isRunning || InfinityChallenge(8).isRunning) return false;
+    if (NormalChallenge(8).isRunning || InfinityChallenge(8).isRunning || InfinityChallenge(13).isRunning) return false;
     if (player.records.thisInfinity.maxAM.gt(Player.infinityGoal) &&
        (!player.break || Player.isInAntimatterChallenge)) return false;
     return false;
@@ -90,6 +90,7 @@ export class Galaxy {
     if (this.canBeBought) return "The Physics of this Timeline do not allow for the purchase of Galaxies. Good luck, weak little fool!";
     if (EternityChallenge(6).isRunning) return "Locked (Eternity Challenge 6)";
     if (InfinityChallenge(8).isRunning) return "Locked (Infinity Challenge 8)";
+    if (InfinityChallenge(13).isRunning) return "Locked (THE ULTIMATE CHALLENGE II)";
     if (InfinityChallenge(1).isRunning) return "Locked (Infinity Challenge 1)";
     if (InfinityChallenge(2).isRunning) return "Locked (Infinity Challenge 2)";
     if (InfinityChallenge(12).isRunning) return "Locked (Infinity Challenge 12)";
