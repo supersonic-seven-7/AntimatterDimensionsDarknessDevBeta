@@ -38,12 +38,14 @@ export function antimatterDimensionCommonMultiplier() {
     InfinityChallenge(4),
     InfinityChallenge(4).reward,
     InfinityChallenge(9),
+    InfinityChallenge(13),
     EternityChallenge(10),
     AlchemyResource.dimensionality,
     PelleUpgrade.antimatterDimensionMult
   );
 
   multiplier = multiplier.dividedByEffectOf(InfinityChallenge(7));
+  multiplier = multiplier.dividedByEffectOf(InfinityChallenge(13));
   multiplier = multiplier.times(getAdjustedGlyphEffect("powermult"));
   multiplier = multiplier.times(Currency.realityMachines.value.powEffectOf(AlchemyResource.force));
 
@@ -151,7 +153,7 @@ function applyNDPowers(mult, tier) {
   const glyphPowMultiplier = getAdjustedGlyphEffect("powerpow");
   const glyphEffarigPowMultiplier = getAdjustedGlyphEffect("effarigdimensions");
 
-  if ((InfinityChallenge(5).isRunning || InfinityChallenge(11).isRunning || InfinityChallenge(12).isRunning) && player.postC4Tier !== tier) {
+  if ((InfinityChallenge(5).isRunning || InfinityChallenge(11).isRunning || InfinityChallenge(12).isRunning) || InfinityChallenge(13).isRunning) && player.postC4Tier !== tier) {
     multiplier = multiplier.pow(InfinityChallenge(5).effectValue);
   }
   if (InfinityChallenge(5).isCompleted) {
@@ -191,7 +193,7 @@ function onBuyDimension(tier) {
   if (player.speedrun.isActive && !player.speedrun.hasStarted) Speedrun.startTimer();
 
   if (NormalChallenge(2).isRunning) player.chall2Pow = 0;
-  if (NormalChallenge(4).isRunning || InfinityChallenge(1).isRunning || InfinityChallenge(2).isRunning || InfinityChallenge(12).isRunning) {
+  if (NormalChallenge(4).isRunning || InfinityChallenge(1).isRunning || InfinityChallenge(2).isRunning || InfinityChallenge(12).isRunning || InfinityChallenge(13).isRunning) {
     AntimatterDimensions.resetAmountUpToTier(tier - 1);
   }
 
@@ -311,7 +313,7 @@ export function buyMaxDimension(tier, bulk = Infinity) {
   if (bulkLeft <= 0) return;
 
   // Buy in a while loop in order to properly trigger abnormal price increases
-  if (NormalChallenge(9).isRunning || InfinityChallenge(2).isRunning || InfinityChallenge(6).isRunning) {
+  if (NormalChallenge(9).isRunning || InfinityChallenge(2).isRunning || InfinityChallenge(6).isRunning || InfinityChallenge(13).isRunning) {
     while (dimension.isAffordableUntil10 && dimension.cost.lt(goal) && bulkLeft > 0) {
       // We can use dimension.currencyAmount or Currency.antimatter here, they're the same,
       // but it seems safest to use dimension.currencyAmount for consistency.
@@ -553,8 +555,8 @@ class AntimatterDimensionState extends DimensionState {
   }
 
   challengeCostBump() {
-    if (InfinityChallenge(6).isRunning || InfinityChallenge(11).isRunning || InfinityChallenge(12).isRunning) this.multiplyIC5Costs();
-    else if (NormalChallenge(9).isRunning || InfinityChallenge(2).isRunning) this.multiplySameCosts();
+    if (InfinityChallenge(6).isRunning || InfinityChallenge(11).isRunning || InfinityChallenge(12).isRunning || InfinityChallenge(13).isRunning) this.multiplyIC5Costs();
+    else if (NormalChallenge(9).isRunning || InfinityChallenge(2).isRunning || InfinityChallenge(13).isRunning) this.multiplySameCosts();
   }
 
   multiplySameCosts() {
