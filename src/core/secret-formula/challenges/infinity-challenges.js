@@ -189,6 +189,12 @@ export const infinityChallenges = [
       `You are trapped in every Infinity Challenge AT THE SAME TIME.`,
     goal: DC.E1E15,
     isQuickResettable: true,
+    effectIC4: () => Decimal.pow(1.05, player.totalTickBought),
+    effectIC5: 0.25,
+    effectIC7: () => Currency.matter.value.clampMin(1),
+    effectIC8: 0.1,
+    effectIC9: () => DC.D0_8446303389034288.pow(
+      Math.max(0, player.records.thisInfinity.time - player.records.thisInfinity.lastBuyTime)),
     reward: {
       description:
         "???"
