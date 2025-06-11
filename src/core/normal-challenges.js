@@ -63,6 +63,11 @@ class NormalChallengeState extends GameMechanicState {
     const isPartOfC13 = this.id !== 13;
     return player.challenge.normal.current === this.id || (isPartOfC13 && NormalChallenge(13).isRunning);
   }
+  
+  get isRunning() {
+    const isPartOfIC13 = this.id !== 9 && this.id !== 13;
+    return player.challenge.normal.current === this.id || (isPartOfIC13 && InfinityChallenge(13).isRunning);
+  }
 
   get isOnlyActiveChallenge() {
     return player.challenge.normal.current === this.id;
