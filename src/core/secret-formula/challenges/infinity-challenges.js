@@ -187,11 +187,13 @@ export const infinityChallenges = [
     id: 13,
     description: () =>
       `You are trapped in every Infinity Challenge AT THE SAME TIME.`,
-    goal: DC.E1E15,
+    goal: DC.E1_6E6,
     isQuickResettable: true,
     reward: {
       description:
-        "???"
+        "Delay Infinity Dimension Purchase Caps based on Dimension Boosts",
+      effect: () => DimBoost.purchasedBoosts.plus(1).log10(),
+      formatEffect: value => formatX(value, 2, 2)
     },
     unlockAM: DC.E3_6E6,
   },
