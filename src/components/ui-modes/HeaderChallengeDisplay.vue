@@ -100,6 +100,9 @@ export default {
       if (player.challenge.infinity.current === 13) {
         return "THE ULTIMATE CHALLENGE II";
       }
+      if (player.challenge.normal.current === 13) {
+        return "THE ULTIMATE CHALLENGE I";
+      }
       return this.activeChallengeNames.join(" + ");
     },
   },
