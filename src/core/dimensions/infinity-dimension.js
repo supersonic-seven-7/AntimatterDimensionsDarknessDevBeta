@@ -325,7 +325,7 @@ export const InfinityDimensions = {
    * @type {InfinityDimensionState[]}
    */
   all: InfinityDimension.index.compact(),
-  HARDCAP_PURCHASES: 1500,
+  HARDCAP_PURCHASES: 1500 * InfinityChallenge(13).reward.effectOrDefault(1),
 
   unlockNext() {
     if (InfinityDimension(8).isUnlocked) return;
