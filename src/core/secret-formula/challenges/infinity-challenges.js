@@ -192,7 +192,7 @@ export const infinityChallenges = [
     reward: {
       description:
         "Delay Infinity Dimension Purchase Caps based on Dimension Boosts",
-      effect: () => Math.log10(DimBoost.purchasedBoosts + 1),
+      effect: () => Math.log10(DimBoost.purchasedBoosts + 1) + 1,
       formatEffect: value => formatX(value, 2, 2)
     },
     unlockAM: DC.E3_6E6,
