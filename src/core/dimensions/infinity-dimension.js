@@ -325,7 +325,7 @@ export const InfinityDimensions = {
    * @type {InfinityDimensionState[]}
    */
   all: InfinityDimension.index.compact(),
-  HARDCAP_PURCHASES: 1500 * InfinityChallenge(13).reward.effectOrDefault(1),
+  HARDCAP_PURCHASES: 1500,
 
   unlockNext() {
     if (InfinityDimension(8).isUnlocked) return;
@@ -355,8 +355,16 @@ export const InfinityDimensions = {
     return Math.floor(Tesseracts.capIncrease());
   },
 
-  get totalDimCap() {
+  get partialDimCap() {
     return this.HARDCAP_PURCHASES + this.capIncrease;
+  },
+
+  get capMult() {
+    return InfinityChallenge(13).reward.effectOrDefault(1);
+  }
+
+  get totalDimCap() {
+    return this.partialDimCap * this.capMult;
   },
 
   canBuy() {
