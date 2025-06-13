@@ -361,7 +361,7 @@ export const InfinityDimensions = {
 
   get capMult() {
     return InfinityChallenge(13).reward.effectOrDefault(1);
-  }
+  },
 
   get totalDimCap() {
     return this.partialDimCap * this.capMult;
