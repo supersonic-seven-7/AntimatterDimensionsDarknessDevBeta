@@ -221,7 +221,7 @@ class InfinityDimensionState extends DimensionState {
   }
 
   get purchaseCap() {
-    return this.purchaseCapOld.times(this.capMult);
+    return this.purchaseCapOld * this.capMult;
   }
 
   get isCapped() {
