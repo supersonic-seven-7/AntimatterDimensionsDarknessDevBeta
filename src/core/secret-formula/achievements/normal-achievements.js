@@ -778,8 +778,8 @@ export const normalAchievements = [
   {
     id: 112,
     name: "Never again",
-    get description() { return `Get the sum of Infinity Challenge times below ${formatInt(750)}ms.`; },
-    checkRequirement: () => Time.infinityChallengeSum.totalMilliseconds < 750,
+    get description() { return `Get the sum of Infinity Challenge times below ${formatInt(616)}ms.`; },
+    checkRequirement: () => Time.infinityChallengeSum.totalMilliseconds < 616,
     checkEvent: [GAME_EVENT.BIG_CRUNCH_AFTER, GAME_EVENT.REALITY_RESET_AFTER]
   },
   {
