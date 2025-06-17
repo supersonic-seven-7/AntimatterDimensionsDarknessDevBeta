@@ -33,8 +33,8 @@ export const eternityUpgrades = {
     description: "Infinity Dimension multiplier based on sum of Infinity Challenge times",
     // The cap limits this at a lower value, but we also need an explicit cap here because very old versions have
     // allowed EC12 to make all the challenge records sum to zero (causing a division by zero here)
-    effect: () => (player.challenge.infinity.bestTimes[13] < 999999999
-      ? DC.E1.pow(184.8 / Math.clampMin(Time.infinityChallengeSum.totalSeconds - player.challenge.infinity.bestTimes[13], 0.6))
+    effect: () => (Achievement(112).isUnlocked
+      ? DC.E300
       : DC.E1.pow(184.8 / Math.clampMin(Time.infinityChallengeSum.totalSeconds, 0.6))
     ),
     cap: DC.E300,
