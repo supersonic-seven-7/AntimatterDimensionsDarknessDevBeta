@@ -368,7 +368,7 @@ export const InfinityDimensions = {
   },
 
   get totalDimCap() {
-    return this.partialDimCap * this.capMult;
+    return this.totalDimCap;
   },
 
   canBuy() {
