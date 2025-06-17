@@ -221,7 +221,7 @@ class InfinityDimensionState extends DimensionState {
   }
 
   get purchaseCap() {
-    return this.purchaseCapOld * this.capMult;
+    return this.totalDimCap;
   }
 
   get isCapped() {
@@ -368,7 +368,7 @@ export const InfinityDimensions = {
   },
 
   get totalDimCap() {
-    return this.totalDimCap;
+    return this.partialDimCap * this.capMult;
   },
 
   canBuy() {
