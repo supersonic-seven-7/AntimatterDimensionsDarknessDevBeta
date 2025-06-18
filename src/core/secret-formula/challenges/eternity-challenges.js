@@ -8,8 +8,8 @@ export const eternityChallenges = [
   {
     id: 1,
     description: "Time Dimensions are disabled.",
-    goal: DC.E1E15,
-    goalIncrease: DC.E200,
+    goal: DC.E55400,
+    goalIncrease: DC.E1E15,
     reward: {
       description: "Time Dimension multiplier based on time spent this Eternity",
       effect: completions =>
