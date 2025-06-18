@@ -211,17 +211,13 @@ class InfinityDimensionState extends DimensionState {
     return this.data.baseAmount / 10;
   }
 
-  get purchaseCapOld() {
+  get purchaseCap() {
     if (Enslaved.isRunning) {
       return 1;
     }
-    return InfinityDimensions.capIncrease + (this.tier === 8
+    return (InfinityDimensions.capIncrease * InfinityChallenge(13).reward.effectOrDefault(1)) + (this.tier === 8
       ? Number.MAX_VALUE
-      : InfinityDimensions.HARDCAP_PURCHASES);
-  }
-
-  get purchaseCap() {
-    return this.totalDimCap;
+      : InfinityDimensions.HARDCAP_PURCHASES * InfinityChallenge(13).reward.effectOrDefault(1));
   }
 
   get isCapped() {
