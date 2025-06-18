@@ -3,7 +3,7 @@ import { DC } from "../../../constants";
 export const ecTimeStudies = [
   {
     id: 1,
-    cost: 9999,
+    cost: 888,
     requirement: [171],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
@@ -15,25 +15,25 @@ export const ecTimeStudies = [
   },
   {
     id: 2,
-    cost: 9999,
+    cost: 1000,
     requirement: [171],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
       resource: "Tickspeed upgrades from Time Dimensions",
       current: () => player.totalTickGained,
-      required: completions => 1300 + Math.min(completions, 4) * 150,
+      required: completions => 5600 + Math.min(completions, 4) * 1100,
       formatValue: formatInt
     }
   },
   {
     id: 3,
-    cost: 9999,
+    cost: 1200,
     requirement: [171],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
       resource: "8th Antimatter Dimensions",
       current: () => AntimatterDimension(8).totalAmount,
-      required: completions => new Decimal(17300 + Math.min(completions, 4) * 1250),
+      required: completions => new Decimal(80000 + Math.min(completions, 4) * 10000),
       formatValue: value => formatInt(Math.floor(value.toNumber()))
     }
   },
