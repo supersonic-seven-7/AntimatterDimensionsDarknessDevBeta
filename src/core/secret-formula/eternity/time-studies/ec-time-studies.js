@@ -21,7 +21,7 @@ export const ecTimeStudies = [
     secondary: {
       resource: "Tickspeed upgrades from Time Dimensions",
       current: () => player.totalTickGained,
-      required: completions => 8000 + Math.min(completions, 4) * 1000,
+      required: completions => 14300 + Math.min(completions, 4) * 2675,
       formatValue: formatInt
     }
   },
