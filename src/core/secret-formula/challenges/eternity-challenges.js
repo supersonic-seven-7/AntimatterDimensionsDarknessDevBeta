@@ -40,7 +40,7 @@ export const eternityChallenges = [
     goalIncrease: DC.E75,
     reward: {
       description: () => `Increase the multiplier for buying ${formatInt(10)} Antimatter Dimensions`,
-      effect: completions => completions * 0.72,
+      effect: completions => Decimal.pow(completions * 1.44, 2),
       formatEffect: value => `+${format(value, 2, 2)}`
     }
   },
