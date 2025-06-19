@@ -22,7 +22,7 @@ export const eternityChallenges = [
   {
     id: 2,
     description: "Infinity Dimensions are disabled.",
-    goal: DC.E975,
+    goal: DC.E1E15,
     pelleGoal: DC.E1750,
     goalIncrease: DC.E175,
     reward: {
