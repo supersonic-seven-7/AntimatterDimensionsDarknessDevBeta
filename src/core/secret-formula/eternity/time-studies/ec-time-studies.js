@@ -27,13 +27,13 @@ export const ecTimeStudies = [
   },
   {
     id: 3,
-    cost: 999,
+    cost: 960,
     requirement: [171],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
       resource: "8th Antimatter Dimensions",
       current: () => AntimatterDimension(8).totalAmount,
-      required: completions => new Decimal(80000 + Math.min(completions, 4) * 10000),
+      required: completions => new Decimal(67400 + Math.min(completions, 4) * 8150),
       formatValue: value => formatInt(Math.floor(value.toNumber()))
     }
   },
