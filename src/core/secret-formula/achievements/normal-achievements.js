@@ -282,7 +282,7 @@ export const normalAchievements = [
     id: 48,
     name: "Antichallenged",
     get description() { return `Complete all ${formatInt(12)} Normal Challenges.`; },
-    checkRequirement: () => NormalChallenges.all.countWhere(c => !c.isCompleted) === 0,
+    checkRequirement: () => NormalChallenges.all.countWhere(c => !c.isCompleted) <= 1,
     checkEvent: [GAME_EVENT.BIG_CRUNCH_AFTER, GAME_EVENT.REALITY_RESET_AFTER, GAME_EVENT.REALITY_UPGRADE_TEN_BOUGHT],
     get reward() { return `All Dimensions are ${formatPercents(0.1)} stronger.`; },
     effect: 1.1
