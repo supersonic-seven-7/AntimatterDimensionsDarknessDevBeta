@@ -274,7 +274,7 @@ export function replicantiMult() {
   return Decimal.pow(Decimal.log2(Replicanti.amount.clampMin(1)), 2)
     .plusEffectOf(TimeStudy(21))
     .timesEffectOf(TimeStudy(102))
-    .times(Math.max(Math.pow(replicantiBoosterMult().times(InfinityChallenge(11).reward.effectOrDefault(1)), player.replicanti.galaxies), 1))
+    .times(Math.max(Math.pow(replicantiBoosterMult() * InfinityChallenge(11).reward.effectOrDefault(1), player.replicanti.galaxies), 1))
     .clampMin(1)
     .pow(getAdjustedGlyphEffect("replicationpow"));
 }
