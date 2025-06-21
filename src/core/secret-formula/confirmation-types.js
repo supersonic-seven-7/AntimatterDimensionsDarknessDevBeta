@@ -24,7 +24,7 @@ export const confirmationTypes = [
     option: "exitChallenge",
     isUnlocked: () => PlayerProgress.infinityUnlocked(),
   }, {
-    name: "Replicanti Galaxy",
+    name: "Replicanti Booster",
     option: "replicantiGalaxy",
     isUnlocked: () => PlayerProgress.eternityUnlocked() || player.replicanti.unl,
   }, {
