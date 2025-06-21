@@ -12,7 +12,7 @@ export const pelleStrikes = {
   },
   powerGalaxies: {
     id: 2,
-    requirementDescription: "Power-up Galaxies",
+    requirementDescription: "Power-up Dimboosts",
     penaltyDescription: () => `Infinity Dimensions are raised to ${formatPow(0.5, 1, 1)}`,
     rewardDescription: () => `Unlock ${wordShift.wordCycle(PelleRifts.decay.name)}`,
     rift: () => PelleRifts.decay
