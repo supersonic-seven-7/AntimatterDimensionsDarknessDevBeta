@@ -39,7 +39,7 @@ export const ecTimeStudies = [
   },
   {
     id: 4,
-    cost: 9999,
+    cost: 1030,
     requirement: [143],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
