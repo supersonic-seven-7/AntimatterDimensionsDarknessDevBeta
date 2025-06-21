@@ -562,7 +562,7 @@ export const normalTimeStudies = [
     requirement: [213],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [226],
-    description: "You gain extra Replicanti Galaxies based on Replicanti amount",
+    description: "You gain extra Replicanti Boosters based on Replicanti amount",
     effect: () => Math.floor(Replicanti.amount.exponent / 1000),
     formatEffect: value => `+${formatInt(value)} RG`
   },
@@ -573,7 +573,7 @@ export const normalTimeStudies = [
     requirement: [213],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [225],
-    description: "You gain extra Replicanti Galaxies based on their max",
+    description: "You gain extra Replicanti Boosters based on their max",
     effect: () => Math.floor(player.replicanti.boughtGalaxyCap / 15),
     formatEffect: value => `+${formatInt(value)} RG`
   },
@@ -629,7 +629,7 @@ export const normalTimeStudies = [
     requirement: [225, 226],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [234],
-    description: "Max Replicanti Galaxy upgrade is cheaper based on current Replicanti",
+    description: "Max Replicanti Booster upgrade is cheaper based on current Replicanti",
     effect: () => Replicanti.amount.pow(0.3),
     formatEffect: value => `/ ${format(value, 1, 2)}`
   },
@@ -674,7 +674,7 @@ export const normalTimeStudies = [
     requirement: [() => Ra.unlocks.unlockHardV.effectOrDefault(0) >= 3, 225, 226, 233],
     reqType: TS_REQUIREMENT_TYPE.ALL,
     requiresST: [225, 226, 233],
-    description: () => `Gain ${formatPercents(0.5)} more extra Replicanti Galaxies from Time Studies 225 and 226,
+    description: () => `Gain ${formatPercents(0.5)} more extra Replicanti Boosters from Time Studies 225 and 226,
       and from Effarig's Infinity`,
     effect: 1.5,
     unlocked: () => Ra.unlocks.unlockHardV.effectOrDefault(0) >= 3
