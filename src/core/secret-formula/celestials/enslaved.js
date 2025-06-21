@@ -23,7 +23,7 @@ export const enslaved = {
       hint: `Some Challenges are harder, but also boost something in exchange. I wonder if there's a Challenge
         that's just strictly better than normal here.`,
       condition: () => `Entered Eternity Challenge 6 again after completing it ${formatInt(5)} times in order
-        to use its cheaper Replicanti Galaxies`,
+        to use its cheaper Replicanti Boosters`,
     },
     c10: {
       id: 4,
