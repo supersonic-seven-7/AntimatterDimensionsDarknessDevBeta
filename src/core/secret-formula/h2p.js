@@ -233,7 +233,7 @@ ${PlayerProgress.infinityUnlocked() ? "- <b>IP</b>: Infinity Point<br>" : ""}
 ${PlayerProgress.infinityUnlocked() ? "- <b>NC</b>: Normal Challenge<br>" : ""}
 ${PlayerProgress.infinityUnlocked() ? "- <b>IC</b>: Infinity Challenge<br>" : ""}
 ${InfinityDimension(1).isUnlocked || PlayerProgress.eternityUnlocked() ? "- <b>ID</b>: Infinity Dimension<br>" : ""}
-${PlayerProgress.replicantiUnlocked() ? "- <b>RG</b>: Replicanti Galaxy<br>" : ""}
+${PlayerProgress.replicantiUnlocked() ? "- <b>RG</b>: Replicanti Booster<br>" : ""}
 ${PlayerProgress.eternityUnlocked() ? "- <b>EP</b>: Eternity Point<br>" : ""}
 ${PlayerProgress.eternityUnlocked() ? "- <b>TT</b>: Time Theorem<br>" : ""}
 ${PlayerProgress.eternityUnlocked() ? "- <b>TD</b>: Time Dimension<br>" : ""}
@@ -640,13 +640,12 @@ Each individual Replicanti has a certain chance (initially ${formatPercents(0.01
 every Replicanti tick (initially every second), and both of these can be upgraded by spending IP.
 <br>
 <br>
-If you have purchased a Replicanti Galaxy upgrade, then you can get a "free" Replicanti Galaxy in exchange for
-resetting your Replicanti count back to ${formatInt(1)}. This Galaxy is free in that it will act as if it was an
-Antimatter Galaxy, but it will not make your next Antimatter Galaxy more expensive. However, it will still reset the
-same things as an Antimatter Galaxy does.
+If you have purchased a Replicanti Booster upgrade, then you can get a "free" Replicanti Booster in exchange for
+resetting your Replicanti count back to ${formatInt(1)}. A Replicanti Booster will reset the same things as an
+Antimatter Galaxy does.
 <br>
 <br>
-<b>Hotkey: R</b> will try to purchase a Replicanti Galaxy.
+<b>Hotkey: R</b> will try to purchase a Replicanti Booster.
 <br>
 Replicanti give a multiplier to all Infinity Dimensions, which will reach a maximum of
 ${formatX(Math.pow(2, 20), 2, 2)} at ${formatPostBreak(Number.MAX_VALUE, 2)} Replicanti.
@@ -656,9 +655,9 @@ ${formatX(Math.pow(2, 20), 2, 2)} at ${formatPostBreak(Number.MAX_VALUE, 2)} Rep
 <br>
 <b>Interval upgrade cost:</b> Base ${format(DC.E140)} IP, cost increment ${formatX(DC.E10)} IP
 <br>
-<b>Galaxy upgrade cost:</b> Base ${format(DC.E170)} IP, cost increment ${formatX(DC.E25)} IP and an additional
+<b>Booster upgrade cost:</b> Base ${format(DC.E170)} IP, cost increment ${formatX(DC.E25)} IP and an additional
 ${formatX(1e5)} IP per upgrade, scaling similarly to distant Antimatter Galaxies. Above ${formatInt(100)} Replicanti
-Galaxies, this ${formatX(1e5)} per upgrade changes to ${formatX(DC.E55)}. Above ${formatInt(1000)}, the scaling switches
+Boosters, this ${formatX(1e5)} per upgrade changes to ${formatX(DC.E55)}. Above ${formatInt(1000)}, the scaling switches
 from quadratic to cubic, with the ${formatX(DC.E55)} multiplier itself increasing by ${formatX(DC.E5)} per upgrade.
 `,
       isUnlocked: () => Replicanti.areUnlocked || PlayerProgress.eternityUnlocked(),
@@ -870,9 +869,7 @@ you have gained a TP multiplier or are able to significantly increase your antim
 <br>
 <br>
 Tachyon Particles generate another currency called Dilated Time. Dilated Time is translated into Tachyon Galaxies by
-reaching thresholds similarly to the Tickspeed Upgrades gained from Time Dimensions. These Tachyon Galaxies are like
-Replicanti Galaxies in that they affect tickspeed as if they were Antimatter Galaxies but they do not increase the cost
-of your next Antimatter Galaxy.
+reaching thresholds similarly to the Tickspeed Upgrades gained from Time Dimensions.
 <br>
 <br>
 Unlocking Time Dilation also unlocks upgrades you can purchase using Dilated Time. The first and third upgrades in the
@@ -1820,11 +1817,9 @@ In addition, each Rift offers three milestone rewards for filling them up to a c
       name: "The Galaxy Generator",
       info: () => `
 When you reach ${formatInt(100)}% Recursion/Dispersion/Destruction, you unlock the <b>Galaxy Generator</b>, which can
-passively generate Galaxies. Generated Galaxies are like Replicanti Galaxies and Tachyon Galaxies in that they affect
-tickspeed as if they were Antimatter Galaxies, but they do not increase the cost of your next Antimatter Galaxy. You
-also unlock five new upgrades. The first upgrade increases the base amount of Galaxies generated. The other four
-upgrades then give a multiplier to this base amount. The first two upgrades can be bought by spending antimatter and
-Generated Galaxies. Replicanti or Tachyon Galaxies cannot be spent for purchasing those upgrades.
+passively generate Galaxies. Generated Galaxies will not increase the cost of your next Antimatter Galaxy. You also unlock
+five new upgrades. The first upgrade increases the base amount of Galaxies generated. The other four upgrades then give
+a multiplier to this base amount. The first two upgrades can be bought by spending antimatter and Generated Galaxies.
 <br>
 <br>
 The <b>Galaxy Generator</b> has a maximum number of Galaxies it can generate, which can only be increased by draining
