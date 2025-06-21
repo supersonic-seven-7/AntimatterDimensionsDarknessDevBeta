@@ -35,7 +35,7 @@ export const eternityChallenges = [
   {
     id: 3,
     description: "Antimatter Dimensions 5-8 don't produce anything. Dimensional Sacrifice is disabled.",
-    goal: DC.E6750,
+    goal: DC.E6375,
     pelleGoal: DC.E975,
     goalIncrease: DC.E1E15,
     reward: {
