@@ -67,7 +67,7 @@ export const ecTimeStudies = [
     requirement: [121],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
-      resource: "Replicanti Galaxies",
+      resource: "Replicanti Boosters",
       current: () => player.replicanti.galaxies,
       required: completions => 40 + Math.min(completions, 4) * 5,
       formatValue: formatInt
