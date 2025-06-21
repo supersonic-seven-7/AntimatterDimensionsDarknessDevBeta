@@ -138,7 +138,7 @@ export const pelleUpgrades = {
   },
   replicantiGalaxyNoReset: {
     id: 13,
-    description: "Replicanti Galaxies no longer reset on Infinity",
+    description: "Replicanti Boosters no longer reset on Infinity",
     cost: 1e19,
     formatCost,
   },
@@ -192,7 +192,7 @@ export const pelleUpgrades = {
   },
   replicantiGalaxyEM40: {
     id: 22,
-    description: "Replicanti Galaxies no longer reset anything they normally reset",
+    description: "Replicanti Boosters no longer reset anything they normally reset",
     cost: 1e30,
     formatCost,
   }
