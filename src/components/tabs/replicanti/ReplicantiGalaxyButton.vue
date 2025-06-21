@@ -37,7 +37,7 @@ export default {
     autobuyerTextDisplay() {
       const auto = this.isAutoActive;
       const disabled = !this.isAutoEnabled;
-      return `Auto Galaxy ${auto ? "ON" : "OFF"}${disabled ? " (disabled)" : ""}`;
+      return `Auto Booster ${auto ? "ON" : "OFF"}${disabled ? " (disabled)" : ""}`;
     },
   },
   methods: {
