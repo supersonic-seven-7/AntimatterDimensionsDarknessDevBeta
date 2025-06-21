@@ -80,9 +80,9 @@ export const eternityChallenges = [
     id: 6,
     // The asterisk, if present, will get replaced with strings generated from the scramble text
     description: () => {
-      if (Enslaved.isRunning) return "you *. The cost of upgrading your max Replicanti Galaxies is massively reduced.";
+      if (Enslaved.isRunning) return "you *. The cost of upgrading your max Replicanti Boosters is massively reduced.";
       return "you cannot gain Antimatter Galaxies normally. The cost of upgrading your max Replicanti" +
-              " Galaxies is massively reduced.";
+              " Boosters is massively reduced.";
     },
     goal: DC.E850,
     pelleGoal: DC.E1500,
@@ -120,7 +120,7 @@ export const eternityChallenges = [
     pelleGoal: DC.E2800,
     goalIncrease: DC.E900,
     reward: {
-      description: "Infinity Power strengthens Replicanti Galaxies",
+      description: "Infinity Power strengthens Replicanti Boosters",
       effect: completions => {
         const infinityPower = Math.log10(Currency.infinityPower.value.pLog10() + 1);
         return Math.max(0, Math.pow(infinityPower, 0.03 * completions) - 1);
