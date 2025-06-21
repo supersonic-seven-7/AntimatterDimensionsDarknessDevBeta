@@ -10,7 +10,7 @@ export const eternityMilestones = {
   },
   autobuyerReplicantiGalaxy: {
     eternities: 3,
-    reward: "Unlock the Replicanti Galaxy Autobuyer"
+    reward: "Unlock the Replicanti Booster Autobuyer"
   },
   keepInfinityUpgrades: {
     eternities: 4,
@@ -121,7 +121,7 @@ export const eternityMilestones = {
   },
   replicantiNoReset: {
     eternities: 40,
-    reward: `Replicanti Galaxies no longer reset Antimatter, Antimatter Dimensions,
+    reward: `Replicanti Boosters no longer reset Antimatter, Antimatter Dimensions,
       Tickspeed, Dimensional Sacrifice, or Dimension Boosts`,
     pelleUseless: true
   },
@@ -139,7 +139,7 @@ export const eternityMilestones = {
   },
   autobuyerReplicantiMaxGalaxies: {
     eternities: 80,
-    reward: "Unlock the Max Replicanti Galaxy Upgrade Autobuyer",
+    reward: "Unlock the Max Replicanti Booster Upgrade Autobuyer",
     givenByPelle: () => PelleUpgrade.replicantiAutobuyers.isBought,
     pelleUseless: true
   },
