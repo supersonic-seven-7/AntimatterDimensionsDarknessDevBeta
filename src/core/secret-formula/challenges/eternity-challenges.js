@@ -48,7 +48,7 @@ export const eternityChallenges = [
     id: 4,
     description: `all Infinity multipliers and generators are disabled. The goal must be reached within a certain
       number of Infinities or else you will fail the Challenge.`,
-    goal: DC.E2750,
+    goal: DC.E1E15,
     goalIncrease: DC.E550,
     restriction: completions => Math.max(16 - 4 * completions, 0),
     checkRestriction: restriction => Currency.infinities.lte(restriction),
@@ -58,8 +58,8 @@ export const eternityChallenges = [
     failedRestriction: "(Too many Infinities for more)",
     reward: {
       description: "Infinity Dimension multiplier based on unspent IP",
-      effect: completions => Currency.infinityPoints.value.pow(0.003 + completions * 0.002),
-      cap: DC.E200,
+      effect: completions => Currency.infinityPoints.value.pow(0.03 + completions * 0.02),
+      cap: DC.E1E6,
       formatEffect: value => formatX(value, 2, 1)
     }
   },
