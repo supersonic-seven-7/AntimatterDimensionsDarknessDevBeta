@@ -87,7 +87,7 @@ export const shortcuts = [
     function: () => manualBigCrunchResetRequest(),
     visible: true
   }, {
-    name: "Replicanti Galaxy",
+    name: "Replicanti Booster",
     keys: ["r"],
     type: "bindHotkey",
     function: () => {
