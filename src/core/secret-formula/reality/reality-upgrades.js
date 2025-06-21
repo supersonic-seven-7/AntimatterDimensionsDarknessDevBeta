@@ -70,7 +70,7 @@ export const realityUpgrades = [
     name: "Cosmically Duplicate",
     id: 6,
     cost: 15,
-    requirement: "Complete your first manual Eternity without using Replicanti Galaxies",
+    requirement: "Complete your first manual Eternity without using Replicanti Boosters",
     // Note that while noRG resets on eternity, the reality-level check will be false after the first eternity.
     // The noRG variable is eternity-level as it's also used for an achievement check
     hasFailed: () => !(player.requirementChecks.eternity.noRG && player.requirementChecks.reality.noEternities),
@@ -78,7 +78,7 @@ export const realityUpgrades = [
     checkEvent: GAME_EVENT.ETERNITY_RESET_BEFORE,
     canLock: true,
     lockEvent: "gain a Replicanti Galaxy",
-    description: "Replicanti speed is multiplied based on Replicanti Galaxies",
+    description: "Replicanti speed is multiplied based on Replicanti Boosters",
     effect: () => 1 + Replicanti.galaxies.total / 50,
     formatEffect: value => formatX(value, 2, 2)
   },
