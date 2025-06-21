@@ -118,7 +118,7 @@ export default {
             pendingTime += leftPercentAfterGalaxy * secondsPerGalaxy.toNumber();
           }
           const thisGalaxyTime = pending > 0 ? pendingTime : secondsPerGalaxy.toNumber() - remainingTime;
-          this.galaxyText += ` (all Replicanti Galaxies within
+          this.galaxyText += ` (all Replicanti Boosters within
             ${TimeSpan.fromSeconds(Math.clampMin(allGalaxyTime - thisGalaxyTime, 0))})`;
         }
       } else {
