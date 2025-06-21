@@ -264,11 +264,17 @@ export function replicantiLoop(diff) {
   PerformanceStats.end();
 }
 
+export function replicantiBoosterMult() {
+  return DC.D2
+    .timesEffectOf(TimeStudy(132).plus(1))
+    .timesEffectOf(TimeStudy(133).plus(1));
+}
+
 export function replicantiMult() {
   return Decimal.pow(Decimal.log2(Replicanti.amount.clampMin(1)), 2)
     .plusEffectOf(TimeStudy(21))
     .timesEffectOf(TimeStudy(102))
-    .times(Math.max(Math.pow(2 * InfinityChallenge(11).reward.effectOrDefault(1), player.replicanti.galaxies), 1))
+    .times(Math.max(Math.pow(this.replicantiBoosterMult * InfinityChallenge(11).reward.effectOrDefault(1), player.replicanti.galaxies), 1))
     .clampMin(1)
     .pow(getAdjustedGlyphEffect("replicationpow"));
 }
