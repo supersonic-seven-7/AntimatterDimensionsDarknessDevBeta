@@ -215,7 +215,7 @@ export default {
         Your Replicanti cap without TS192 is now {{ format(replicantiCap, 2) }}
         ({{ capMultText }})
         <br>
-        {{ quantifyInt("extra Replicanti Galaxy", effarigInfinityBonusRG) }}
+        {{ quantifyInt("extra Replicanti Booster", effarigInfinityBonusRG) }}
         (Next Replicanti Booster at {{ format(nextEffarigRGThreshold, 2) }} cap)
       </div>
       <p class="c-replicanti-description">
