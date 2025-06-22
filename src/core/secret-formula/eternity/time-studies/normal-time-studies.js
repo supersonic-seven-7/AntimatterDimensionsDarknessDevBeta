@@ -136,8 +136,8 @@ export const normalTimeStudies = [
     cost: 20,
     requirement: [42, () => Perk.bypassEC5Lock.isBought || EternityChallenge(5).completions > 0],
     reqType: TS_REQUIREMENT_TYPE.ALL,
-    description: () => `You gain Replicanti ${formatInt(3)} times faster`,
-    effect: 3
+    description: () => `You gain Replicanti ${formatInt(6)} times faster`,
+    effect: 6
   },
   {
     id: 71,
