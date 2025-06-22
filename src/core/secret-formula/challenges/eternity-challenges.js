@@ -71,9 +71,9 @@ export const eternityChallenges = [
     pelleGoal: DC.E1400,
     goalIncrease: DC.E400,
     reward: {
-      description: "Distant Galaxy cost scaling starts later",
-      effect: completions => completions * 5,
-      formatEffect: value => `${formatInt(value)} AG later`
+      description: "You can hold a greater number of Galaxies",
+      effect: completions => completions,
+      formatEffect: value => `${formatInt(value)} Galaxies`
     }
   },
   {
