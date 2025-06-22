@@ -704,7 +704,11 @@ export const normalAchievements = [
     name: "This mile took an eternity",
     description: "Get all Eternity milestones.",
     checkRequirement: () => EternityMilestone.all.every(m => m.isReached),
-    checkEvent: GAME_EVENT.GAME_TICK_AFTER
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER,
+    get reward() {
+      return `You can hold a single Galaxy at all times.`;
+    },
+    effect: 1
   },
   {
     id: 103,
