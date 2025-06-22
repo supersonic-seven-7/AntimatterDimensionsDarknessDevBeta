@@ -83,6 +83,7 @@ export class Galaxy {
     if (NormalChallenge(8).isRunning || InfinityChallenge(8).isRunning || InfinityChallenge(13).isRunning) return false;
     if (player.records.thisInfinity.maxAM.gt(Player.infinityGoal) &&
        (!player.break || Player.isInAntimatterChallenge)) return false;
+    if (Achievement(102).isUnlocked && player.galaxies <= EternityChallenge(5).reward) return true;
     return false;
   }
 
