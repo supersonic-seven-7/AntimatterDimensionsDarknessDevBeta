@@ -24,7 +24,7 @@ export const eternityChallenges = [
     description: "Infinity Dimensions are disabled.",
     goal: DC.E1080,
     pelleGoal: DC.E1750,
-    goalIncrease: DC.E1E15,
+    goalIncrease: DC.E200,
     reward: {
       description: "1st Infinity Dimension multiplier based on Infinity Power",
       effect: completions => Currency.infinityPower.value.pow(1.5 / (70 - completions * 10)).clampMin(1),
