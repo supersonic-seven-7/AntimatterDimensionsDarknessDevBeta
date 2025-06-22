@@ -158,7 +158,7 @@ export function requiredIPForEP(epAmount) {
   if (InfinityChallenge(12).isCompleted) {
     epThresh = DC.E3000;
   }
-  return Decimal.pow10(3083 * (Decimal.log(Decimal.divide(epAmount, totalEPMult()), 5) + 0.7))
+  return Decimal.pow10(EternityChallenge(5).reward.effectOrDefault(3083) * (Decimal.log(Decimal.divide(epAmount, totalEPMult()), 5) + 0.7))
     .clampMin(epThresh);
 }
 
