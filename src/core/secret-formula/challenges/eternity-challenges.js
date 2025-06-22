@@ -70,9 +70,9 @@ export const eternityChallenges = [
     pelleGoal: DC.E1400,
     goalIncrease: DC.E1E15,
     reward: {
-      description: "You can hold a greater number of Galaxies",
-      effect: completions => completions,
-      formatEffect: value => `${formatInt(value)} Galaxies`
+      description: "Improve the Eternity Point Formula",
+      effect: completions => 3083 - (completions * 100),
+      formatEffect: value => `log(x)/3083 ➜ log(x)/${formatInt(value)}`
     }
   },
   {
