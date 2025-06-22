@@ -67,7 +67,7 @@ export const eternityChallenges = [
     id: 5,
     description: () => `Antimatter Galaxy cost increase scaling starts immediately (normally at ${formatInt(100)}
       Galaxies). Dimension Boost costs scaling is massively increased.`,
-    goal: DC.E750,
+    goal: DC.E1E15,
     pelleGoal: DC.E1400,
     goalIncrease: DC.E400,
     reward: {
