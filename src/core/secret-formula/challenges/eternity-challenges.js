@@ -66,9 +66,9 @@ export const eternityChallenges = [
   {
     id: 5,
     description: () => `Dimension Boost costs scaling is massively increased.`,
-    goal: DC.E1E15,
+    goal: DC.E10500,
     pelleGoal: DC.E1400,
-    goalIncrease: DC.E400,
+    goalIncrease: DC.E1E15,
     reward: {
       description: "You can hold a greater number of Galaxies",
       effect: completions => completions,
