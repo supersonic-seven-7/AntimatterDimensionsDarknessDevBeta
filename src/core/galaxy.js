@@ -78,13 +78,20 @@ export class Galaxy {
     return NormalChallenge(10).isRunning ? 6 : 8;
   }
 
+  static get maxGalaxy() {
+    if (Achievement(102).isUnlocked) {
+      return 1 + EternityChallenge(5).reward;
+    }
+    return 0;
+  }
+  
   static get canBeBought() {
+    if (player.galaxies >= this.maxGalaxy) return false;
     if (EternityChallenge(6).isRunning && !Enslaved.isRunning) return false;
     if (NormalChallenge(8).isRunning || InfinityChallenge(8).isRunning || InfinityChallenge(13).isRunning) return false;
     if (player.records.thisInfinity.maxAM.gt(Player.infinityGoal) &&
        (!player.break || Player.isInAntimatterChallenge)) return false;
-    if (Achievement(102).isUnlocked && player.galaxies <= EternityChallenge(5).reward) return true;
-    return false;
+    return true;
   }
 
   static get lockText() {
