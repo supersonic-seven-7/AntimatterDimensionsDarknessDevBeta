@@ -25,7 +25,9 @@ export const infinityChallenges = [
     isQuickResettable: true,
     reward: {
       description: () => `Improve the Infinity Power Conversion Rate based on Dimboosts`,
-      effect: () => Math.min(Math.pow((DimBoost.purchasedBoosts + 1) * 10, 0.2), 6),
+      effect: () => (Achievement(122).isUnlocked
+        ? Math.max(Math.pow(DimBoost.purchasedBoosts - 777, 0.1), 0) + 6
+        : Math.min(Math.pow((DimBoost.purchasedBoosts + 1) * 10, 0.2), 6)),
       formatEffect: value => `+${format(value, 2, 2)}`
     },
     unlockAM: DC.E3000,
