@@ -71,8 +71,8 @@ export const eternityChallenges = [
     goalIncrease: DC.E1650,
     reward: {
       description: "Improve the Eternity Point Formula",
-      effect: completions => 3083 - (completions * 100),
-      formatEffect: value => `log(x)/3083 ➜ log(x)/${formatInt(value)}`
+      effect: completions => 3083 - (completions * 200),
+      formatEffect: value => `log(x)/3,083 ➜ log(x)/${formatInt(value)}`
     }
   },
   {
