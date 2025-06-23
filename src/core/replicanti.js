@@ -266,9 +266,9 @@ export function replicantiLoop(diff) {
 
 export function replicantiBoosterMult() {
   return DC.D2
-    .timesEffectOf(TimeStudy(132)).plus(1)
-    .timesEffectOf(TimeStudy(133)).plus(1)
-    .times(EternityChallenge(8).reward.effectOrDefault(0)).plus(1);
+    .timesEffectOf(TimeStudy(132))
+    .timesEffectOf(TimeStudy(133))
+    .times(EternityChallenge(8).reward.effectOrDefault(1));
 }
 
 export function replicantiMult() {
