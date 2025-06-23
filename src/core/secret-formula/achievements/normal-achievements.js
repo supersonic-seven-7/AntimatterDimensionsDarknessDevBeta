@@ -985,7 +985,10 @@ export const normalAchievements = [
     name: "Faster than a potato^286",
     get description() { return `Get more than ${formatPostBreak("1e8294")} ticks per second.`; },
     checkRequirement: () => Tickspeed.current.exponent <= -8291,
-    checkEvent: GAME_EVENT.GAME_TICK_AFTER
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER,
+    get reward() {
+      return "Remove the softcap of the Infinity Challenge 7 reward.";
+    }
   },
   {
     id: 136,
