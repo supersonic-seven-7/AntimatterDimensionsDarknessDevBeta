@@ -75,13 +75,13 @@ export const ecTimeStudies = [
   },
   {
     id: 7,
-    cost: 9999,
+    cost: 1444,
     requirement: [111],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
       resource: "antimatter",
       current: () => Currency.antimatter.value,
-      required: completions => DC.E300000.pow(Math.min(completions, 4)).times(DC.E500000),
+      required: completions => DC.E1E15.pow(Math.min(completions, 4)).times(DC.E500000),
       formatValue: value => format(value)
     }
   },
