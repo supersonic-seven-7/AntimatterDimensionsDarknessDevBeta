@@ -332,7 +332,7 @@ export const normalTimeStudies = [
       ? `Replicanti Boosters are ${formatPercents(0.4)} stronger`
       : `Replicanti Boosters are ${formatPercents(0.4)} stronger and Replicanti are 
         ${Perk.studyPassive.isBought ? formatX(3) : formatX(1.5, 1, 1)} faster`),
-    effect: 0.4
+    effect: 1.4
   },
   {
     id: 133,
@@ -345,7 +345,7 @@ export const normalTimeStudies = [
       ? `Replicanti Boosters are ${formatPercents(0.5)} stronger`
       : `Replicanti are ${formatX(10)} slower until ${format(Number.MAX_VALUE, 2)}` +
     `, but Replicanti Boosters are ${formatPercents(0.5)} stronger`),
-    effect: 0.5
+    effect: 1.5
   },
   {
     id: 141,
