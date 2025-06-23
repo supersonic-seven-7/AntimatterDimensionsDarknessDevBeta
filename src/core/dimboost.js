@@ -97,6 +97,7 @@ export class DimBoost {
       if (InfinityChallenge(10).isRunning) return "Locked (Infinity Challenge 10)";
       if (InfinityChallenge(12).isRunning) return "Locked (Infinity Challenge 12)";
       if (InfinityChallenge(13).isRunning) return "Locked (THE ULTIMATE CHALLENGE II)";
+      if (EternityChallenge(6).isRunning) return "Locked (Eternity Challenge 6)";
       if (NormalChallenge(8).isRunning) return "Locked (8th Antimatter Dimension Autobuyer Challenge)";
     }
     return null;
