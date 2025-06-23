@@ -49,7 +49,7 @@ export const eternityChallenges = [
     description: `all Infinity multipliers and generators are disabled. The goal must be reached within a certain
       number of Infinities or else you will fail the Challenge.`,
     goal: DC.E18000,
-    goalIncrease: DC.E1E15,
+    goalIncrease: DC.E45000,
     restriction: completions => Math.max(16 - 4 * completions, 0),
     checkRestriction: restriction => Currency.infinities.lte(restriction),
     formatRestriction: restriction => (restriction === 0
