@@ -68,7 +68,7 @@ export const eternityChallenges = [
     description: () => `Dimension Boost costs scaling is massively increased.`,
     goal: DC.E10500,
     pelleGoal: DC.E1400,
-    goalIncrease: DC.E1E15,
+    goalIncrease: DC.E1600,
     reward: {
       description: "Improve the Eternity Point Formula",
       effect: completions => 3083 - (completions * 100),
