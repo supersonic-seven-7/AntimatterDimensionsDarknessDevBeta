@@ -261,8 +261,8 @@ export const normalTimeStudies = [
     requirement: [101, 102, 103],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => (Achievement(103).canBeApplied
-      ? `Make the Infinity Point formula better based on Dimboosts log(x)/${formatFloat(307.8, 1)} ➜ log(x)/${formatInt(270)}`
-      : `Make the Infinity Point formula better based on Dimboosts log(x)/${formatInt(308)} ➜ log(x)/${formatInt(270)}`),
+      ? `Make the Infinity Point formula better log(x)/${formatFloat(307.8, 1)} ➜ log(x)/${formatInt(270)}`
+      : `Make the Infinity Point formula better log(x)/${formatInt(308)} ➜ log(x)/${formatInt(270)}`),
     effect: 270
   },
   {
