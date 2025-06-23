@@ -115,7 +115,7 @@ export const eternityChallenges = [
     id: 8,
     description: () => `you can only upgrade Infinity Dimensions ${formatInt(50)} times and Replicanti
       upgrades ${formatInt(40)} times. Infinity Dimension and Replicanti upgrade autobuyers are disabled.`,
-    goal: DC.E1300,
+    goal: DC.E1E15,
     pelleGoal: DC.E2800,
     goalIncrease: DC.E900,
     reward: {
