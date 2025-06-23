@@ -69,7 +69,7 @@ export const ecTimeStudies = [
     secondary: {
       resource: "Replicanti Boosters",
       current: () => player.replicanti.galaxies,
-      required: completions => 192 + Math.min(completions, 4) * 32,
+      required: completions => 192 + Math.min(completions, 4) * 12,
       formatValue: formatInt
     }
   },
