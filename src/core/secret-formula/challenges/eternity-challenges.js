@@ -80,7 +80,7 @@ export const eternityChallenges = [
     // The asterisk, if present, will get replaced with strings generated from the scramble text
     description: () => {
       if (Enslaved.isRunning) return "you *. The cost of upgrading your max Replicanti Boosters is massively reduced.";
-      return "you cannot gain Antimatter Galaxies normally. The cost of upgrading your max Replicanti" +
+      return "you cannot gain Dimension Boosts normally. The cost of upgrading your max Replicanti" +
               " Boosters is massively reduced.";
     },
     goal: DC.E1E15,
@@ -94,7 +94,7 @@ export const eternityChallenges = [
         return `-${format(value, 2, 1)} (${formatX(total, 2, 1)} total)`;
       }
     },
-    scrambleText: ["cannot gain Antimatter Galaxies normally", "c㏰'퐚 gai鸭 Anti꟢at랜erﻪﶓa⁍axie㮾 䂇orma㦂l"],
+    scrambleText: ["cannot gain Dimension Boosts normally", "c㏰'퐚 gai鸭 Dim꟢si랜onﻪﶓB⁍osts㮾 䂇orma㦂l"],
   },
   {
     id: 7,
