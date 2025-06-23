@@ -107,7 +107,7 @@ export const eternityChallenges = [
     effect: () => TimeDimension(1).productionPerSecond,
     reward: {
       description: "1st Time Dimension produces 8th Infinity Dimensions",
-      effect: completions => TimeDimension(1).productionPerSecond.pow(completions * 0.2).minus(1).clampMin(0),
+      effect: completions => TimeDimension(1).productionPerSecond.pow(completions * 2).minus(1).clampMin(0),
       formatEffect: value => `${format(value, 2, 1)} per second`
     }
   },
