@@ -926,8 +926,8 @@ export const normalAchievements = [
     get description() { return `Reach ${formatPostBreak("1e22000")} Infinity Points without any Time Studies.`; },
     checkRequirement: () => Currency.infinityPoints.exponent >= 22000 && player.timestudy.studies.length === 0,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
-    reward: "Time Dimensions are multiplied by the number of Time Studies you have.",
-    effect: () => Math.max(player.timestudy.studies.length, 1),
+    reward: "Time Dimensions are multiplied based on the number of Time Studies you have.",
+    effect: () => DC.D2.pow(Math.max(player.timestudy.studies.length, 1)),
     formatEffect: value => `${formatX(value)}`
   },
   {
