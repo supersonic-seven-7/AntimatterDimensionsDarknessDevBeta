@@ -83,9 +83,9 @@ export const eternityChallenges = [
       return "you cannot gain Dimension Boosts normally. The cost of upgrading your max Replicanti" +
               " Boosters is massively reduced.";
     },
-    goal: DC.E1E15,
+    goal: DC.E13400,
     pelleGoal: DC.E1500,
-    goalIncrease: DC.E250,
+    goalIncrease: DC.E1E15,
     reward: {
       description: "Further reduce Antimatter Dimension cost multiplier growth",
       effect: completions => completions * 0.2,
