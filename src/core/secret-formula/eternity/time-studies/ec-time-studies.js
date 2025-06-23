@@ -63,13 +63,13 @@ export const ecTimeStudies = [
   },
   {
     id: 6,
-    cost: 9999,
+    cost: 1333,
     requirement: [121],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
       resource: "Replicanti Boosters",
       current: () => player.replicanti.galaxies,
-      required: completions => 40 + Math.min(completions, 4) * 5,
+      required: completions => 192 + Math.min(completions, 4) * 32,
       formatValue: formatInt
     }
   },
