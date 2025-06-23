@@ -857,7 +857,10 @@ export const normalAchievements = [
     name: "You're already dead.",
     description: "Eternity without buying Antimatter Dimensions 2-8.",
     checkRequirement: () => player.requirementChecks.eternity.onlyAD1,
-    checkEvent: GAME_EVENT.ETERNITY_RESET_BEFORE
+    checkEvent: GAME_EVENT.ETERNITY_RESET_BEFORE,
+    get reward() {
+      return "The hardcap of the Infinity Challenge 2 reward becomes a softcap.";
+    }
   },
   {
     id: 123,
@@ -987,7 +990,7 @@ export const normalAchievements = [
     checkRequirement: () => Tickspeed.current.exponent <= -8291,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     get reward() {
-      return "Remove the softcap of the Infinity Challenge 7 reward.";
+      return "The hardcap of the Infinity Challenge 7 reward becomes a softcap.";
     }
   },
   {
