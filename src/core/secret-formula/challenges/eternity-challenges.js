@@ -83,7 +83,7 @@ export const eternityChallenges = [
       return "you cannot gain Antimatter Galaxies normally. The cost of upgrading your max Replicanti" +
               " Boosters is massively reduced.";
     },
-    goal: DC.E850,
+    goal: DC.E1E15,
     pelleGoal: DC.E1500,
     goalIncrease: DC.E250,
     reward: {
