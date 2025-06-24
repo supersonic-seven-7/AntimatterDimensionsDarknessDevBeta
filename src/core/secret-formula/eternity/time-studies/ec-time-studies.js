@@ -99,13 +99,13 @@ export const ecTimeStudies = [
   },
   {
     id: 9,
-    cost: 9999,
+    cost: 1395,
     requirement: [151],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
       resource: "Infinity Power",
       current: () => Currency.infinityPower.value,
-      required: completions => DC.E2000.pow(Math.min(completions, 4)).times(DC.E17500),
+      required: completions => DC.E2000.pow(Math.min(completions, 4)).times(DC.E1E15),
       formatValue: value => format(value)
     }
   },
