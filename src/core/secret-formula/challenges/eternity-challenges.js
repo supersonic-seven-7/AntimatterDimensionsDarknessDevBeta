@@ -136,7 +136,7 @@ export const eternityChallenges = [
     goalIncrease: DC.E1E15,
     reward: {
       description: "Infinity Dimension multiplier based on Time Shards",
-      effect: completions => Currency.timeShards.value.pow(completions).clampMin(1),
+      effect: completions => Currency.timeShards.value.pow(completions * 2).clampMin(1),
       cap: DC.E1E6,
       formatEffect: value => formatX(value, 2, 1)
     }
