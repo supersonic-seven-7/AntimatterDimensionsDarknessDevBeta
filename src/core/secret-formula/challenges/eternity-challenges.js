@@ -85,7 +85,7 @@ export const eternityChallenges = [
     },
     goal: DC.E13400,
     pelleGoal: DC.E1500,
-    goalIncrease: DC.E1E15,
+    goalIncrease: DC.E60000,
     reward: {
       description: "Further reduce Antimatter Dimension cost multiplier growth",
       effect: completions => completions * 0.2,
