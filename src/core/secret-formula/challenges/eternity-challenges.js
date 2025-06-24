@@ -133,7 +133,7 @@ export const eternityChallenges = [
       Time Dimensions with greatly reduced effect. ${specialInfinityGlyphDisabledEffectText()}`,
     goal: DC.E1100,
     pelleGoal: DC.E2900,
-    goalIncrease: DC.E1E15,
+    goalIncrease: DC.E700,
     reward: {
       description: "Infinity Dimension multiplier based on Time Shards",
       effect: completions => Currency.timeShards.value.pow(completions * 2).clampMin(1),
