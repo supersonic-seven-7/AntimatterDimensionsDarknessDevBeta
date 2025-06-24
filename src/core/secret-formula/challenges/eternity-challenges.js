@@ -103,7 +103,7 @@ export const eternityChallenges = [
       "7th Antimatter Dimensions. Tickspeed also directly applies to Infinity and Time Dimensions.",
     goal: DC.E1000,
     pelleGoal: DC.E2700,
-    goalIncrease: DC.E1E15,
+    goalIncrease: DC.E75,
     effect: () => TimeDimension(1).productionPerSecond,
     reward: {
       description: "1st Time Dimension produces 8th Infinity Dimensions",
