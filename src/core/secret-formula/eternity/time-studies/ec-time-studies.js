@@ -81,7 +81,7 @@ export const ecTimeStudies = [
     secondary: {
       resource: "antimatter",
       current: () => Currency.antimatter.value,
-      required: completions => DC.E1E15.pow(Math.min(completions, 4)).times(DC.E1_39E7),
+      required: completions => DC.E1_6E6.pow(Math.min(completions, 4)).times(DC.E1_39E7),
       formatValue: value => format(value)
     }
   },
