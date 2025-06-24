@@ -131,13 +131,13 @@ export const eternityChallenges = [
     id: 9,
     description: () => `you cannot buy Tickspeed upgrades. Infinity Power instead multiplies
       Time Dimensions with greatly reduced effect. ${specialInfinityGlyphDisabledEffectText()}`,
-    goal: DC.E1750,
+    goal: DC.E1E15,
     pelleGoal: DC.E2900,
     goalIncrease: DC.E250,
     reward: {
       description: "Infinity Dimension multiplier based on Time Shards",
-      effect: completions => Currency.timeShards.value.pow(completions * 0.1).clampMin(1),
-      cap: DC.E400,
+      effect: completions => Currency.timeShards.value.pow(completions).clampMin(1),
+      cap: DC.E1E6,
       formatEffect: value => formatX(value, 2, 1)
     }
   },
