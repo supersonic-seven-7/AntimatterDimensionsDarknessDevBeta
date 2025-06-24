@@ -105,7 +105,7 @@ export const ecTimeStudies = [
     secondary: {
       resource: "Infinity Power",
       current: () => Currency.infinityPower.value,
-      required: completions => DC.E1E15.pow(Math.min(completions, 4)).times(DC.E69250),
+      required: completions => DC.E65625.pow(Math.min(completions, 4)).times(DC.E69250),
       formatValue: value => format(value)
     }
   },
