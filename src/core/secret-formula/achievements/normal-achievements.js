@@ -888,10 +888,10 @@ export const normalAchievements = [
     id: 125,
     name: "Like feasting on a behind",
     get description() {
-      return `Reach ${format(DC.D4_2E69)} Infinity Points without having any Infinities
+      return `Reach ${format(DC.E69)} Infinity Points without having any Infinities
       or any 1st Antimatter Dimensions in your current Eternity.`;
     },
-    checkRequirement: () => Currency.infinityPoints.value >= 4.2e69 &&
+    checkRequirement: () => Currency.infinityPoints.exponent >= 69 &&
       player.requirementChecks.eternity.noAD1 && Currency.infinities.eq(0),
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     reward: "Infinity Point multiplier based on time spent this Infinity.",
