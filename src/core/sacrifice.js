@@ -56,7 +56,7 @@ export class Sacrifice {
   static get sacrificeExponent() {
     let base;
     // C8 seems weaker, but it actually follows its own formula which ends up being stronger based on how it stacks
-    if (NormalChallenge(8).isRunning) base = 1;
+    if (NormalChallenge(8).isRunning || NormalChallenge(13).isRunning) base = 1;
     // Pre-Reality this was 100; having ach32/57 results in 1.2x, which is brought back in line by changing to 120
     else if (InfinityChallenge(3).isCompleted) base = 1 / 120;
     else base = 2;
@@ -78,7 +78,7 @@ export class Sacrifice {
     // ND8, then sacrificed amount is updated, and then the updated sacrifice multiplier then gets applied to a
     // different variable that is only applied during C8. However since sacrifice only depends on sacrificed ND1, this
     // can actually be done in a single calculation in order to handle C8 in a less hacky way.
-    if (NormalChallenge(8).isRunning) {
+    if (NormalChallenge(8).isRunning || NormalChallenge(13).isRunning) {
       prePowerSacrificeMult = nd1Amount.pow(0.05).dividedBy(sacrificed.pow(0.04)).clampMin(1)
         .times(nd1Amount.pow(0.05).dividedBy(sacrificed.plus(nd1Amount).pow(0.04)));
     } else if (InfinityChallenge(3).isCompleted) {
@@ -94,7 +94,7 @@ export class Sacrifice {
     if (player.sacrificed.eq(0)) return DC.D1;
     // C8 uses a variable that keeps track of a sacrifice boost that persists across sacrifice-resets and isn't
     // used anywhere else, which also naturally takes account of the exponent from achievements and time studies.
-    if (NormalChallenge(8).isRunning) {
+    if (NormalChallenge(8).isRunning || NormalChallenge(13).isRunning) {
       return player.chall8TotalSacrifice;
     }
 
