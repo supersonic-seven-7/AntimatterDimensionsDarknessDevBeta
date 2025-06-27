@@ -14,7 +14,7 @@ class DimBoostRequirement {
 
 export class DimBoost {
   static get power() {
-    if (NormalChallenge(8).isRunning) {
+    if (NormalChallenge(8).isRunning || NormalChallenge(13).isRunning) {
       return DC.D1;
     }
 
@@ -52,7 +52,7 @@ export class DimBoost {
   }
 
   static get maxDimensionsUnlockable() {
-    return NormalChallenge(10).isRunning ? 6 : 8;
+    return (NormalChallenge(10).isRunning || NormalChallenge(13).isRunning) ? 6 : 8;
   }
 
   static get canUnlockNewDimension() {
@@ -74,7 +74,7 @@ export class DimBoost {
       // more boosts than this; it's just that boosts beyond this are pointless.
       return 2;
     }
-    if (NormalChallenge(8).isRunning) {
+    if (NormalChallenge(8).isRunning || NormalChallenge(13).isRunning) {
       // See above. It's important we check for this after checking for IC1 since otherwise
       // this case would trigger when we're in IC1.
       return 5;
@@ -99,6 +99,7 @@ export class DimBoost {
       if (InfinityChallenge(13).isRunning) return "Locked (THE ULTIMATE CHALLENGE II)";
       if (EternityChallenge(6).isRunning) return "Locked (Eternity Challenge 6)";
       if (NormalChallenge(8).isRunning) return "Locked (8th Antimatter Dimension Autobuyer Challenge)";
+      if (NormalChallenge(13).isRunning) return "Locked (THE ULTIMATE CHALLENGE I)";
     }
     return null;
   }
@@ -115,7 +116,7 @@ export class DimBoost {
       TimeStudy(211),
       TimeStudy(222)
     );
-    if (tier === 6 && NormalChallenge(10).isRunning) {
+    if (tier === 6 && (NormalChallenge(10).isRunning || NormalChallenge(13).isRunning)) {
       amount += Math.round((targetResets - 3) * (20 - discount));
     } else if (tier === 8) {
       amount += Math.round((targetResets - 5) * (15 - discount));
@@ -142,7 +143,7 @@ export class DimBoost {
     let newUnlock = "";
     if (!allNDUnlocked && boosts < DimBoost.maxDimensionsUnlockable - 4) {
       newUnlock = `unlock the ${boosts + 5}th Dimension`;
-    } else if (boosts === 4 && !NormalChallenge(10).isRunning && !EternityChallenge(3).isRunning) {
+    } else if (boosts === 4 && !NormalChallenge(10).isRunning && !NormalChallenge(13).isRunning && !EternityChallenge(3).isRunning) {
       newUnlock = "unlock Sacrifice";
     }
 
@@ -152,7 +153,7 @@ export class DimBoost {
     if (boosts >= DimBoost.maxDimensionsUnlockable - 1) dimensionRange = `to all Dimensions`;
 
     let boostEffects;
-    if (NormalChallenge(8).isRunning) boostEffects = newUnlock;
+    if (NormalChallenge(8).isRunning || NormalChallenge(13).isRunning) boostEffects = newUnlock;
     else if (newUnlock === "") boostEffects = `${formattedMultText} ${dimensionRange}`;
     else boostEffects = `${newUnlock} and ${formattedMultText} ${dimensionRange}`;
 
