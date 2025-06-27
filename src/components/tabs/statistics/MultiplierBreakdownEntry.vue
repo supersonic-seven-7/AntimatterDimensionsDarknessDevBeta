@@ -123,7 +123,7 @@ export default {
       this.calculatePercents();
       this.now = Date.now();
       this.replacePowers = player.options.multiplierTab.replacePowers && this.allowPowerToggle;
-      this.inNC12 = NormalChallenge(12).isRunning;
+      this.inNC12 = NormalChallenge(12).isRunning || NormalChallenge(13).isRunning;
     },
     changeGroup() {
       this.selected = (this.selected + 1) % this.groups.length;
