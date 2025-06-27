@@ -40,7 +40,7 @@ export function getTickSpeedMultiplier() {
     let baseMultiplier = 1 / 1.1245;
     if (player.galaxies === 1) baseMultiplier = 1 / 1.11888888;
     if (player.galaxies === 2) baseMultiplier = 1 / 1.11267177;
-    if (NormalChallenge(5).isRunning) {
+    if (NormalChallenge(5).isRunning || NormalChallenge(13).isRunning) {
       baseMultiplier = 1 / 1.08;
       if (player.galaxies === 1) baseMultiplier = 1 / 1.07632;
       if (player.galaxies === 2) baseMultiplier = 1 / 1.072;
@@ -52,7 +52,7 @@ export function getTickSpeedMultiplier() {
     return DC.D0_01.clampMin(baseMultiplier - (galaxies * perGalaxy));
   }
   let baseMultiplier = 0.8;
-  if (NormalChallenge(5).isRunning) baseMultiplier = 0.83;
+  if (NormalChallenge(5).isRunning || NormalChallenge(13).isRunning) baseMultiplier = 0.83;
   galaxies -= 2;
   galaxies *= effects;
   galaxies *= getAdjustedGlyphEffect("cursedgalaxies");
@@ -68,7 +68,7 @@ export function getTickSpeedMultiplier() {
 export function buyTickSpeed() {
   if (!Tickspeed.isAvailableForPurchase || !Tickspeed.isAffordable) return false;
 
-  if (NormalChallenge(9).isRunning) {
+  if (NormalChallenge(9).isRunning || NormalChallenge(13).isRunning) {
     Tickspeed.multiplySameCosts();
   }
   Tutorial.turnOffEffect(TUTORIAL_STATE.TICKSPEED);
@@ -76,7 +76,7 @@ export function buyTickSpeed() {
   player.totalTickBought++;
   player.records.thisInfinity.lastBuyTime = player.records.thisInfinity.time;
   player.requirementChecks.permanent.singleTickspeed++;
-  if (NormalChallenge(2).isRunning) player.chall2Pow = 0;
+  if (NormalChallenge(2).isRunning || NormalChallenge(13).isRunning) player.chall2Pow = 0;
   GameUI.update();
   return true;
 }
@@ -86,7 +86,7 @@ export function buyMaxTickSpeed() {
   let boughtTickspeed = false;
 
   Tutorial.turnOffEffect(TUTORIAL_STATE.TICKSPEED);
-  if (NormalChallenge(9).isRunning) {
+  if (NormalChallenge(9).isRunning || NormalChallenge(13).isRunning) {
     const goal = Player.infinityGoal;
     let cost = Tickspeed.cost;
     while (Currency.antimatter.gt(cost) && cost.lt(goal)) {
@@ -108,7 +108,7 @@ export function buyMaxTickSpeed() {
 
   if (boughtTickspeed) {
     player.records.thisInfinity.lastBuyTime = player.records.thisInfinity.time;
-    if (NormalChallenge(2).isRunning) player.chall2Pow = 0;
+    if (NormalChallenge(2).isRunning || NormalChallenge(13).isRunning) player.chall2Pow = 0;
   }
 }
 
