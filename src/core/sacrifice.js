@@ -14,7 +14,7 @@ export class Sacrifice {
   }
 
   static get disabledCondition() {
-    if (NormalChallenge(10).isRunning) return "8th Dimensions are disabled";
+    if (NormalChallenge(10).isRunning || NormalChallenge(13).isRunning) return "8th Dimensions are disabled";
     if (EternityChallenge(3).isRunning) return "Eternity Challenge 3";
     if (DimBoost.purchasedBoosts < 5) return `Requires ${formatInt(5)} Dimension Boosts`;
     if (AntimatterDimension(8).totalAmount.eq(0)) return "No 8th Antimatter Dimensions";
@@ -28,7 +28,7 @@ export class Sacrifice {
     let factor = 2;
     let places = 1;
     let base = `(log₁₀(AD1)/${formatInt(10)})`;
-    if (f("Challenge8isRunning", NormalChallenge(8).isRunning)) {
+    if (f("Challenge8isRunning", NormalChallenge(8).isRunning || NormalChallenge(13).isRunning)) {
       factor = 1;
       base = "x";
     } else if (f("InfinityChallenge2isCompleted", InfinityChallenge(3).isCompleted)) {
