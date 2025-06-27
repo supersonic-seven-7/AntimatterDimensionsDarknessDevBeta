@@ -45,7 +45,7 @@ export const MultiplierTabHelper = {
       let baseMult = 1.1245;
       if (player.galaxies === 1) baseMult = 1.11888888;
       if (player.galaxies === 2) baseMult = 1.11267177;
-      if (NormalChallenge(5).isRunning) {
+      if (NormalChallenge(5).isRunning || NormalChallenge(13).isRunning) {
         baseMult = 1.08;
         if (player.galaxies === 1) baseMult = 1.07632;
         if (player.galaxies === 2) baseMult = 1.072;
@@ -66,7 +66,7 @@ export const MultiplierTabHelper = {
       effectiveCount *= Pelle.specialGlyphEffect.power;
 
       // These all need to be framed as INCREASING x/sec tick rate (ie. all multipliers > 1, all logs > 0)
-      const baseMult = 0.965 ** 2 / (NormalChallenge(5).isRunning ? 0.83 : 0.8);
+      const baseMult = 0.965 ** 2 / (NormalChallenge(5).isRunning || NormalChallenge(13).isRunning ? 0.83 : 0.8);
       const logBase = Math.log10(baseMult);
       const logPerGalaxy = -DC.D0_965.log10();
 
