@@ -2,7 +2,7 @@ import { DC } from "./constants";
 import { GameMechanicState } from "./game-mechanics";
 
 export function updateNormalAndInfinityChallenges(diff) {
-  if (NormalChallenge(11).isRunning || InfinityChallenge(7).isRunning || InfinityChallenge(13).isRunning) {
+  if (NormalChallenge(11).isRunning || NormalChallenge(13).isRunning || InfinityChallenge(7).isRunning || InfinityChallenge(13).isRunning) {
     if (AntimatterDimension(2).amount.neq(0)) {
       Currency.matter.bumpTo(1);
       // These caps are values which occur at approximately e308 IP
@@ -10,7 +10,7 @@ export function updateNormalAndInfinityChallenges(diff) {
         Math.clampMax(player.galaxies, 100) / 100;
       Currency.matter.multiply(Decimal.pow(cappedBase, diff / 20));
     }
-    if (Currency.matter.gt(Currency.antimatter.value) && NormalChallenge(11).isRunning && !Player.canCrunch) {
+    if (Currency.matter.gt(Currency.antimatter.value) && (NormalChallenge(11).isRunning || NormalChallenge(13).isRunning) && !Player.canCrunch) {
       const values = [Currency.antimatter.value, Currency.matter.value];
       softReset(0, true, true);
       Modal.message.show(`Your ${format(values[0], 2, 2)} antimatter was annihilated
@@ -18,11 +18,11 @@ export function updateNormalAndInfinityChallenges(diff) {
     }
   }
 
-  if (NormalChallenge(3).isRunning) {
+  if (NormalChallenge(3).isRunning || NormalChallenge(13).isRunning) {
     player.chall3Pow = player.chall3Pow.times(DC.D1_00038.pow(diff / 100)).clampMax(Decimal.NUMBER_MAX_VALUE);
   }
 
-  if (NormalChallenge(2).isRunning) {
+  if (NormalChallenge(2).isRunning || NormalChallenge(13).isRunning) {
     player.chall2Pow = Math.min(player.chall2Pow + diff / 100 / 1800, 1);
   }
 
