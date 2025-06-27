@@ -115,7 +115,7 @@ export function sacrificeReset() {
   if ((!player.break || (!InfinityChallenge.isRunning && NormalChallenge.isRunning)) &&
     Currency.antimatter.gt(Decimal.NUMBER_MAX_VALUE)) return false;
   if (
-    NormalChallenge(8).isRunning &&
+    (NormalChallenge(8).isRunning || NormalChallenge(13).isRunning) &&
     (Sacrifice.totalBoost.gte(Decimal.NUMBER_MAX_VALUE))
   ) {
     return false;
@@ -125,13 +125,13 @@ export function sacrificeReset() {
   player.chall8TotalSacrifice = player.chall8TotalSacrifice.times(nextBoost);
   player.sacrificed = player.sacrificed.plus(AntimatterDimension(1).amount);
   const isAch118Unlocked = Achievement(118).canBeApplied;
-  if (NormalChallenge(8).isRunning) {
+  if (NormalChallenge(8).isRunning || NormalChallenge(13).isRunning) {
     if (!isAch118Unlocked) {
       AntimatterDimensions.reset();
     }
     Currency.antimatter.reset();
   } else if (!isAch118Unlocked) {
-    AntimatterDimensions.resetAmountUpToTier(NormalChallenge(12).isRunning ? 6 : 7);
+    AntimatterDimensions.resetAmountUpToTier(NormalChallenge(12).isRunning || NormalChallenge(13).isRunning ? 6 : 7);
   }
   player.requirementChecks.infinity.noSacrifice = false;
   EventHub.dispatch(GAME_EVENT.SACRIFICE_RESET_AFTER);
