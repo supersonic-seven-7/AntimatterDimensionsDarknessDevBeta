@@ -67,20 +67,20 @@ export class Galaxy {
   }
 
   static get costMult() {
-    return Effects.min(NormalChallenge(10).isRunning ? 90 : 60);
+    return Effects.min(NormalChallenge(10).isRunning || NormalChallenge(13).isRunning ? 90 : 60);
   }
 
   static get baseCost() {
-    return NormalChallenge(10).isRunning ? 99 : 80;
+    return NormalChallenge(10).isRunning || NormalChallenge(13).isRunning ? 99 : 80;
   }
 
   static get requiredTier() {
-    return NormalChallenge(10).isRunning ? 6 : 8;
+    return NormalChallenge(10).isRunning || NormalChallenge(13).isRunning ? 6 : 8;
   }
   
   static get canBeBought() {
     if (EternityChallenge(6).isRunning && !Enslaved.isRunning) return false;
-    if (NormalChallenge(8).isRunning || InfinityChallenge(8).isRunning || InfinityChallenge(13).isRunning) return false;
+    if (NormalChallenge(8).isRunning || NormalChallenge(13).isRunning || InfinityChallenge(8).isRunning || InfinityChallenge(13).isRunning) return false;
     if (player.records.thisInfinity.maxAM.gt(Player.infinityGoal) &&
        (!player.break || Player.isInAntimatterChallenge)) return false;
     return false;
@@ -95,6 +95,7 @@ export class Galaxy {
     if (InfinityChallenge(2).isRunning) return "Locked (Infinity Challenge 2)";
     if (InfinityChallenge(12).isRunning) return "Locked (Infinity Challenge 12)";
     if (NormalChallenge(8).isRunning) return "Locked (8th Antimatter Dimension Autobuyer Challenge)";
+    if (NormalChallenge(13).isRunning) return "Locked (THE ULTIMATE CHALLENGE I)";
     return "The Physics of this Timeline do not allow for the purchase of Galaxies. Good luck, weak little fool!";
   }
 
