@@ -362,21 +362,15 @@ class AntimatterDimensionState extends DimensionState {
    */
   get costScale() {
     return new ExponentialCostScaling({
-      get baseCost() {
-        if (NormalChallenge(6).isRunning) return this._c6BaseCost;
-        if (NormalChallenge(13).isRunning) return this._c13BaseCost;
-        return this._baseCost;
-      },
-      get baseIncrease() {
-        if (NormalChallenge(6).isRunning) return this._c6BaseCostMultiplier;
-        if (NormalChallenge(13).isRunning) return this._c13BaseCostMultiplier;
-        return this._baseCostMultiplier;
-      },
-      //old functions
-      //baseCost: (NormalChallenge(6).isRunning) ? this._c6BaseCost : this._baseCost,
-      //baseIncrease: (NormalChallenge(6).isRunning) ? this._c6BaseCostMultiplier : this._baseCostMultiplier,
-      //baseCost: NormalChallenge(13).isRunning ? this._c13BaseCost : this._baseCost,
-      //baseIncrease: NormalChallenge(13).isRunning ? this._c13BaseCostMultiplier : this._baseCostMultiplier,
+      baseCost: NormalChallenge(6).isRunning ? this._c6BaseCost,
+      baseIncrease: NormalChallenge(6).isRunning ? this._c6BaseCostMultiplier,
+      baseCost: NormalChallenge(13).isRunning ? this._c13BaseCost,
+      baseIncrease: NormalChallenge(13).isRunning ? this._c13BaseCostMultiplier,
+      baseCost: (!NormalChallenge(6).isRunning && !NormalChallenge(13).isRunning) ? this._baseCost,
+      baseIncrease: (!NormalChallenge(6).isRunning && !NormalChallenge(13).isRunning) ? this._baseCostMultiplier,
+      //placeholder
+      //baseCost: (!NormalChallenge(6).isRunning && !NormalChallenge(13).isRunning) ? this._c13BaseCost : this._baseCost,
+      //baseIncrease: (!NormalChallenge(6).isRunning && !NormalChallenge(13).isRunning) ? this._c13BaseCostMultiplier : this._baseCostMultiplier,
       costScale: Player.dimensionMultDecrease,
       scalingCostThreshold: Number.MAX_VALUE
     });
