@@ -368,7 +368,7 @@ class AntimatterDimensionState extends DimensionState {
         costScale: Player.dimensionMultDecrease,
         scalingCostThreshold: Number.MAX_VALUE
       });
-    },
+    }
     if (NormalChallenge(13).isRunning) {
       return new ExponentialCostScaling({
         baseCost: NormalChallenge(13).isRunning ? this._c13BaseCost : this._baseCost,
@@ -376,7 +376,7 @@ class AntimatterDimensionState extends DimensionState {
         costScale: Player.dimensionMultDecrease,
         scalingCostThreshold: Number.MAX_VALUE
       });
-    },
+    }
     if (!NormalChallenge(6).isRunning && !NormalChallenge(13).isRunning) {
       return new ExponentialCostScaling({
         baseCost: (!NormalChallenge(6).isRunning && !NormalChallenge(13).isRunning) ? this._baseCost : this._c6BaseCost,
