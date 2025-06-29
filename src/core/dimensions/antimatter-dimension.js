@@ -361,25 +361,30 @@ class AntimatterDimensionState extends DimensionState {
    * @returns {ExponentialCostScaling}
    */
   get costScale() {
-    return new ExponentialCostScaling({
-      if (NormalChallenge(6).isRunning) {
+    if (NormalChallenge(6).isRunning) {
+      return new ExponentialCostScaling({
         baseCost: NormalChallenge(6).isRunning ? this._c6BaseCost : this._baseCost,
         baseIncrease: NormalChallenge(6).isRunning ? this._c6BaseCostMultiplier : this._baseCostMultiplier,
-      },
-      if (NormalChallenge(13).isRunning) {
+        costScale: Player.dimensionMultDecrease,
+        scalingCostThreshold: Number.MAX_VALUE
+      });
+    },
+    if (NormalChallenge(13).isRunning) {
+      return new ExponentialCostScaling({
         baseCost: NormalChallenge(13).isRunning ? this._c13BaseCost : this._baseCost,
         baseIncrease: NormalChallenge(13).isRunning ? this._c13BaseCostMultiplier : this._baseCostMultiplier,
-      },
-      if (!NormalChallenge(6).isRunning && !NormalChallenge(13).isRunning) {
+        costScale: Player.dimensionMultDecrease,
+        scalingCostThreshold: Number.MAX_VALUE
+      });
+    },
+    if (!NormalChallenge(6).isRunning && !NormalChallenge(13).isRunning) {
+      return new ExponentialCostScaling({
         baseCost: (!NormalChallenge(6).isRunning && !NormalChallenge(13).isRunning) ? this._baseCost : this._c6BaseCost,
         baseIncrease: (!NormalChallenge(6).isRunning && !NormalChallenge(13).isRunning) ? this._baseCostMultiplier : this._c6BaseCostMultiplier,
-      },
-      //placeholder
-      //baseCost: (!NormalChallenge(6).isRunning && !NormalChallenge(13).isRunning) ? this._c13BaseCost : this._baseCost,
-      //baseIncrease: (!NormalChallenge(6).isRunning && !NormalChallenge(13).isRunning) ? this._c13BaseCostMultiplier : this._baseCostMultiplier,
-      costScale: Player.dimensionMultDecrease,
-      scalingCostThreshold: Number.MAX_VALUE
-    });
+        costScale: Player.dimensionMultDecrease,
+        scalingCostThreshold: Number.MAX_VALUE
+      });
+    }
   }
 
   /**
