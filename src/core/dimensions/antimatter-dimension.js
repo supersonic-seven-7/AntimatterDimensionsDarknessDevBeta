@@ -559,7 +559,7 @@ class AntimatterDimensionState extends DimensionState {
     if (!EternityMilestone.unlockAllND.isReached && this.tier > DimBoost.totalBoosts + 4) return false;
     const hasPrevTier = this.tier === 1 || AntimatterDimension(this.tier - 1).totalAmount.gt(0);
     if (!EternityMilestone.unlockAllND.isReached && !hasPrevTier) return false;
-    return this.tier < 7 || !NormalChallenge(10).isRunning || !NormalChallenge(13).isRunning;
+    return this.tier < 7 || (!NormalChallenge(10).isRunning && !NormalChallenge(13).isRunning);
   }
 
   reset() {
