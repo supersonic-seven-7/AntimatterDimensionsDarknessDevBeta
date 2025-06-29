@@ -366,12 +366,12 @@ class AntimatterDimensionState extends DimensionState {
         if (NormalChallenge(6).isRunning) return this._c6BaseCost;
         if (NormalChallenge(13).isRunning) return this._c13BaseCost;
         return this._baseCost;
-      }
+      },
       get baseIncrease() {
         if (NormalChallenge(6).isRunning) return this._c6BaseCostMultiplier;
         if (NormalChallenge(13).isRunning) return this._c13BaseCostMultiplier;
         return this._baseCostMultiplier;
-      }
+      },
       //old functions
       //baseCost: (NormalChallenge(6).isRunning) ? this._c6BaseCost : this._baseCost,
       //baseIncrease: (NormalChallenge(6).isRunning) ? this._c6BaseCostMultiplier : this._baseCostMultiplier,
