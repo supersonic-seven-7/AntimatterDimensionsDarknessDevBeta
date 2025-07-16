@@ -119,7 +119,7 @@ export const secretAchievements = [
     id: 33,
     name: "Welcome to the Endgame",
     description: "Reach the current Endgame. (Insert AD: Endgame reference here)",
-    checkRequirement: () => InfinityChallenge(12).isRunning,
+    checkRequirement: () => Currency.eternityPoints.exponent >= 100,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER
   },
   {
