@@ -45,23 +45,8 @@ class NormalChallengeState extends GameMechanicState {
   }
   
   get isRunning() {
-    const isPartOfIC1 = this.id !== 9 && this.id !== 12 && this.id !== 13;
-    return player.challenge.normal.current === this.id || (isPartOfIC1 && InfinityChallenge(1).isRunning);
-  }
-  
-  get isRunning() {
-    const isPartOfIC2 = this.id !== 12 && this.id !== 13;
-    return player.challenge.normal.current === this.id || (isPartOfIC2 && InfinityChallenge(2).isRunning);
-  }
-
-  get isRunning() {
-    const isPartOfIC12 = this.id !== 9 && this.id !== 12 && this.id !== 13;
-    return player.challenge.normal.current === this.id || (isPartOfIC12 && InfinityChallenge(12).isRunning);
-  }
-  
-  get isRunning() {
-    const isPartOfUC2 = this.id !== 12 && this.id !== 13;
-    return player.challenge.normal.current === this.id || (isPartOfUC2 && InfinityChallenge(13).isRunning);
+    const isPartOfIC = this.id !== 9 && this.id !== 12 && this.id !== 13;
+    return player.challenge.normal.current === this.id || (isPartOfIC && (InfinityChallenge(1).isRunning || InfinityChallenge(2).isRunning || InfinityChallenge(12).isRunning || InfinityChallenge(13).isRunning));
   }
   
   get isOnlyActiveChallenge() {
