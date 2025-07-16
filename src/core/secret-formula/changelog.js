@@ -9,6 +9,37 @@ export const changelog = [
    * }
    */
   {
+    date: [2025, 7, 16],
+    name: "Minor Bugfixes",
+    info: `
+<b>Bugs fixed:</b><br>
+<ul>
+<li>Supercharged IC rewards were acting up</li>
+<li>Infinity Challenges not behaving properly</li>
+<li>Some text still showed "Replicanti Galaxy" instead of "Replicanti Booster"</li>
+</ul>
+<br>
+`
+  },
+  {
+    date: [2025, 6, 25],
+    name: "Eternal Darkness",
+    info: `
+<b>Things changed:</b><br>
+<ul>
+<li>Added Eternity</li>
+<li>Added Ultimate Challenges</li>
+<li>Rescaled Eternity Points</li>
+<li>Fixed terminology errors</li>
+<li>Added Eternity Challenges 1-9</li>
+<li>Rebalanced Achievements</li>
+<li>Rescaled Infinity Challenges</li>
+<li>Content is currently up to EC10x1, which is the end for now</li>
+</ul>
+<br>
+`
+  },
+  {
     date: [2025, 5, 28],
     name: "Darkness+1",
     info: `
