@@ -259,7 +259,7 @@ export const normalAchievements = [
     id: 45,
     name: "Faster than a potato",
     get description() { return `Get more than ${format(DC.E29)} ticks per second.`; },
-    checkRequirement: () => Tickspeed.current.exponent <= -26,
+    checkRequirement: () => Tickspeed.current.exponent <= -27,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     get reward() { return `Multiply starting tickspeed by ${formatX(1.02, 0, 2)}.`; },
     effect: 0.98
@@ -425,7 +425,7 @@ export const normalAchievements = [
     id: 66,
     name: "Faster than a squared potato",
     get description() { return `Get more than ${format(DC.E58)} ticks per second.`; },
-    checkRequirement: () => Tickspeed.current.exponent <= -55,
+    checkRequirement: () => Tickspeed.current.exponent <= -56,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     get reward() { return `Multiply starting tickspeed by ${formatX(1.02, 0, 2)}.`; },
     effect: 0.98
@@ -578,7 +578,7 @@ export const normalAchievements = [
     id: 86,
     name: "You can't even bend time bro",
     get description() { return `Reach ${format(DC.E100)} ticks per second.`; },
-    checkRequirement: () => Tickspeed.current.exponent <= -97,
+    checkRequirement: () => Tickspeed.current.exponent <= -98,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     get reward() { return `Your Galaxy is ${formatPercents(0.5)} stronger, and Dimboosts are ${formatX(1.5, 1, 1)} more powerful.`; },
     effect: 1.5
@@ -987,7 +987,7 @@ export const normalAchievements = [
     id: 135,
     name: "Faster than a potato^286",
     get description() { return `Get more than ${formatPostBreak("1e8294")} ticks per second.`; },
-    checkRequirement: () => Tickspeed.current.exponent <= -8291,
+    checkRequirement: () => Tickspeed.current.exponent <= -8292,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     get reward() {
       return "The hardcap of the Infinity Challenge 7 reward becomes a softcap.";
