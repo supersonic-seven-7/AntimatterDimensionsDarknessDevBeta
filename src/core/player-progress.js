@@ -68,4 +68,8 @@ export class PlayerProgress {
   static infinityChallengeCompleted() {
     return InfinityChallenges.all.some(c => c.isCompleted);
   }
+
+  static ultimateChallengeCompleted() {
+    return UltimateChallenges.all.some(c => c.isCompleted);
+  }
 }
