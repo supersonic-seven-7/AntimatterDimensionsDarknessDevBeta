@@ -21,6 +21,7 @@ function handleChallengeCompletion() {
   if (!player.options.retryChallenge) {
     player.challenge.normal.current = 0;
     player.challenge.infinity.current = 0;
+    player.challenge.ultimate.current = 0;
   }
 }
 
