@@ -40,6 +40,7 @@ import TeresaTab from "./celestial-teresa/TeresaTab";
 import TimeDilationTab from "./time-dilation/TimeDilationTab";
 import TimeDimensionsTab from "./time-dimensions/TimeDimensionsTab";
 import TimeStudiesTab from "./time-studies/TimeStudiesTab";
+import UltimateChallengesTab from "./ultimate-challenges/UltimateChallengesTab";
 import VTab from "./celestial-v/VTab";
 
 const TabComponents = {
@@ -69,6 +70,7 @@ const TabComponents = {
   NormalChallengesTab,
   InfinityChallengesTab,
   EternityChallengesTab,
+  UltimateChallengesTab,
   InfinityUpgradesTab,
   BreakInfinityTab,
   ReplicantiTab,
