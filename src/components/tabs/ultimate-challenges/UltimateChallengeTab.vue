@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     update() {
-      this.nextUC = InfinityChallenges.nextUC;
+      this.nextUC = UltimateChallenges.nextUC;
       this.showAllChallenges = player.options.showAllChallenges;
     },
     isChallengeVisible(challenge) {
