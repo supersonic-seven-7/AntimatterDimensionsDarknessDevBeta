@@ -237,6 +237,17 @@ export const tabs = [
           EternityChallenges.all.some(ec => ec.completions > 0),
         id: 2,
         hidable: true
+      },
+      {
+        key: "ultimate",
+        name: "Ultimate Challenges",
+        symbol: "∄",
+        component: "ultimate-challenges-tab",
+        condition: () =>
+          PlayerProgress.realityUnlocked() ||
+          player.challenge.eternity.unlocked !== 0,
+        id: 3,
+        hidable: true
       }
     ],
   },
