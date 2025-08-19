@@ -13,6 +13,11 @@ class UltimateChallengeRewardState extends GameMechanicState {
 }
 
 class UltimateChallengeState extends GameMechanicState {
+  constructor(config) {
+    super(config);
+    this._reward = new UltimateChallengeRewardState(config.reward, this);
+  }
+  
   get isQuickResettable() {
     return this.config.isQuickResettable;
   }
