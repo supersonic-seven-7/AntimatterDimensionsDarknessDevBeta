@@ -8,7 +8,7 @@ export const infinityChallenges = [
     goal: Decimal.NUMBER_MAX_VALUE,
     isQuickResettable: true,
     reward: "You can Break Infinity",
-    unlockReq: PlayerProgress.eternityUnlocked(),
+    unlockReq: Decimal.NUMBER_MAX_VALUE,
   },
   {
     id: 2,
