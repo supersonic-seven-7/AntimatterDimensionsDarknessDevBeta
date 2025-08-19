@@ -287,5 +287,12 @@ export const Time = {
    */
   get infinityChallengeSum() {
     return this.fromMilliseconds(() => GameCache.infinityChallengeTimeSum.value);
+  },
+  
+  /**
+   * @return {TimeSpan}
+   */
+  get ultimateChallengeSum() {
+    return this.fromMilliseconds(() => GameCache.ultimateChallengeTimeSum.value);
   }
 };
