@@ -43,6 +43,11 @@ export default {
           activityToken: () => player.dilation.active
         },
         {
+          name: token => `THE ULTIMATE CHALLENGE ${token}`,
+          isActive: token => token > 0,
+          activityToken: () => player.challenge.ultimate.current
+        },
+        {
           name: token => `Eternity Challenge ${token}`,
           isActive: token => token > 0,
           activityToken: () => player.challenge.eternity.current
@@ -97,10 +102,10 @@ export default {
       if (this.activeChallengeNames.length === 0) {
         return "the Dark Universe (no active challenges). Good luck.";
       }
-      if (player.challenge.infinity.current === 13) {
+      if (player.challenge.ultimate.current === 2) {
         return "THE ULTIMATE CHALLENGE II";
       }
-      if (player.challenge.normal.current === 13) {
+      if (player.challenge.ultimate.current === 1) {
         return "THE ULTIMATE CHALLENGE I";
       }
       return this.activeChallengeNames.join(" + ");
@@ -179,6 +184,7 @@ export default {
       if (fullName.match(" Challenge$")) Tab.challenges.normal.show(true);
       else if (fullName.match("Infinity Challenge")) Tab.challenges.infinity.show(true);
       else if (fullName.match("Eternity Challenge")) Tab.challenges.eternity.show(true);
+      else if (fullName.match("ULTIMATE CHALLENGE")) Tab.challenges.ultimate.show(true);
       else if (player.dilation.active) Tab.eternity.dilation.show(true);
       else Tab.celestials[celestial].show(true);
     },
