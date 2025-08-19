@@ -72,9 +72,6 @@ class UltimateChallengeState extends GameMechanicState {
     return this.isRunning;
   }
 
-  /**
-   * @return {UltimateChallengeRewardState}
-   */
   get goal() {
     if (this.id === 1) return Decimal.NUMBER_MAX_VALUE;
     if (this.id === 2) return DC.E1_6E6;
@@ -100,15 +97,8 @@ class UltimateChallengeState extends GameMechanicState {
   }
 }
 
-/**
- * @param {number} id
- * @return {UltimateChallengeState}
- */
 export const UltimateChallenge = UltimateChallengeState.createAccessor(GameDatabase.challenges.ultimate);
 
-/**
- * @returns {UltimateChallengeState}
- */
 Object.defineProperty(UltimateChallenge, "current", {
   get: () => (player.challenge.ultimate.current > 0
     ? UltimateChallenge(player.challenge.ultimate.current)
@@ -120,9 +110,6 @@ Object.defineProperty(UltimateChallenge, "isRunning", {
 });
 
 export const UltimateChallenges = {
-  /**
-   * @type {UltimateChallengeState[]}
-   */
   all: UltimateChallenge.index.compact(),
   completeAll() {
     for (const challenge of UltimateChallenges.all) challenge.complete();
@@ -135,10 +122,7 @@ export const UltimateChallenges = {
   },
   get nextUCUnlockReq() {
     return this.nextUC?.unlockReq;
-  }
-  /**
-   * @returns {UltimateChallengeState[]}
-   */
+  },
   get completed() {
     return UltimateChallenges.all.filter(x => x.isCompleted);
   }
