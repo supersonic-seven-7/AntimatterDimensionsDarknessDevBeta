@@ -2928,6 +2928,10 @@ br {
   margin-top: auto;
   margin-left: 2rem;
 }
+.l-challenge-records-tab__ultimate_challenges {
+  margin-top: auto;
+  margin-left: 2rem;
+}
 
 /* #endregion Challenge Records */
 
@@ -3434,6 +3438,13 @@ br {
   border-radius: var(--var-border-radius, 1rem);
 }
 
+.c-challenge-box--ultimate {
+  height: 18rem;
+  color: var(--color-text);
+  background-color: var(--color-prestige--accent);
+  border-color: var(--color-pelle--base);
+}
+
 .c-challenge-box__reward-description--small-text {
   font-size: 0.95rem;
 }
@@ -3476,6 +3487,14 @@ br {
 }
 
 .l-challenge-box__bottom--infinity {
+  display: flex;
+  flex-direction: column;
+  height: 5.5rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.l-challenge-box__bottom--ultimate {
   display: flex;
   flex-direction: column;
   height: 5.5rem;
