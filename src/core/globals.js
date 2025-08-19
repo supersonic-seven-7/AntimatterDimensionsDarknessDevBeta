@@ -73,6 +73,7 @@ export * from "./normal-challenges";
 export * from "./infinity-challenges";
 export * from "./eternity";
 export * from "./eternity-challenge";
+export * from "./ultimate-challenge";
 export * from "./reality";
 export * from "./replicanti";
 export * from "./time-theorems";
