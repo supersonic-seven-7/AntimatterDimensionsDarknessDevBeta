@@ -1,6 +1,6 @@
 import { DC } from "../../constants";
 
-export const infinityChallenges = [
+export const ultimateChallenges = [
   {
     id: 1,
     description: () => `You are locked inside all Normal Challenges AT THE SAME TIME. This includes
