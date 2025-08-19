@@ -3,6 +3,7 @@ import { ProgressChecker } from "./storage/progress-checker";
 import CloudInvalidDataModal from "@/components/modals/cloud/CloudInvalidDataModal";
 import CloudLoadConflictModal from "@/components/modals/cloud/CloudLoadConflictModal";
 import CloudSaveConflictModal from "@/components/modals/cloud/CloudSaveConflictModal";
+import UltimateChallengeStartModal from "@/components/modals/challenges/UltimateChallengeStartModal";
 import EternityChallengeStartModal from "@/components/modals/challenges/EternityChallengeStartModal";
 import InfinityChallengeStartModal from "@/components/modals/challenges/InfinityChallengeStartModal";
 import MessageModal from "@/components/modals/MessageModal";
@@ -194,6 +195,7 @@ class TimeModal extends Modal {
 // If a new modal which can be shown in the same queue multiple times needs to be added
 // Additional code needs to be written to account for that
 
+Modal.startUltimateChallenge = new ChallengeConfirmationModal(UltimateChallengeStartModal);
 Modal.startEternityChallenge = new ChallengeConfirmationModal(EternityChallengeStartModal);
 Modal.startInfinityChallenge = new ChallengeConfirmationModal(InfinityChallengeStartModal);
 Modal.startNormalChallenge = new ChallengeConfirmationModal(NormalChallengeStartModal);
