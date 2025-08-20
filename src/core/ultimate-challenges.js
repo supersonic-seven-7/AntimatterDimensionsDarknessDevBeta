@@ -1,6 +1,13 @@
 import { DC } from "./constants";
 import { GameMechanicState } from "./game-mechanics";
 
+export function tryCompleteUltimateChallenges() {
+  if (Achievement(121).isUnlocked) {
+    const toComplete = UltimateChallenges.all.filter(x => x.isUnlocked && !x.isCompleted);
+    for (const challenge of toComplete) challenge.complete();
+  }
+}
+
 class UltimateChallengeRewardState extends GameMechanicState {
   constructor(config, challenge) {
     super(config);
