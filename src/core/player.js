@@ -51,7 +51,7 @@ window.player = {
       unlocked: 0,
       requirementBits: 0,
     },
-    infinity: {
+    ultimate: {
       current: 0,
       bestTimes: Array.repeat(Number.MAX_VALUE, 2),
       completedBits: 0,
