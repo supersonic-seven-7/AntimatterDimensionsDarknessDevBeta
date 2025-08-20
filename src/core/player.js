@@ -929,19 +929,19 @@ export const Player = {
   },
 
   get isInAntimatterChallenge() {
-    return NormalChallenge.isRunning || InfinityChallenge.isRunning;
+    return NormalChallenge.isRunning || InfinityChallenge.isRunning || UltimateChallenge.isRunning;
   },
 
   get antimatterChallenge() {
-    return NormalChallenge.current || InfinityChallenge.current;
+    return NormalChallenge.current || InfinityChallenge.current || UltimateChallenge.current;
   },
 
   get isInAnyChallenge() {
-    return this.isInAntimatterChallenge || EternityChallenge.isRunning || UltimateChallenge.isRunning;
+    return this.isInAntimatterChallenge || EternityChallenge.isRunning;
   },
 
   get anyChallenge() {
-    return this.antimatterChallenge || EternityChallenge.current || UltimateChallenge.current;
+    return this.antimatterChallenge || EternityChallenge.current;
   },
 
   get canCrunch() {
