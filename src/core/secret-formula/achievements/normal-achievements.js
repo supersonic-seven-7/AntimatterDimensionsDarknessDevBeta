@@ -971,7 +971,7 @@ export const normalAchievements = [
       player.IPMultPurchases === 0 &&
       Currency.infinityPoints.exponent >= 70000,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
-    reward: "You start Eternities with all Infinity Challenges unlocked and completed."
+    reward: "You start Eternities with all Infinity Challenges (and UC2) unlocked and completed."
   },
   {
     id: 134,
