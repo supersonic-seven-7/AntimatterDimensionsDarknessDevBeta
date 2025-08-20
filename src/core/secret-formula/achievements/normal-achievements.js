@@ -850,7 +850,7 @@ export const normalAchievements = [
     get description() { return `Reach ${formatPostBreak("1e30008")} Infinity Points.`; },
     checkRequirement: () => Currency.infinityPoints.exponent >= 30008,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
-    reward: `Unlock auto-completion of IC13/UC2`,
+    reward: `Unlock auto-completion of UC2`,
   },
   {
     id: 122,
