@@ -42,6 +42,7 @@ class UltimateChallengeState extends GameMechanicState {
 
   get isRunning() {
     return player.challenge.ultimate.current === this.id;
+    if (this.id === 1) player.break = false;
   }
 
   requestStart() {
@@ -74,7 +75,7 @@ class UltimateChallengeState extends GameMechanicState {
   complete() {
     player.challenge.ultimate.completedBits |= 1 << this.id;
     EventHub.dispatch(GAME_EVENT.ULTIMATE_CHALLENGE_COMPLETED);
-    if (this.id !== 1) player.break = true;
+    player.break = true;
   }
 
   get isEffectActive() {
