@@ -14,7 +14,7 @@ export class Sacrifice {
   }
 
   static get disabledCondition() {
-    if (NormalChallenge(10).isRunning || NormalChallenge(13).isRunning) return "8th Dimensions are disabled";
+    if (NormalChallenge(10).isRunning || UltimateChallenge(1).isRunning) return "8th Dimensions are disabled";
     if (EternityChallenge(3).isRunning) return "Eternity Challenge 3";
     if (DimBoost.purchasedBoosts < 5) return `Requires ${formatInt(5)} Dimension Boosts`;
     if (AntimatterDimension(8).totalAmount.eq(0)) return "No 8th Antimatter Dimensions";
@@ -28,7 +28,7 @@ export class Sacrifice {
     let factor = 2;
     let places = 1;
     let base = `(log₁₀(AD1)/${formatInt(10)})`;
-    if (f("Challenge8isRunning", NormalChallenge(8).isRunning || NormalChallenge(13).isRunning)) {
+    if (f("Challenge8isRunning", NormalChallenge(8).isRunning || UltimateChallenge(1).isRunning)) {
       factor = 1;
       base = "x";
     } else if (f("InfinityChallenge2isCompleted", InfinityChallenge(3).isCompleted)) {
@@ -56,7 +56,7 @@ export class Sacrifice {
   static get sacrificeExponent() {
     let base;
     // C8 seems weaker, but it actually follows its own formula which ends up being stronger based on how it stacks
-    if (NormalChallenge(8).isRunning || NormalChallenge(13).isRunning) base = 1;
+    if (NormalChallenge(8).isRunning || UltimateChallenge(1).isRunning) base = 1;
     // Pre-Reality this was 100; having ach32/57 results in 1.2x, which is brought back in line by changing to 120
     else if (InfinityChallenge(3).isCompleted) base = 1 / 120;
     else base = 2;
@@ -78,7 +78,7 @@ export class Sacrifice {
     // ND8, then sacrificed amount is updated, and then the updated sacrifice multiplier then gets applied to a
     // different variable that is only applied during C8. However since sacrifice only depends on sacrificed ND1, this
     // can actually be done in a single calculation in order to handle C8 in a less hacky way.
-    if (NormalChallenge(8).isRunning || NormalChallenge(13).isRunning) {
+    if (NormalChallenge(8).isRunning || UltimateChallenge(1).isRunning) {
       prePowerSacrificeMult = nd1Amount.pow(0.05).dividedBy(sacrificed.pow(0.04)).clampMin(1)
         .times(nd1Amount.pow(0.05).dividedBy(sacrificed.plus(nd1Amount).pow(0.04)));
     } else if (InfinityChallenge(3).isCompleted) {
@@ -94,7 +94,7 @@ export class Sacrifice {
     if (player.sacrificed.eq(0)) return DC.D1;
     // C8 uses a variable that keeps track of a sacrifice boost that persists across sacrifice-resets and isn't
     // used anywhere else, which also naturally takes account of the exponent from achievements and time studies.
-    if (NormalChallenge(8).isRunning || NormalChallenge(13).isRunning) {
+    if (NormalChallenge(8).isRunning || UltimateChallenge(1).isRunning) {
       return player.chall8TotalSacrifice;
     }
 
@@ -115,7 +115,7 @@ export function sacrificeReset() {
   if ((!player.break || (!InfinityChallenge.isRunning && NormalChallenge.isRunning)) &&
     Currency.antimatter.gt(Decimal.NUMBER_MAX_VALUE)) return false;
   if (
-    (NormalChallenge(8).isRunning || NormalChallenge(13).isRunning) &&
+    (NormalChallenge(8).isRunning || UltimateChallenge(1).isRunning) &&
     (Sacrifice.totalBoost.gte(Decimal.NUMBER_MAX_VALUE))
   ) {
     return false;
@@ -125,13 +125,13 @@ export function sacrificeReset() {
   player.chall8TotalSacrifice = player.chall8TotalSacrifice.times(nextBoost);
   player.sacrificed = player.sacrificed.plus(AntimatterDimension(1).amount);
   const isAch118Unlocked = Achievement(118).canBeApplied;
-  if (NormalChallenge(8).isRunning || NormalChallenge(13).isRunning) {
+  if (NormalChallenge(8).isRunning || UltimateChallenge(1).isRunning) {
     if (!isAch118Unlocked) {
       AntimatterDimensions.reset();
     }
     Currency.antimatter.reset();
   } else if (!isAch118Unlocked) {
-    AntimatterDimensions.resetAmountUpToTier(NormalChallenge(12).isRunning || NormalChallenge(13).isRunning ? 6 : 7);
+    AntimatterDimensions.resetAmountUpToTier(NormalChallenge(12).isRunning || UltimateChallenge(1).isRunning ? 6 : 7);
   }
   player.requirementChecks.infinity.noSacrifice = false;
   EventHub.dispatch(GAME_EVENT.SACRIFICE_RESET_AFTER);
