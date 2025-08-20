@@ -20,7 +20,7 @@ export default {
       return `Total Tickspeed: ${format(this.tickspeed, 2, 3)} / sec`;
     },
     perUpgrade() {
-      if (InfinityChallenge(3).isRunning || InfinityChallenge(13).isRunning) return `Tickspeed upgrades give
+      if (InfinityChallenge(3).isRunning || UltimateChallenge(2).isRunning) return `Tickspeed upgrades give
         ${formatX(1.05 + this.galaxyCount * 0.005, 3, 3)} to all ADs`;
       return `ADs produce ${formatX(this.mult.reciprocal(), 2, 3)} faster per Tickspeed upgrade`;
     },
