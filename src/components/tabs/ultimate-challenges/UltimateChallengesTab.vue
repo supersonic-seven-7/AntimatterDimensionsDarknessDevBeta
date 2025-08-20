@@ -22,7 +22,7 @@ export default {
     },
     nextAtDisplay() {
       const first = this.nextUC?.id === 1;
-      const last = this.nextUC?.id === 2;
+      const last = this.nextUC?.id === undefined;
       const next = UltimateChallenges.nextUCUnlockReq;
 
       if (first) return `The first Ultimate Challenge unlocks at Eternity.`;
