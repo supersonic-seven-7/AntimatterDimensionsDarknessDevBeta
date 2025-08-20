@@ -215,9 +215,9 @@ class InfinityDimensionState extends DimensionState {
     if (Enslaved.isRunning) {
       return 1;
     }
-    return (InfinityDimensions.capIncrease * InfinityChallenge(13).reward.effectOrDefault(1)) + (this.tier === 8
+    return (InfinityDimensions.capIncrease * UltimateChallenge(2).reward.effectOrDefault(1)) + (this.tier === 8
       ? Number.MAX_VALUE
-      : InfinityDimensions.HARDCAP_PURCHASES * InfinityChallenge(13).reward.effectOrDefault(1));
+      : InfinityDimensions.HARDCAP_PURCHASES * UltimateChallenge(2).reward.effectOrDefault(1));
   }
 
   get isCapped() {
@@ -360,7 +360,7 @@ export const InfinityDimensions = {
   },
 
   get capMult() {
-    return InfinityChallenge(13).reward.effectOrDefault(1);
+    return UltimateChallenge(2).reward.effectOrDefault(1);
   },
 
   get totalDimCap() {
@@ -383,7 +383,7 @@ export const InfinityDimensions = {
     }
 
     if (EternityChallenge(7).isRunning) {
-      if (!NormalChallenge(10).isRunning || NormalChallenge(13).isRunning) {
+      if (!NormalChallenge(10).isRunning || UltimateChallenge(1).isRunning) {
         InfinityDimension(1).produceDimensions(AntimatterDimension(7), diff);
       }
     } else {
