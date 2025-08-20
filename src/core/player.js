@@ -925,7 +925,7 @@ export const Player = {
   defaultStart: deepmergeAll([{}, player]),
 
   get isInMatterChallenge() {
-    return NormalChallenge(11).isRunning || NormalChallenge(13).isRunning || InfinityChallenge(7).isRunning || InfinityChallenge(13).isRunning;
+    return NormalChallenge(11).isRunning || UltimateChallenge(1).isRunning || InfinityChallenge(7).isRunning || UltimateChallenge(2).isRunning;
   },
 
   get isInAntimatterChallenge() {
