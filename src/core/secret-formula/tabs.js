@@ -245,7 +245,7 @@ export const tabs = [
         component: "ultimate-challenges-tab",
         condition: () =>
           PlayerProgress.realityUnlocked() ||
-          player.challenge.eternity.unlocked !== 0,
+          PlayerProgress.eternityUnlocked(),
         id: 3,
         hidable: true
       }
