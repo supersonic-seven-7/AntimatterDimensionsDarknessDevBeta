@@ -14,7 +14,7 @@ class DimBoostRequirement {
 
 export class DimBoost {
   static get power() {
-    if (NormalChallenge(8).isRunning || NormalChallenge(13).isRunning) {
+    if (NormalChallenge(8).isRunning || UltimateChallenge(1).isRunning) {
       return DC.D1;
     }
 
@@ -39,7 +39,7 @@ export class DimBoost {
         InfinityUpgrade.dimboostMult.chargedEffect,
         BreakInfinityUpgrade.galaxyBoost
       );
-    if (InfinityChallenge(13).isRunning) boost = boost.times(0.1);
+    if (UltimateChallenge(2).isRunning) boost = boost.times(0.1);
     if (GlyphAlteration.isAdded("effarig")) boost = boost.pow(getSecondaryGlyphEffect("effarigforgotten"));
     return boost;
   }
@@ -52,7 +52,7 @@ export class DimBoost {
   }
 
   static get maxDimensionsUnlockable() {
-    return (NormalChallenge(10).isRunning || NormalChallenge(13).isRunning) ? 6 : 8;
+    return (NormalChallenge(10).isRunning || UltimateChallenge(1).isRunning) ? 6 : 8;
   }
 
   static get canUnlockNewDimension() {
@@ -60,7 +60,7 @@ export class DimBoost {
   }
 
   static get maxBoosts() {
-    if (Ra.isRunning || InfinityChallenge(10).isRunning || InfinityChallenge(13).isRunning || EternityChallenge(6).isRunning) {
+    if (Ra.isRunning || InfinityChallenge(10).isRunning || UltimateChallenge(2).isRunning || EternityChallenge(6).isRunning) {
       // Ra makes boosting impossible. Note that this function isn't called
       // when giving initial boosts, so the player will still get those.
       return 0;
@@ -74,7 +74,7 @@ export class DimBoost {
       // more boosts than this; it's just that boosts beyond this are pointless.
       return 2;
     }
-    if (NormalChallenge(8).isRunning || NormalChallenge(13).isRunning) {
+    if (NormalChallenge(8).isRunning || UltimateChallenge(1).isRunning) {
       // See above. It's important we check for this after checking for IC1 since otherwise
       // this case would trigger when we're in IC1.
       return 5;
@@ -96,10 +96,10 @@ export class DimBoost {
       if (InfinityChallenge(2).isRunning) return "Locked (Infinity Challenge 2)";
       if (InfinityChallenge(10).isRunning) return "Locked (Infinity Challenge 10)";
       if (InfinityChallenge(12).isRunning) return "Locked (Infinity Challenge 12)";
-      if (InfinityChallenge(13).isRunning) return "Locked (THE ULTIMATE CHALLENGE II)";
+      if (UltimateChallenge(2).isRunning) return "Locked (THE ULTIMATE CHALLENGE II)";
       if (EternityChallenge(6).isRunning) return "Locked (Eternity Challenge 6)";
       if (NormalChallenge(8).isRunning) return "Locked (8th Antimatter Dimension Autobuyer Challenge)";
-      if (NormalChallenge(13).isRunning) return "Locked (THE ULTIMATE CHALLENGE I)";
+      if (UltimateChallenge(1).isRunning) return "Locked (THE ULTIMATE CHALLENGE I)";
     }
     return null;
   }
@@ -116,7 +116,7 @@ export class DimBoost {
       TimeStudy(211),
       TimeStudy(222)
     );
-    if (tier === 6 && (NormalChallenge(10).isRunning || NormalChallenge(13).isRunning)) {
+    if (tier === 6 && (NormalChallenge(10).isRunning || UltimateChallenge(1).isRunning)) {
       amount += Math.round((targetResets - 3) * (20 - discount));
     } else if (tier === 8) {
       amount += Math.round((targetResets - 5) * (15 - discount));
@@ -143,7 +143,7 @@ export class DimBoost {
     let newUnlock = "";
     if (!allNDUnlocked && boosts < DimBoost.maxDimensionsUnlockable - 4) {
       newUnlock = `unlock the ${boosts + 5}th Dimension`;
-    } else if (boosts === 4 && !NormalChallenge(10).isRunning && !NormalChallenge(13).isRunning && !EternityChallenge(3).isRunning) {
+    } else if (boosts === 4 && !NormalChallenge(10).isRunning && !UltimateChallenge(1).isRunning && !EternityChallenge(3).isRunning) {
       newUnlock = "unlock Sacrifice";
     }
 
@@ -153,7 +153,7 @@ export class DimBoost {
     if (boosts >= DimBoost.maxDimensionsUnlockable - 1) dimensionRange = `to all Dimensions`;
 
     let boostEffects;
-    if (NormalChallenge(8).isRunning || NormalChallenge(13).isRunning) boostEffects = newUnlock;
+    if (NormalChallenge(8).isRunning || UltimateChallenge(1).isRunning) boostEffects = newUnlock;
     else if (newUnlock === "") boostEffects = `${formattedMultText} ${dimensionRange}`;
     else boostEffects = `${newUnlock} and ${formattedMultText} ${dimensionRange}`;
 
