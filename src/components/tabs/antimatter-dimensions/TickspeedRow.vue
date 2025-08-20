@@ -27,7 +27,7 @@ export default {
       };
     },
     multiplierDisplay() {
-      if (InfinityChallenge(4).isRunning || InfinityChallenge(13).isRunning) return `Multiply all Antimatter Dimensions by
+      if (InfinityChallenge(4).isRunning || UltimateChallenge(2).isRunning) return `Multiply all Antimatter Dimensions by
         ${formatX(1.05, 3, 3)}`;
       const tickmult = this.mult;
       return `${formatX(tickmult.reciprocal(), 2, 3)} faster / upgrade.`;
