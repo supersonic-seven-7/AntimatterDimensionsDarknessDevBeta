@@ -55,19 +55,19 @@ export default {
     updateChallengePower() {
       const isC2Running = NormalChallenge(2).isRunning;
       const isC3Running = NormalChallenge(3).isRunning;
-      const isC13Running = NormalChallenge(13).isRunning;
+      const isUC1Running = UltimateChallenge(1).isRunning;
       const isIC6Running = InfinityChallenge(7).isRunning;
       const isIC8Running = InfinityChallenge(9).isRunning;
-      const isIC13Running = InfinityChallenge(13).isRunning;
-      const isChallengePowerVisible = isC2Running || isC3Running || isC13Running || isIC6Running || isIC8Running  || isIC13Running;
+      const isUC2Running = UltimateChallenge(2).isRunning;
+      const isChallengePowerVisible = isC2Running || isC3Running || isUC1Running || isIC6Running || isIC8Running  || isUC2Running;
       this.isChallengePowerVisible = isChallengePowerVisible;
       if (isChallengePowerVisible) {
         const powerArray = [];
-        if (isC2Running || isC13Running) powerArray.push(`Production: ${formatPercents(player.chall2Pow, 2, 2)}`);
-        if (isC3Running || isC13Running) powerArray.push(`First dimension: ${formatX(player.chall3Pow, 3, 4)}`);
-        if (isIC6Running || isIC13Running) powerArray.push(`Matter: Antimatter Dimensions /
+        if (isC2Running || isUC1Running) powerArray.push(`Production: ${formatPercents(player.chall2Pow, 2, 2)}`);
+        if (isC3Running || isUC1Running) powerArray.push(`First dimension: ${formatX(player.chall3Pow, 3, 4)}`);
+        if (isIC6Running || isUC2Running) powerArray.push(`Matter: Antimatter Dimensions /
           ${format(new Decimal(1).timesEffectOf(InfinityChallenge(7)), 2, 2)}`);
-        if (isIC8Running || isIC13Running) powerArray.push(`Production: /
+        if (isIC8Running || isUC2Running) powerArray.push(`Production: /
           ${format(new Decimal(1).timesEffectOf(InfinityChallenge(9)).reciprocal(), 2, 2)}`);
         this.challengePower = powerArray.join(", ");
       }
