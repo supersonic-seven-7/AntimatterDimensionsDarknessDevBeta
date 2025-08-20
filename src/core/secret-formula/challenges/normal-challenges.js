@@ -132,19 +132,5 @@ export const normalChallenges = [
     name: "Automated Big Crunches",
     reward: "Big Crunches Autobuyer",
     lockedAt: DC.D16,
-  },
-  {
-    id: 13,
-    legacyId: 13,
-    isQuickResettable: true,
-    description: () => `You are locked inside all Normal Challenges AT THE SAME TIME. This includes
-    Challenge ${formatInt(9)} and Challenge ${formatInt(12)}.`,
-    name: "THE ULTIMATE CHALLENGE I",
-    reward: "You can Break Infinity",
-    lockedAt() {
-      return PlayerProgress.eternityUnlocked()
-        ? DC.D16
-        : DC.E1E15;
-    },
   }
 ];
