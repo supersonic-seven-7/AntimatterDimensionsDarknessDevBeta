@@ -7,7 +7,9 @@ export const ultimateChallenges = [
     Challenge ${formatInt(9)} and Challenge ${formatInt(12)}.`,
     goal: Decimal.NUMBER_MAX_VALUE,
     isQuickResettable: true,
-    reward: "You can Break Infinity",
+    reward: {
+      description: "You can Break Infinity",
+    },
     unlockReq: Decimal.NUMBER_MAX_VALUE,
   },
   {
