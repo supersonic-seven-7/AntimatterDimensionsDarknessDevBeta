@@ -73,7 +73,7 @@ export function playerInfinityUpgradesOnReset() {
 }
 
 export function breakInfinity() {
-  if (!Autobuyer.bigCrunch.hasMaxedInterval || (!NormalChallenge(13).isCompleted && PlayerProgress.eternityUnlocked())) return;
+  if (!Autobuyer.bigCrunch.hasMaxedInterval || (!UltimateChallenge(1).isCompleted && PlayerProgress.eternityUnlocked())) return;
   if (InfinityChallenge.isRunning) return;
   for (const autobuyer of Autobuyers.all) {
     if (autobuyer.data.interval !== undefined) autobuyer.maxIntervalForFree();
