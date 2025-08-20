@@ -56,7 +56,8 @@ class UltimateChallengeState extends GameMechanicState {
     player.challenge.eternity.current = 0;
     player.challenge.ultimate.current = this.id;
     if (!Enslaved.isRunning) Tab.dimensions.antimatter.show();
-    player.break = true;
+    if (this.id === 1) player.break = false;
+    if (this.id === 2) player.break = true;
   }
 
   get isCompleted() {
@@ -65,7 +66,8 @@ class UltimateChallengeState extends GameMechanicState {
 
   complete() {
     player.challenge.ultimate.completedBits |= 1 << this.id;
-    EventHub.dispatch(GAME_EVENT.INFINITY_CHALLENGE_COMPLETED);
+    EventHub.dispatch(GAME_EVENT.ULTIMATE_CHALLENGE_COMPLETED);
+    player.break = true;
   }
 
   get isEffectActive() {
