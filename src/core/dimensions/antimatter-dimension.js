@@ -47,9 +47,9 @@ export function antimatterDimensionCommonMultiplier() {
   multiplier = multiplier.times(getAdjustedGlyphEffect("powermult"));
   multiplier = multiplier.times(Currency.realityMachines.value.powEffectOf(AlchemyResource.force));
 
-  if (InfinityChallenge(13).isRunning) multiplier = multiplier.timesEffectOf(InfinityChallenge(4));
-  if (InfinityChallenge(13).isRunning) multiplier = multiplier.timesEffectOf(InfinityChallenge(9));
-  if (InfinityChallenge(13).isRunning) multiplier = multiplier.dividedByEffectOf(InfinityChallenge(7));
+  if (UltimateChallenge(2).isRunning) multiplier = multiplier.timesEffectOf(InfinityChallenge(4));
+  if (UltimateChallenge(2).isRunning) multiplier = multiplier.timesEffectOf(InfinityChallenge(9));
+  if (UltimateChallenge(2).isRunning) multiplier = multiplier.dividedByEffectOf(InfinityChallenge(7));
 
   if (Pelle.isDoomed) multiplier = multiplier.dividedBy(10);
 
@@ -58,7 +58,7 @@ export function antimatterDimensionCommonMultiplier() {
 
 export function getDimensionFinalMultiplierUncached(tier) {
   if (tier < 1 || tier > 8) throw new Error(`Invalid Antimatter Dimension tier ${tier}`);
-  if ((NormalChallenge(10).isRunning || NormalChallenge(13).isRunning) && tier > 6) return DC.D1;
+  if ((NormalChallenge(10).isRunning || UltimateChallenge(1).isRunning) && tier > 6) return DC.D1;
   if (EternityChallenge(11).isRunning) {
     return Currency.infinityPower.value.pow(
       InfinityDimensions.powerConversionRate
@@ -155,7 +155,7 @@ function applyNDPowers(mult, tier) {
   const glyphPowMultiplier = getAdjustedGlyphEffect("powerpow");
   const glyphEffarigPowMultiplier = getAdjustedGlyphEffect("effarigdimensions");
 
-  if ((InfinityChallenge(5).isRunning || InfinityChallenge(11).isRunning || InfinityChallenge(12).isRunning || InfinityChallenge(13).isRunning) && player.postC4Tier !== tier) {
+  if ((InfinityChallenge(5).isRunning || InfinityChallenge(11).isRunning || InfinityChallenge(12).isRunning || UltimateChallenge(2).isRunning) && player.postC4Tier !== tier) {
     multiplier = multiplier.pow(InfinityChallenge(5).effectValue);
   }
   if (InfinityChallenge(5).isCompleted) {
@@ -194,8 +194,8 @@ function onBuyDimension(tier) {
 
   if (player.speedrun.isActive && !player.speedrun.hasStarted) Speedrun.startTimer();
 
-  if (NormalChallenge(2).isRunning || NormalChallenge(13).isRunning) player.chall2Pow = 0;
-  if (NormalChallenge(4).isRunning || NormalChallenge(13).isRunning || InfinityChallenge(1).isRunning || InfinityChallenge(2).isRunning || InfinityChallenge(12).isRunning || InfinityChallenge(13).isRunning) {
+  if (NormalChallenge(2).isRunning || UltimateChallenge(1).isRunning) player.chall2Pow = 0;
+  if (NormalChallenge(4).isRunning || UltimateChallenge(1).isRunning || InfinityChallenge(1).isRunning || InfinityChallenge(2).isRunning || InfinityChallenge(12).isRunning || UltimateChallenge(2).isRunning) {
     AntimatterDimensions.resetAmountUpToTier(tier - 1);
   }
 
@@ -315,7 +315,7 @@ export function buyMaxDimension(tier, bulk = Infinity) {
   if (bulkLeft <= 0) return;
 
   // Buy in a while loop in order to properly trigger abnormal price increases
-  if (NormalChallenge(9).isRunning || NormalChallenge(13).isRunning || InfinityChallenge(2).isRunning || InfinityChallenge(6).isRunning || InfinityChallenge(13).isRunning) {
+  if (NormalChallenge(9).isRunning || UltimateChallenge(1).isRunning || InfinityChallenge(2).isRunning || InfinityChallenge(6).isRunning || UltimateChallenge(2).isRunning) {
     while (dimension.isAffordableUntil10 && dimension.cost.lt(goal) && bulkLeft > 0) {
       // We can use dimension.currencyAmount or Currency.antimatter here, they're the same,
       // but it seems safest to use dimension.currencyAmount for consistency.
@@ -351,10 +351,10 @@ class AntimatterDimensionState extends DimensionState {
     this._c6BaseCost = C6_BASE_COSTS[tier];
     const C6_BASE_COST_MULTIPLIERS = [null, 1e3, 5e3, 1e4, 1.2e4, 1.8e4, 2.6e4, 3.2e4, 4.2e4];
     this._c6BaseCostMultiplier = C6_BASE_COST_MULTIPLIERS[tier];
-    const C13_BASE_COSTS = [null, 1, 5, 10, 15, 2, 4, 1e4, 1e5];
-    this._c13BaseCost = C13_BASE_COSTS[tier];
-    const C13_BASE_COST_MULTIPLIERS = [null, 1e3, 5e3, 2, 3, 4, 2, 1e4, 1e5];
-    this._c13BaseCostMultiplier = C13_BASE_COST_MULTIPLIERS[tier];
+    const UC1_BASE_COSTS = [null, 1, 5, 10, 15, 2, 4, 1e4, 1e5];
+    this._uc1BaseCost = UC1_BASE_COSTS[tier];
+    const UC1_BASE_COST_MULTIPLIERS = [null, 1e3, 5e3, 2, 3, 4, 2, 1e4, 1e5];
+    this._uc1BaseCostMultiplier = UC1_BASE_COST_MULTIPLIERS[tier];
   }
 
   /**
@@ -369,18 +369,18 @@ class AntimatterDimensionState extends DimensionState {
         scalingCostThreshold: Number.MAX_VALUE
       });
     }
-    if (NormalChallenge(13).isRunning) {
+    if (UltimateChallenge(1).isRunning) {
       return new ExponentialCostScaling({
-        baseCost: NormalChallenge(13).isRunning ? this._c13BaseCost : this._baseCost,
-        baseIncrease: NormalChallenge(13).isRunning ? this._c13BaseCostMultiplier : this._baseCostMultiplier,
+        baseCost: UltimateChallenge(1).isRunning ? this._uc1BaseCost : this._baseCost,
+        baseIncrease: UltimateChallenge(1).isRunning ? this._uc1BaseCostMultiplier : this._baseCostMultiplier,
         costScale: Player.dimensionMultDecrease,
         scalingCostThreshold: Number.MAX_VALUE
       });
     }
-    if (!NormalChallenge(6).isRunning && !NormalChallenge(13).isRunning) {
+    if (!NormalChallenge(6).isRunning && !UltimateChallenge(1).isRunning) {
       return new ExponentialCostScaling({
-        baseCost: (!NormalChallenge(6).isRunning && !NormalChallenge(13).isRunning) ? this._baseCost : this._c6BaseCost,
-        baseIncrease: (!NormalChallenge(6).isRunning && !NormalChallenge(13).isRunning) ? this._baseCostMultiplier : this._c6BaseCostMultiplier,
+        baseCost: (!NormalChallenge(6).isRunning && !UltimateChallenge(1).isRunning) ? this._baseCost : this._c6BaseCost,
+        baseIncrease: (!NormalChallenge(6).isRunning && !UltimateChallenge(1).isRunning) ? this._baseCostMultiplier : this._c6BaseCostMultiplier,
         costScale: Player.dimensionMultDecrease,
         scalingCostThreshold: Number.MAX_VALUE
       });
@@ -453,14 +453,14 @@ class AntimatterDimensionState extends DimensionState {
     const tier = this.tier;
     if (tier === 8 ||
       (tier > 3 && EternityChallenge(3).isRunning) ||
-      (tier > 6 && (NormalChallenge(12).isRunning || NormalChallenge(13).isRunning))) {
+      (tier > 6 && (NormalChallenge(12).isRunning || UltimateChallenge(1).isRunning))) {
       return DC.D0;
     }
 
     let toGain;
     if (tier === 7 && EternityChallenge(7).isRunning) {
       toGain = InfinityDimension(1).productionPerSecond.times(10);
-    } else if (NormalChallenge(12).isRunning || NormalChallenge(13).isRunning) {
+    } else if (NormalChallenge(12).isRunning || UltimateChallenge(1).isRunning) {
       toGain = AntimatterDimension(tier + 2).productionPerSecond;
     } else {
       toGain = AntimatterDimension(tier + 1).productionPerSecond;
@@ -474,7 +474,7 @@ class AntimatterDimensionState extends DimensionState {
   get isProducing() {
     const tier = this.tier;
     if ((EternityChallenge(3).isRunning && tier > 4) ||
-      ((NormalChallenge(10).isRunning || NormalChallenge(13).isRunning) && tier > 6) ||
+      ((NormalChallenge(10).isRunning || UltimateChallenge(1).isRunning) && tier > 6) ||
       (Laitela.isRunning && tier > Laitela.maxAllowedDimension)) {
       return false;
     }
@@ -485,7 +485,7 @@ class AntimatterDimensionState extends DimensionState {
    * @returns {Decimal}
    */
   get currencyAmount() {
-    return this.tier >= 3 && (NormalChallenge(6).isRunning || NormalChallenge(13).isRunning)
+    return this.tier >= 3 && (NormalChallenge(6).isRunning || UltimateChallenge(1).isRunning)
       ? AntimatterDimension(this.tier - 2).amount
       : Currency.antimatter.value;
   }
@@ -494,7 +494,7 @@ class AntimatterDimensionState extends DimensionState {
    * @param {Decimal} value
    */
   set currencyAmount(value) {
-    if (this.tier >= 3 && (NormalChallenge(6).isRunning || NormalChallenge(13).isRunning)) AntimatterDimension(this.tier - 2).amount = value;
+    if (this.tier >= 3 && (NormalChallenge(6).isRunning || UltimateChallenge(1).isRunning)) AntimatterDimension(this.tier - 2).amount = value;
     else Currency.antimatter.value = value;
   }
 
@@ -559,7 +559,7 @@ class AntimatterDimensionState extends DimensionState {
     if (!EternityMilestone.unlockAllND.isReached && this.tier > DimBoost.totalBoosts + 4) return false;
     const hasPrevTier = this.tier === 1 || AntimatterDimension(this.tier - 1).totalAmount.gt(0);
     if (!EternityMilestone.unlockAllND.isReached && !hasPrevTier) return false;
-    return this.tier < 7 || (!NormalChallenge(10).isRunning && !NormalChallenge(13).isRunning);
+    return this.tier < 7 || (!NormalChallenge(10).isRunning && !UltimateChallenge(1).isRunning);
   }
 
   reset() {
@@ -573,8 +573,8 @@ class AntimatterDimensionState extends DimensionState {
   }
 
   challengeCostBump() {
-    if (InfinityChallenge(6).isRunning || InfinityChallenge(11).isRunning || InfinityChallenge(12).isRunning || InfinityChallenge(13).isRunning) this.multiplyIC5Costs();
-    else if (NormalChallenge(9).isRunning || NormalChallenge(13).isRunning || InfinityChallenge(2).isRunning || InfinityChallenge(13).isRunning) this.multiplySameCosts();
+    if (InfinityChallenge(6).isRunning || InfinityChallenge(11).isRunning || InfinityChallenge(12).isRunning || UltimateChallenge(2).isRunning) this.multiplyIC5Costs();
+    else if (NormalChallenge(9).isRunning || UltimateChallenge(1).isRunning || InfinityChallenge(2).isRunning || UltimateChallenge(2).isRunning) this.multiplySameCosts();
   }
 
   multiplySameCosts() {
@@ -612,17 +612,17 @@ class AntimatterDimensionState extends DimensionState {
     const tier = this.tier;
     if (Laitela.isRunning && tier > Laitela.maxAllowedDimension) return DC.D0;
     let amount = this.totalAmount;
-    if (NormalChallenge(12).isRunning || NormalChallenge(13).isRunning) {
+    if (NormalChallenge(12).isRunning || UltimateChallenge(1).isRunning) {
       if (tier === 2) amount = amount.pow(1.6);
       if (tier === 4) amount = amount.pow(1.4);
       if (tier === 6) amount = amount.pow(1.2);
     }
     let production = amount.times(this.multiplier).times(Tickspeed.perSecond);
-    if (NormalChallenge(2).isRunning || NormalChallenge(13).isRunning) {
+    if (NormalChallenge(2).isRunning || UltimateChallenge(1).isRunning) {
       production = production.times(player.chall2Pow);
     }
     if (tier === 1) {
-      if (NormalChallenge(3).isRunning || NormalChallenge(13).isRunning) {
+      if (NormalChallenge(3).isRunning || UltimateChallenge(1).isRunning) {
         production = production.times(player.chall3Pow);
       }
       if (production.gt(10)) {
@@ -662,7 +662,7 @@ export const AntimatterDimensions = {
   },
 
   get buyTenMultiplier() {
-    if (NormalChallenge(7).isRunning || NormalChallenge(13).isRunning) return DC.D2.min(1 + DimBoost.totalBoosts / 5);
+    if (NormalChallenge(7).isRunning || UltimateChallenge(1).isRunning) return DC.D2.min(1 + DimBoost.totalBoosts / 5);
 
     let mult = DC.D2.plusEffectsOf(
       Achievement(141).effects.buyTenMult,
@@ -690,7 +690,7 @@ export const AntimatterDimensions = {
 
     let maxTierProduced = EternityChallenge(3).isRunning ? 3 : 7;
     let nextTierOffset = 1;
-    if (NormalChallenge(12).isRunning || NormalChallenge(13).isRunning) {
+    if (NormalChallenge(12).isRunning || UltimateChallenge(1).isRunning) {
       maxTierProduced--;
       nextTierOffset++;
     }
@@ -701,7 +701,7 @@ export const AntimatterDimensions = {
       player.requirementChecks.eternity.noAD1 = false;
     }
     AntimatterDimension(1).produceCurrency(Currency.antimatter, diff);
-    if (NormalChallenge(12).isRunning || NormalChallenge(13).isRunning) {
+    if (NormalChallenge(12).isRunning || UltimateChallenge(1).isRunning) {
       AntimatterDimension(2).produceCurrency(Currency.antimatter, diff);
     }
     // Production may overshoot the goal on the final tick of the challenge
