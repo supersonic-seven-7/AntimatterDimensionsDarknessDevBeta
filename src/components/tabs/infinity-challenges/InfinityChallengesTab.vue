@@ -27,9 +27,7 @@ export default {
 
       if (first) return `The first Infinity Challenge unlocks at ${format(next)} antimatter.`;
       if (last) return "All Infinity Challenges unlocked";
-      return next === undefined
-        ? "All Infinity Challenges unlocked"
-        : `Next Infinity Challenge unlocks at ${format(next)} antimatter.`;
+      return `Next Infinity Challenge unlocks at ${format(next)} antimatter.`;
     }
   },
   methods: {
