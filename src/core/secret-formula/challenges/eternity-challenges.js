@@ -149,7 +149,7 @@ export const eternityChallenges = [
       EternityChallenge(10).applyEffect(v => description += ` Currently: ${formatX(v, 2, 1)}`);
       return description;
     },
-    goal: DC.E3000,
+    goal: DC.E1E15,
     pelleGoal: DC.E3200,
     goalIncrease: DC.E300,
     effect: () => Decimal.pow(Currency.infinitiesTotal.value, 950).clampMin(1).pow(TimeStudy(31).effectOrDefault(1)),
