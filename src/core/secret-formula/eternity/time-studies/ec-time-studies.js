@@ -117,7 +117,7 @@ export const ecTimeStudies = [
     secondary: {
       resource: "Eternity Points",
       current: () => Currency.eternityPoints.value,
-      required: completions => DC.E20.pow(Math.min(completions, 4)).times(DC.E100),
+      required: completions => DC.E20.pow(Math.min(completions, 4)).times(DC.E200),
       formatValue: value => format(value)
     }
   },
