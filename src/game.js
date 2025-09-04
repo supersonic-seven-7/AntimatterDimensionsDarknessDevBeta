@@ -297,6 +297,11 @@ export function updateRefresh() {
   location.reload(true);
 }
 
+export function cheatRefresh() {
+  GameStorage.hardReset();
+  location.reload(true);
+}
+
 export const GAME_SPEED_EFFECT = {
   FIXED_SPEED: 1,
   TIME_GLYPH: 2,
