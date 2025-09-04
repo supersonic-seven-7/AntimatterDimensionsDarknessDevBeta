@@ -523,7 +523,7 @@ export function gameLoop(passDiff, options = {}) {
   player.celestials.ra.peakGamespeed = Math.max(player.celestials.ra.peakGamespeed, getGameSpeedupFactor());
   Enslaved.isReleaseTick = false;
 
-  if (EternityChallenge(10).completions > 0 || PlayerProgress.realityUnlocked()) {
+  if (EternityChallenge(10).completions > 0 || PlayerProgress.dilationUnlocked() || PlayerProgress.realityUnlocked()) {
     player.anticheat = true;
   }
 
