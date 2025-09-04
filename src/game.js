@@ -530,6 +530,12 @@ export function gameLoop(passDiff, options = {}) {
 
   if (EternityChallenge(10).completions > 0 || PlayerProgress.dilationUnlocked() || PlayerProgress.realityUnlocked()) {
     player.anticheat = true;
+    Modal.message.show(`Hey there, cheater. Looks like you're trying to access untested content. We're going to need
+    you to wait until the content is tested before you can play this. So what has this treachery cost you? Well first of
+    all, you pissed off the game's developer, Supersonic Seven. He's working hard to give you safe new content, and
+    you're trying to jump ahead and access if before anyone else. Second of all, you bricked the game. Sure, it still
+    runs and all, but now you have to do everything manually. So have fun with that. Anyway, I hope this teaches you a lesson.
+    Don't do it again.`, { callback: cheatRefresh, closeButton: false }, 3);
   }
 
   // These need to all be done consecutively in order to minimize the chance of a reset occurring between real time
