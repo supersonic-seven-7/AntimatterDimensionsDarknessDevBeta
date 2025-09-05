@@ -64,8 +64,7 @@ class UltimateChallengeState extends GameMechanicState {
     player.challenge.eternity.current = 0;
     player.challenge.ultimate.current = this.id;
     if (!Enslaved.isRunning) Tab.dimensions.antimatter.show();
-    if (this.id === 1) player.break = false;
-    if (this.id === 2) player.break = true;
+    player.break = true;
   }
 
   get isCompleted() {
