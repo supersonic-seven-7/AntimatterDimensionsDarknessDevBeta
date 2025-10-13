@@ -156,7 +156,7 @@ export const eternityChallenges = [
     reward: {
       description: "Time Dimension multiplier based on Infinities",
       effect: completions => {
-        const mult = Currency.infinitiesTotal.value.times(1e-5).pow(10 * Math.pow((completions / 5), 1.5)).clampMin(1);
+        const mult = Currency.infinitiesTotal.value.times(1e-5).pow(10 * ((completions / 5) ** 1.5)).clampMin(1);
         return mult.powEffectOf(TimeStudy(31));
       },
       formatEffect: value => {
