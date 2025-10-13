@@ -439,9 +439,9 @@ export const normalTimeStudies = [
     cost: 10000,
     requirement: [181, () => EternityChallenge(10).completions > 0],
     reqType: TS_REQUIREMENT_TYPE.ALL,
-    description: () => `After Eternity you permanently keep ${formatPercents(0.05)}
+    description: () => `After Eternity you permanently keep ${formatPercents(0.2)}
     of your Infinities as Banked Infinities`,
-    effect: () => Currency.infinities.value.times(0.05).floor()
+    effect: () => Currency.infinities.value.times(0.2).floor()
   },
   {
     id: 192,
@@ -458,8 +458,8 @@ export const normalTimeStudies = [
     requirement: [181, () => EternityChallenge(10).completions > 0],
     reqType: TS_REQUIREMENT_TYPE.ALL,
     description: "Antimatter Dimension multiplier based on Eternities",
-    effect: () => (DC.E13000.pow(Currency.eternities.value.div(1e6).clampMax(1))),
-    cap: DC.E13000,
+    effect: () => (DC.E1_6E6.pow(Currency.eternities.value.div(8e5).clampMax(1))),
+    cap: DC.E2E7,
     formatEffect: value => formatX(value, 2, 1)
   },
   {
