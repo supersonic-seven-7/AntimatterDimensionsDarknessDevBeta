@@ -149,14 +149,14 @@ export const eternityChallenges = [
       EternityChallenge(10).applyEffect(v => description += ` Currently: ${formatX(v, 2, 1)}`);
       return description;
     },
-    goal: DC.E3000,
+    goal: DC.E3400,
     pelleGoal: DC.E3200,
-    goalIncrease: DC.E300,
+    goalIncrease: DC.E400,
     effect: () => Decimal.pow(Currency.infinitiesTotal.value, 950).clampMin(1).pow(TimeStudy(31).effectOrDefault(1)),
     reward: {
       description: "Time Dimension multiplier based on Infinities",
       effect: completions => {
-        const mult = Currency.infinitiesTotal.value.times(2.783e-6).pow(0.4 + 0.1 * completions).clampMin(1);
+        const mult = Currency.infinitiesTotal.value.times(1e-5).pow(10 * Math.pow((completions / 5), 1.5)).clampMin(1);
         return mult.powEffectOf(TimeStudy(31));
       },
       formatEffect: value => {
