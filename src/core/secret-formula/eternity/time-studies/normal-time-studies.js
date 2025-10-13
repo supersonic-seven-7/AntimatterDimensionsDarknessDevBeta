@@ -503,8 +503,8 @@ export const normalTimeStudies = [
     description: "Dimensional Sacrifice boosts the 8th Antimatter Dimension even more",
     effect: () => {
       const totalBoost = Sacrifice.totalBoost;
-      const firstPart = totalBoost.pow(16).clampMaxExponent(20000000);
-      const secondPart = totalBoost.pow(5).clampMaxExponent(80000000);
+      const firstPart = totalBoost.pow(8.5).clampMaxExponent(20000000);
+      const secondPart = totalBoost.pow(1.5).clampMaxExponent(80000000);
       return firstPart.times(secondPart);
     },
     cap: DC.E1E8,
