@@ -492,8 +492,15 @@ export const normalTimeStudies = [
     cost: 5000,
     requirement: [193],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: () => `You gain Replicanti ${formatInt(25)} times faster`,
-    effect: 25
+    description: () => `You gain Replicanti ${formatInt(25)} times faster and gain a power effect
+    to Replicanti Boosters based on Replicanti Speed`,
+    effect: () => {
+      const repSpeed = totalReplicantiSpeedMult(Replicanti.amount.gt(replicantiCap()));
+      const firstPart = repSpeed.pow(0.1).clampMax(10);
+      const secondPart = Decimal.pow(repSpeed.log10(), 0.2).clampMin(1);
+      return firstPart.times(secondPart);
+    },
+    formatEffect: value => `^${format(value, 2, 3)}`
   },
   {
     id: 214,
