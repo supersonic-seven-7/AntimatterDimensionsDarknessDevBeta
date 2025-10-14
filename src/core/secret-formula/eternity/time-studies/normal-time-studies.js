@@ -445,7 +445,7 @@ export const normalTimeStudies = [
   },
   {
     id: 192,
-    cost: 25000,
+    cost: 15625,
     requirement: [181, () => EternityChallenge(10).completions > 0, () => !Enslaved.isRunning],
     reqType: TS_REQUIREMENT_TYPE.ALL,
     description: () => (Enslaved.isRunning
@@ -464,7 +464,7 @@ export const normalTimeStudies = [
   },
   {
     id: 201,
-    cost: 15000,
+    cost: 9375,
     requirement: [192],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: "Pick a second path from the Dimension Split"
