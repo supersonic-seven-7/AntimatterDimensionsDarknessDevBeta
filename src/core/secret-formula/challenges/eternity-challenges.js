@@ -200,9 +200,9 @@ export const eternityChallenges = [
     formatRestriction: restriction => `in ${quantify("in-game second", restriction, 0, 1)} or less.`,
     failedRestriction: "(Too slow for more)",
     reward: {
-      description: "Infinity Dimension cost multipliers are reduced",
-      effect: completions => 1 - completions * 0.008,
-      formatEffect: value => `x${formatPow(value, 3, 3)}`
+      description: "The Infinity Dimension cap threshold is raised to a power",
+      effect: completions => 1 + ((completions * (completions + 1) / 2) / 100),
+      formatEffect: value => formatPow(value, 3, 3)
     }
   }
 ];
