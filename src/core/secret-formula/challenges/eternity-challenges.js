@@ -122,7 +122,7 @@ export const eternityChallenges = [
       description: "Infinity Power strengthens Replicanti Boosters",
       effect: completions => {
         const infinityPower = Math.log10(Currency.infinityPower.value.pLog10() + 1);
-        return Math.max(0, Math.pow(infinityPower, 0.1 * completions));
+        return Math.max(1, Math.pow(infinityPower, 0.1 * completions));
       },
       formatEffect: value => `${formatPercents(value, 2)} Strength`
     }
