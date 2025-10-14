@@ -484,7 +484,7 @@ export const normalTimeStudies = [
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: "Replicanti Boosters are stronger based on your Time Shards",
     effect: () => Math.pow(Currency.timeShards.value.clampMin(2).log2(), 0.1),
-    cap: 9,
+    cap: 10,
     formatEffect: value => `+${formatPercents(value - 1, 3)}`
   },
   {
