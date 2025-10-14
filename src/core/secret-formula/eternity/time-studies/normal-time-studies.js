@@ -493,7 +493,7 @@ export const normalTimeStudies = [
     requirement: [193],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     description: () => `You gain Replicanti ${formatInt(25)} times faster and gain a power effect
-    to Replicanti Boosters based on Replicanti Speed`,
+    to Replicanti Boosters based on Rep Speed`,
     effect: () => {
       const repSpeed = totalReplicantiSpeedMult(Replicanti.amount.gt(replicantiCap()));
       const firstPart = repSpeed.pow(0.1).clampMax(10);
