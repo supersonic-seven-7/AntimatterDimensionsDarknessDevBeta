@@ -194,7 +194,7 @@ export const eternityChallenges = [
         within a certain amount of time or you will fail the Challenge.`),
     goal: DC.E1_25E6,
     pelleGoal: DC.E208000,
-    goalIncrease: DC.E1E15,
+    goalIncrease: DC.E500000,
     restriction: completions => Math.max(10 - 2 * completions, 1) / 10,
     checkRestriction: restriction => Time.thisEternity.totalSeconds < restriction,
     formatRestriction: restriction => `in ${quantify("in-game second", restriction, 0, 1)} or less.`,
