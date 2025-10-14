@@ -201,7 +201,7 @@ export const eternityChallenges = [
     failedRestriction: "(Too slow for more)",
     reward: {
       description: "The Infinity Dimension cap threshold is raised to a power",
-      effect: completions => 1 + ((completions * (completions + 1) / 2) / 60),
+      effect: completions => 1 + (completions / 40),
       formatEffect: value => formatPow(value, 3, 3)
     }
   }
