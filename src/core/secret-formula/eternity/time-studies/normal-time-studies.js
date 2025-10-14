@@ -538,8 +538,8 @@ export const normalTimeStudies = [
     requirement: [212],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [224],
-    description: () => `Distant Galaxy cost scaling starts ${formatInt(7)} Galaxies later`,
-    effect: 7
+    description: () => `Replicanti Booster cost scaling starts ${formatInt(200)} Boosters later`,
+    effect: 200
   },
   {
     id: 224,
@@ -550,10 +550,10 @@ export const normalTimeStudies = [
     requiresST: [223],
     description() {
       const effect = TimeStudy(224).effectValue;
-      return `Distant Galaxy cost scaling starts ${quantifyInt("Galaxy", effect)} later
-        (${formatInt(1)} per ${formatInt(2000)} Dim Boosts)`;
+      return `Replicanti Booster cost scaling starts ${quantifyInt("Booster", effect)} later
+        (${formatInt(1)} per ${formatInt(200)} Dim Boosts)`;
     },
-    effect: () => Math.floor(DimBoost.totalBoosts / 2000)
+    effect: () => Math.floor(DimBoost.totalBoosts / 200)
   },
   {
     id: 225,
@@ -563,8 +563,8 @@ export const normalTimeStudies = [
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [226],
     description: "You gain extra Replicanti Boosters based on Replicanti amount",
-    effect: () => Math.floor(Replicanti.amount.exponent / 1000),
-    formatEffect: value => `+${formatInt(value)} RG`
+    effect: () => Math.floor(Replicanti.amount.exponent / 500),
+    formatEffect: value => `+${formatInt(value)} RB`
   },
   {
     id: 226,
@@ -574,8 +574,8 @@ export const normalTimeStudies = [
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [225],
     description: "You gain extra Replicanti Boosters based on their max",
-    effect: () => Math.floor(player.replicanti.boughtGalaxyCap / 15),
-    formatEffect: value => `+${formatInt(value)} RG`
+    effect: () => Math.floor(player.replicanti.boughtGalaxyCap / 12),
+    formatEffect: value => `+${formatInt(value)} RB`
   },
   {
     id: 227,
@@ -585,7 +585,7 @@ export const normalTimeStudies = [
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [228],
     description: "Dimensional Sacrifice affects 4th Time Dimension with reduced effect",
-    effect: () => Math.max(Math.pow(Sacrifice.totalBoost.pLog10(), 10), 1),
+    effect: () => Math.max(Math.pow(Sacrifice.totalBoost.pLog10(), 18), 1),
     formatEffect: value => formatX(value, 2, 2)
   },
   {
@@ -608,7 +608,7 @@ export const normalTimeStudies = [
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [232],
     description: "Dimension Boosts are stronger based on their amount",
-    effect: () => Decimal.pow(DimBoost.totalBoosts, 0.3).clampMin(1),
+    effect: () => Decimal.pow(DimBoost.totalBoosts, 3).clampMin(1),
     formatEffect: value => formatX(value, 2, 2)
   },
   {
@@ -618,8 +618,8 @@ export const normalTimeStudies = [
     requirement: [223, 224],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [231],
-    description: "All Galaxies are stronger based on Antimatter Galaxies",
-    effect: () => Math.pow(1 + player.galaxies / 1000, 0.2),
+    description: "Replicanti Boosters are stronger based on Dimension Boosts",
+    effect: () => Math.pow(1 + DimBoost.totalBoosts / 1000, 0.2),
     formatEffect: value => `+${formatPercents(value - 1, 3)}`
   },
   {
@@ -630,7 +630,7 @@ export const normalTimeStudies = [
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [234],
     description: "Max Replicanti Booster upgrade is cheaper based on current Replicanti",
-    effect: () => Replicanti.amount.pow(0.3),
+    effect: () => Replicanti.amount.pow(0.4),
     formatEffect: value => `/ ${format(value, 1, 2)}`
   },
   {
@@ -652,7 +652,7 @@ export const normalTimeStudies = [
     reqType: TS_REQUIREMENT_TYPE.ALL,
     requiresST: [221, 222, 231],
     description: "Time Study 231 improves the effect of Time Study 221",
-    effect: () => TimeStudy(221).effectValue.pow(TimeStudy(231).effectValue.minus(1)).clampMin(1),
+    effect: () => TimeStudy(221).effectValue.pow(TimeStudy(231).effectValue.pow(0.1)).clampMin(1),
     formatEffect: value => formatX(value, 2, 1),
     unlocked: () => Ra.unlocks.unlockHardV.effectOrDefault(0) >= 1
   },
