@@ -690,6 +690,7 @@ function passivePrestigeGen() {
   if (RealityUpgrade(14).isBought) {
     eternitiedGain = DC.D1.timesEffectsOf(
       Achievement(113),
+      Achievement(127),
       RealityUpgrade(3),
       RealityUpgrade(14)
     );
