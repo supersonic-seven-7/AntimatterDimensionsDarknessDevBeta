@@ -363,8 +363,12 @@ export const InfinityDimensions = {
     return UltimateChallenge(2).reward.effectOrDefault(1);
   },
 
+  get capPow() {
+    return EternityChallenge(12).reward.effectOrDefault(1);
+  },
+
   get totalDimCap() {
-    return this.partialDimCap * this.capMult;
+    return (this.partialDimCap * this.capMult) ** this.capPow;
   },
 
   canBuy() {
