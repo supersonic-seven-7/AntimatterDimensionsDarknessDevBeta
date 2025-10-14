@@ -918,7 +918,9 @@ export const normalAchievements = [
     name: "But I wanted another prestige layer...",
     get description() { return `Reach ${format(Decimal.NUMBER_MAX_VALUE, 1, 0)} Eternity Points.`; },
     checkRequirement: () => Currency.eternityPoints.gte(Decimal.NUMBER_MAX_VALUE),
-    checkEvent: GAME_EVENT.GAME_TICK_AFTER
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER,
+    get reward() { return `Gain ${formatX(3)} more Eternities.`; },
+    effect: 3,
   },
   {
     id: 128,
