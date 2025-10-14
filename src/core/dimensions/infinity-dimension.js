@@ -215,9 +215,9 @@ class InfinityDimensionState extends DimensionState {
     if (Enslaved.isRunning) {
       return 1;
     }
-    return (InfinityDimensions.capIncrease * UltimateChallenge(2).reward.effectOrDefault(1)) + (this.tier === 8
+    return ((InfinityDimensions.capIncrease * UltimateChallenge(2).reward.effectOrDefault(1)) ** EternityChallenge(12).reward.effectOrDefault(1)) + (this.tier === 8
       ? Number.MAX_VALUE
-      : InfinityDimensions.HARDCAP_PURCHASES * UltimateChallenge(2).reward.effectOrDefault(1));
+      : (InfinityDimensions.HARDCAP_PURCHASES * UltimateChallenge(2).reward.effectOrDefault(1)) ** EternityChallenge(12).reward.effectOrDefault(1);
   }
 
   get isCapped() {
