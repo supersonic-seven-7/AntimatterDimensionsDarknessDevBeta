@@ -138,13 +138,16 @@ export function totalReplicantiSpeedMult(overCap) {
 
   const preCelestialEffects = Effects.product(
     TimeStudy(62),
-    TimeStudy(213),
     InfinityChallenge(11).reward,
     RealityUpgrade(2),
     RealityUpgrade(6),
     RealityUpgrade(23),
   );
   totalMult = totalMult.times(preCelestialEffects);
+  if (TimeStudy(213).isBought) {
+    totalMult = totalMult.times(25);
+  }
+  
   if (TimeStudy(132).isBought) {
     totalMult = totalMult.times(Perk.studyPassive.isBought ? 3 : 1.5);
   }
@@ -271,7 +274,8 @@ export function replicantiBoosterMult() {
     .timesEffectOf(TimeStudy(133))
     .times(EternityChallenge(8).reward.effectOrDefault(1))
     .timesEffectOf(TimeStudy(212))
-    .timesEffectOf(TimeStudy(232));
+    .timesEffectOf(TimeStudy(232))
+    .powEffectOf(TimeStudy(213));
 }
 
 export function replicantiMult() {
