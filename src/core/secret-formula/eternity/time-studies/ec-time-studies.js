@@ -123,7 +123,7 @@ export const ecTimeStudies = [
   },
   {
     id: 11,
-    cost: 9999,
+    cost: 999,
     requirement: [231, 232],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
@@ -133,7 +133,7 @@ export const ecTimeStudies = [
   },
   {
     id: 12,
-    cost: 9999,
+    cost: 999,
     requirement: [233, 234],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     secondary: {
