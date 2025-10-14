@@ -22,7 +22,7 @@ export default {
     },
     nextAtDisplay() {
       const first = this.nextIC?.id === 1;
-      const last = this.nextIC?.id === 12;
+      const last = this.nextIC?.id === undefined;
       const next = InfinityChallenges.nextICUnlockAM;
 
       if (first) return `The first Infinity Challenge unlocks at ${format(next)} antimatter.`;
