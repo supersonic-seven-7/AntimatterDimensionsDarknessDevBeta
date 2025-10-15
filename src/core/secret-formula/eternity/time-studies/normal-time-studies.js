@@ -482,7 +482,7 @@ export const normalTimeStudies = [
     cost: 4000,
     requirement: [191],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
-    description: "Replicanti Boosters are stronger based on your Time Shards",
+    description: "Replicanti Boosters and Tickspeed are stronger based on your Time Shards",
     effect: () => Math.pow(Currency.timeShards.value.clampMin(2).log2(), 0.1),
     cap: 10,
     formatEffect: value => `+${formatPercents(value - 1, 3)}`
@@ -625,7 +625,7 @@ export const normalTimeStudies = [
     requirement: [223, 224],
     reqType: TS_REQUIREMENT_TYPE.AT_LEAST_ONE,
     requiresST: [231],
-    description: "Replicanti Boosters are stronger based on Dimension Boosts",
+    description: "Replicanti Boosters and Tickspeed are stronger based on Dimension Boosts",
     effect: () => Math.pow(1 + DimBoost.totalBoosts / 1000, 0.2),
     formatEffect: value => `+${formatPercents(value - 1, 3)}`
   },
