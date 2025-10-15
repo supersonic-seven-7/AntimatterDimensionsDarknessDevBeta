@@ -990,8 +990,11 @@ export const normalAchievements = [
     checkRequirement: () => Replicanti.amount.exponent >= 18000,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     get reward() {
-      return `You gain Replicanti ${formatInt(2)} times faster under ${format(replicantiCap(), 1)} Replicanti.`;
-    }
+      return `You gain Replicanti ${formatInt(2)} times faster under ${format(replicantiCap(), 1)} Replicanti
+      and Boost the Infinity Power Conversion Rate based on current Replicanti.`;
+    },
+    effect: () => Math.log10((Math.pow(Replicanti.amount.exponent, 3) / 1e6) + 1),
+    formatEffect: value => `+${format(value, 2, 3)}`
   },
   {
     id: 135,
