@@ -867,7 +867,15 @@ export const normalAchievements = [
     name: "5 more eternities until the update",
     get description() { return `Complete ${formatInt(50)} unique Eternity Challenge tiers.`; },
     checkRequirement: () => EternityChallenges.completions >= 50,
-    checkEvent: GAME_EVENT.ETERNITY_RESET_AFTER
+    checkEvent: GAME_EVENT.ETERNITY_RESET_AFTER,
+    reward: "Tickspeed gains a power based on time in this Eternity.",
+    effect: () => {
+      const time = Time.thisEternity.totalSeconds;
+      const smallTime = 1 + Math.min(Math.pow(time / 1e6, 0.2), 10);
+      const largeTime = Math.max(Math.log10(time) - 11, 0);
+      return smallTime + largeTime;
+    },
+    formatEffect: value => `${formatPow(value, 2, 3)}`
   },
   {
     id: 124,
