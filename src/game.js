@@ -528,7 +528,7 @@ export function gameLoop(passDiff, options = {}) {
   player.celestials.ra.peakGamespeed = Math.max(player.celestials.ra.peakGamespeed, getGameSpeedupFactor());
   Enslaved.isReleaseTick = false;
 
-  if (PlayerProgress.dilationUnlocked() || PlayerProgress.realityUnlocked()) {
+  if (Currency.tachyonParticles.gte(1) || PlayerProgress.realityUnlocked()) {
     player.anticheat = true;
     Modal.message.show(`Hey there, cheater. Looks like you're trying to access untested content. We're going to need
     you to wait until the content is tested before you can play this. So what has this treachery cost you? Well first of
