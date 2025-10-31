@@ -215,9 +215,9 @@ class InfinityDimensionState extends DimensionState {
     if (Enslaved.isRunning) {
       return 1;
     }
-    return (InfinityDimensions.capIncrease * UltimateChallenge(2).reward.effectOrDefault(1)) + (this.tier === 8
+    return ((InfinityDimensions.capIncrease * UltimateChallenge(2).reward.effectOrDefault(1)) ** EternityChallenge(12).reward.effectOrDefault(1)) + (this.tier === 8
       ? Number.MAX_VALUE
-      : InfinityDimensions.HARDCAP_PURCHASES * UltimateChallenge(2).reward.effectOrDefault(1));
+      : (InfinityDimensions.HARDCAP_PURCHASES * UltimateChallenge(2).reward.effectOrDefault(1)) ** EternityChallenge(12).reward.effectOrDefault(1));
   }
 
   get isCapped() {
@@ -363,8 +363,12 @@ export const InfinityDimensions = {
     return UltimateChallenge(2).reward.effectOrDefault(1);
   },
 
+  get capPow() {
+    return EternityChallenge(12).reward.effectOrDefault(1);
+  },
+
   get totalDimCap() {
-    return this.partialDimCap * this.capMult;
+    return (this.partialDimCap * this.capMult) ** this.capPow;
   },
 
   canBuy() {
@@ -418,6 +422,6 @@ export const InfinityDimensions = {
 
   get powerConversionRate() {
     const multiplier = PelleRifts.paradox.milestones[2].effectOrDefault(1);
-    return (7 + InfinityChallenge(2).reward.effectOrDefault(0) + InfinityChallenge(10).reward.effectOrDefault(0) + TimeStudy(42).effectOrDefault(0) + getAdjustedGlyphEffect("infinityrate") + PelleUpgrade.infConversion.effectOrDefault(0)) * multiplier;
+    return (7 + InfinityChallenge(2).reward.effectOrDefault(0) + InfinityChallenge(10).reward.effectOrDefault(0) + TimeStudy(42).effectOrDefault(0) + Achievement(134).effectOrDefault(0) + getAdjustedGlyphEffect("infinityrate") + PelleUpgrade.infConversion.effectOrDefault(0)) * multiplier;
   }
 };

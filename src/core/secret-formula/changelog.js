@@ -9,6 +9,24 @@ export const changelog = [
    * }
    */
   {
+    date: [2025, 10, 31],
+    name: "Light in the Darkness",
+    info: `
+<b>Things changed:</b><br>
+<ul>
+<li>Added Eternity Challenges 10-12</li>
+<li>Added Light and Dark Studies</li>
+<li>Fixed bug with EP Gain</li>
+<li>Buffed Time Studies beyond 181</li>
+<li>Rescaled a bunch of Time Studies</li>
+<li>Rebalanced Achievements</li>
+<li>Added helpful text in a bunch of places</li>
+<li>Content is currently up to Time Dilation, which is the end for now</li>
+</ul>
+<br>
+`
+  },
+  {
     date: [2025, 7, 16],
     name: "Minor Bugfixes",
     info: `

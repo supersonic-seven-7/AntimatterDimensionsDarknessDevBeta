@@ -122,7 +122,7 @@ export const eternityChallenges = [
       description: "Infinity Power strengthens Replicanti Boosters",
       effect: completions => {
         const infinityPower = Math.log10(Currency.infinityPower.value.pLog10() + 1);
-        return Math.max(0, Math.pow(infinityPower, 0.1 * completions));
+        return Math.max(1, Math.pow(infinityPower, 0.1 * completions));
       },
       formatEffect: value => `${formatPercents(value, 2)} Strength`
     }
@@ -149,14 +149,14 @@ export const eternityChallenges = [
       EternityChallenge(10).applyEffect(v => description += ` Currently: ${formatX(v, 2, 1)}`);
       return description;
     },
-    goal: DC.E1E15,
+    goal: DC.E3400,
     pelleGoal: DC.E3200,
-    goalIncrease: DC.E300,
+    goalIncrease: DC.E14000,
     effect: () => Decimal.pow(Currency.infinitiesTotal.value, 950).clampMin(1).pow(TimeStudy(31).effectOrDefault(1)),
     reward: {
       description: "Time Dimension multiplier based on Infinities",
       effect: completions => {
-        const mult = Currency.infinitiesTotal.value.times(2.783e-6).pow(0.4 + 0.1 * completions).clampMin(1);
+        const mult = Currency.infinitiesTotal.value.times(1e-5).pow(32 * ((completions / 5) ** 1.5)).clampMin(1);
         return mult.powEffectOf(TimeStudy(31));
       },
       formatEffect: value => {
@@ -172,9 +172,9 @@ export const eternityChallenges = [
     id: 11,
     description: () => `all Dimension multipliers and powers are disabled except for the multipliers from
       Infinity Power and Dimension Boosts (to Antimatter Dimensions). ${specialInfinityGlyphDisabledEffectText()}`,
-    goal: DC.E450,
+    goal: DC.E6750,
     pelleGoal: DC.E11200,
-    goalIncrease: DC.E200,
+    goalIncrease: DC.E250,
     pelleGoalIncrease: DC.E1400,
     reward: {
       description: "Further reduce Tickspeed cost multiplier growth",
@@ -192,17 +192,17 @@ export const eternityChallenges = [
         within a certain amount of time or you will fail the Challenge. ${specialInfinityGlyphDisabledEffectText()}`
       : `the game runs ×${formatInt(1000)} slower. The goal must be reached
         within a certain amount of time or you will fail the Challenge.`),
-    goal: DC.E110000,
+    goal: DC.E1_25E6,
     pelleGoal: DC.E208000,
-    goalIncrease: DC.E12000,
+    goalIncrease: DC.E420000,
     restriction: completions => Math.max(10 - 2 * completions, 1) / 10,
     checkRestriction: restriction => Time.thisEternity.totalSeconds < restriction,
     formatRestriction: restriction => `in ${quantify("in-game second", restriction, 0, 1)} or less.`,
     failedRestriction: "(Too slow for more)",
     reward: {
-      description: "Infinity Dimension cost multipliers are reduced",
-      effect: completions => 1 - completions * 0.008,
-      formatEffect: value => `x${formatPow(value, 3, 3)}`
+      description: "The Infinity Dimension cap threshold is raised to a power",
+      effect: completions => 1 + ((completions * (completions + 1) / 2) / 60),
+      formatEffect: value => formatPow(value, 3, 3)
     }
   }
 ];

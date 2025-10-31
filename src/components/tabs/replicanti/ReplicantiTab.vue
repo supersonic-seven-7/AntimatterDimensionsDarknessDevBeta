@@ -22,6 +22,7 @@ export default {
       ec8Purchases: 0,
       amount: new Decimal(),
       mult: new Decimal(),
+      perBoostMult: new Decimal(),
       hasTDMult: false,
       multTD: new Decimal(),
       hasDTMult: false,
@@ -139,6 +140,7 @@ export default {
       }
       this.amount.copyFrom(Replicanti.amount);
       this.mult.copyFrom(replicantiMult());
+      this.perBoostMult.copyFrom(replicantiBoosterMult());
       this.hasTDMult = DilationUpgrade.tdMultReplicanti.isBought;
       this.multTD.copyFrom(DilationUpgrade.tdMultReplicanti.effectValue);
       this.hasDTMult = getAdjustedGlyphEffect("replicationdtgain") !== 0 && !Pelle.isDoomed;
@@ -224,6 +226,10 @@ export default {
         Replicanti, translated to
         <br>
         <span v-html="boostText" />
+        <br>
+        Each Replicanti Booster currently provides a
+        <span class="c-replicanti-description__accent">{{ formatX(perBoostMult, 2, 2) }}</span>
+        boost to your base Replicanti Multiplier.
       </p>
       <div
         v-if="hasMaxText"

@@ -867,7 +867,15 @@ export const normalAchievements = [
     name: "5 more eternities until the update",
     get description() { return `Complete ${formatInt(50)} unique Eternity Challenge tiers.`; },
     checkRequirement: () => EternityChallenges.completions >= 50,
-    checkEvent: GAME_EVENT.ETERNITY_RESET_AFTER
+    checkEvent: GAME_EVENT.ETERNITY_RESET_AFTER,
+    reward: "Tickspeed gains a power based on time in this Eternity.",
+    effect: () => {
+      const time = Time.thisEternity.totalSeconds;
+      const smallTime = 1 + Math.min(Math.pow(time / 1e6, 0.2), 10);
+      const largeTime = Math.max(Math.log10(time) - 11, 0);
+      return smallTime + largeTime;
+    },
+    formatEffect: value => `${formatPow(value, 2, 3)}`
   },
   {
     id: 124,
@@ -918,7 +926,9 @@ export const normalAchievements = [
     name: "But I wanted another prestige layer...",
     get description() { return `Reach ${format(Decimal.NUMBER_MAX_VALUE, 1, 0)} Eternity Points.`; },
     checkRequirement: () => Currency.eternityPoints.gte(Decimal.NUMBER_MAX_VALUE),
-    checkEvent: GAME_EVENT.GAME_TICK_AFTER
+    checkEvent: GAME_EVENT.GAME_TICK_AFTER,
+    get reward() { return `Gain ${formatX(3)} more Eternities.`; },
+    effect: 3,
   },
   {
     id: 128,
@@ -937,11 +947,11 @@ export const normalAchievements = [
     checkRequirement: () => Currency.infinitiesBanked.gt(DC.D2E9),
     checkEvent: [GAME_EVENT.ETERNITY_RESET_AFTER, GAME_EVENT.SAVE_CONVERTED_FROM_PREVIOUS_VERSION],
     get reward() {
-      return `You gain ${formatX(2)} times more Infinities and
+      return `You gain ${formatX(10)} times more Infinities and
       after Eternity you permanently keep ${formatPercents(0.05)} of your Infinities as Banked Infinities.`;
     },
     effects: {
-      infinitiesGain: 2,
+      infinitiesGain: 10,
       bankedInfinitiesGain: () => Currency.infinities.value.times(0.05).floor()
     }
 
@@ -980,8 +990,11 @@ export const normalAchievements = [
     checkRequirement: () => Replicanti.amount.exponent >= 18000,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
     get reward() {
-      return `You gain Replicanti ${formatInt(2)} times faster under ${format(replicantiCap(), 1)} Replicanti.`;
-    }
+      return `You gain Replicanti ${formatInt(2)} times faster under ${format(replicantiCap(), 1)} Replicanti
+      and Boost the Infinity Power Conversion Rate based on current Replicanti.`;
+    },
+    effect: () => Math.log10((Math.pow(Replicanti.amount.exponent, 3) / 1e6) + 1),
+    formatEffect: value => `+${format(value, 2, 3)}`
   },
   {
     id: 135,
