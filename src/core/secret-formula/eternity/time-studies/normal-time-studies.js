@@ -458,7 +458,7 @@ export const normalTimeStudies = [
     requirement: [181, () => EternityChallenge(10).completions > 0],
     reqType: TS_REQUIREMENT_TYPE.ALL,
     description: "Antimatter Dimension multiplier based on Eternities",
-    effect: () => (DC.E1_6E6.pow(Currency.eternities.value.div(8e5).clampMax(1))),
+    effect: () => (DC.E1_6E6.pow(Currency.eternities.value.div(8e5).clampMax(12.5))),
     cap: DC.E2E7,
     formatEffect: value => formatX(value, 2, 1)
   },
