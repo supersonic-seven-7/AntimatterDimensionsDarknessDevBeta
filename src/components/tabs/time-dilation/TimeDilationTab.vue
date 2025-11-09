@@ -145,7 +145,7 @@ export default {
     <span>
       Next
       <span v-if="tachyonGalaxyGain > 1">{{ formatInt(tachyonGalaxyGain) }}</span>
-      {{ pluralize("Tachyon Galaxy", tachyonGalaxyGain) }} at
+      {{ pluralize("Tachyon Amplifier", tachyonGalaxyGain) }} at
       <span
         class="c-dilation-tab__galaxy-threshold"
         :ach-tooltip="galaxyTimeEstimate"
@@ -155,7 +155,7 @@ export default {
         class="c-dilation-tab__galaxies"
         :ach-tooltip="baseGalaxyText"
       >{{ formatInt(totalGalaxies) }}</span>
-      {{ pluralize("Tachyon Galaxy", totalGalaxies) }}
+      {{ pluralize("Tachyon Amplifier", totalGalaxies) }}
     </span>
     <span v-if="hasMaxText">
       Your maximum Dilated Time reached this Reality is
