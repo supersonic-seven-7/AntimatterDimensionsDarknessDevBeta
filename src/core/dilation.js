@@ -115,6 +115,17 @@ export function getTachyonGalaxyMult(thresholdUpgrade) {
   return (1 + thresholdMult * glyphReduction) ** power;
 }
 
+export function getTachyonAmplifierPower() {
+  let base = 1.01;
+  let strength = 1;
+  return base ** strength;
+}
+
+export function getTotalTachyonAmplifierPower() {
+  let power = getTachyonAmplifierPower();
+  return Math.pow(player.dilation.totalTachyonGalaxies, power);
+}
+
 export function getDilationGainPerSecond() {
   if (Pelle.isDoomed) {
     const tachyonEffect = Currency.tachyonParticles.value.pow(PelleRifts.paradox.milestones[1].effectOrDefault(1));
