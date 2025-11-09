@@ -41,6 +41,7 @@ export class DimBoost {
       );
     if (UltimateChallenge(2).isRunning) boost = boost.times(0.1);
     if (GlyphAlteration.isAdded("effarig")) boost = boost.pow(getSecondaryGlyphEffect("effarigforgotten"));
+    boost = boost.pow(getTotalTachyonAmplifierPower());
     return boost;
   }
 
