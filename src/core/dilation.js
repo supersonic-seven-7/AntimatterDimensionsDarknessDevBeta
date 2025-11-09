@@ -123,7 +123,7 @@ export function getTachyonAmplifierPower() {
 
 export function getTotalTachyonAmplifierPower() {
   let power = getTachyonAmplifierPower();
-  return Math.pow(player.dilation.totalTachyonGalaxies, power);
+  return Math.pow(power, player.dilation.totalTachyonGalaxies);
 }
 
 export function getDilationGainPerSecond() {
