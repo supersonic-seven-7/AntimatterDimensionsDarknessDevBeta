@@ -22,6 +22,8 @@ export default {
       maxDT: new Decimal(),
       toMaxTooltip: "",
       isHovering: false,
+      eachPower: 1,
+      totalPower: 1,
     };
   },
   computed: {
@@ -118,6 +120,8 @@ export default {
       const estimateText = getDilationTimeEstimate(this.maxDT);
       if (this.dilatedTimeIncome.lte(0)) this.toMaxTooltip = "No DT gain";
       else this.toMaxTooltip = estimateText.startsWith("<") ? "Currently Increasing" : estimateText;
+      this.eachPower = getTachyonAmplifierPower();
+      this.totalPower = getTotalTachyonAmplifierPower();
     }
   }
 };
@@ -156,6 +160,13 @@ export default {
         :ach-tooltip="baseGalaxyText"
       >{{ formatInt(totalGalaxies) }}</span>
       {{ pluralize("Tachyon Amplifier", totalGalaxies) }}
+    </span>
+    <span>
+      Each Tachyon Amplifier currently provides a
+      <span class="c-dilation-tab__galaxies">{{ formatPow(eachPower, 2, 3) }}</span>
+      boost to Dimension Boosts and Replicanti Boosters, giving a
+      <span class="c-dilation-tab__galaxies">{{ formatPow(totalPower, 2, 3) }}</span>
+      boost overall.
     </span>
     <span v-if="hasMaxText">
       Your maximum Dilated Time reached this Reality is
