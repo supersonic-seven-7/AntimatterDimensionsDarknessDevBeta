@@ -275,7 +275,8 @@ export function replicantiBoosterMult() {
     .times(EternityChallenge(8).reward.effectOrDefault(1))
     .timesEffectOf(TimeStudy(212))
     .timesEffectOf(TimeStudy(232))
-    .powEffectOf(TimeStudy(213));
+    .powEffectOf(TimeStudy(213))
+    .pow(getTotalTachyonAmplifierPower());
 }
 
 export function replicantiMult() {
