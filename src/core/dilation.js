@@ -156,8 +156,7 @@ export function getDilationGainPerSecond() {
 export function tachyonGainMultiplier() {
   if (Pelle.isDisabled("tpMults")) return new Decimal(1);
   const pow = Enslaved.isRunning ? Enslaved.tachyonNerf : 1;
-  //return DC.D1.timesEffectsOf(...
-  return DC.D0.timesEffectsOf(
+  return DC.D1.timesEffectsOf(
     DilationUpgrade.tachyonGain,
     GlyphSacrifice.dilation,
     Achievement(132),
