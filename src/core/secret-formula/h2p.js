@@ -868,7 +868,7 @@ antimatter earned in the current Dilation. As a result, you generally cannot inc
 you have gained a TP multiplier or are able to significantly increase your antimatter in Dilation.
 <br>
 <br>
-Tachyon Particles generate another currency called Dilated Time. Dilated Time is translated into Tachyon Galaxies by
+Tachyon Particles generate another currency called Dilated Time. Dilated Time is translated into Tachyon Amplifiers by
 reaching thresholds similarly to the Tickspeed Upgrades gained from Time Dimensions.
 <br>
 <br>
