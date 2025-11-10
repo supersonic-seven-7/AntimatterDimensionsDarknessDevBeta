@@ -116,7 +116,7 @@ export const dilationUpgrades = {
     id: 6,
     cost: 5e7,
     description: "Antimatter Dimension multiplier based on Dilated Time, unaffected by Time Dilation",
-    effect: () => Currency.dilatedTime.value.pow(308).clampMin(1),
+    effect: () => Currency.dilatedTime.value.pow(3000).clampMin(1),
     formatEffect: value => formatX(value, 2, 1)
   },
   ipMultDT: {
