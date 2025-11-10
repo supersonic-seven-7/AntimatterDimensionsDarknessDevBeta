@@ -882,7 +882,7 @@ also be repeatedly bought, but eventually reaches a cap.
     }, {
       name: "Reality",
       info: () => `
-When you reach ${formatPostBreak(DC.E4000)} EP and have completed the first
+When you reach ${formatPostBreak(DC.E8000)} EP and have completed the first
 ${formatInt(13)} rows of Achievements, you will be able to purchase the Time Study that unlocks Reality.
 Unlocking it opens a new tab, where you can find the button to make a new Reality. Starting a new Reality
 will reset almost the entire game up to this point, but in exchange gives
@@ -913,9 +913,9 @@ currency that can be spent in the Perks subtab on different Perks.
 <br>
 Reality Machines scale purely off of EP, and the Reality button will tell you how much EP you need in order to gain
 the next one. The first ${formatInt(10)} RM scale linearly in the exponent between
-${formatPostBreak(DC.E4000)} EP and ${formatPostBreak(DC.C10P16000D3)} EP, and then past that
-RM = ${formatInt(1000)}<sup>log<sub>${formatInt(10)}</sub>(EP)/${formatInt(4000)}-${formatInt(1)}</sup>. This formula
-is higher RM gain than linear above ${formatPostBreak(DC.C10P16000D3)} EP.
+${formatPostBreak(DC.E8000)} EP and ${formatPostBreak(DC.C10P32000D3)} EP, and then past that
+RM = ${formatInt(1000)}<sup>log<sub>${formatInt(10)}</sub>(EP)/${formatInt(8000)}-${formatInt(1)}</sup>. This formula
+is higher RM gain than linear above ${formatPostBreak(DC.C10P32000D3)} EP.
 <br>
 <br>
 Glyph level scales off of a combination of Eternity Points, Replicanti, and Dilated Time, with a minimum level of
