@@ -1016,11 +1016,11 @@ export const normalAchievements = [
     id: 137,
     name: "Now you're thinking with dilation!",
     get description() {
-      return `Get ${formatPostBreak("1e2600000")} antimatter
+      return `Get ${formatPostBreak("1e1000000")} antimatter
       in ${formatInt(1)} minute or less while Dilated.`;
     },
     checkRequirement: () =>
-      Currency.antimatter.exponent >= 2600000 &&
+      Currency.antimatter.exponent >= 1000000 &&
       Time.thisEternity.totalMinutes <= 1 &&
       player.dilation.active,
     checkEvent: GAME_EVENT.GAME_TICK_AFTER,
