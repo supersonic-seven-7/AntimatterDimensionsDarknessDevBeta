@@ -135,8 +135,8 @@ export const dilationUpgrades = {
   dilationPenalty: {
     id: 9,
     cost: 1e11,
-    description: () => `Reduce the Dilation penalty (${formatPow(1.05, 2, 2)} after reduction)`,
-    effect: 1.05,
+    description: () => `Reduce the Dilation penalty (${formatPow(1.1, 2, 2)} after reduction)`,
+    effect: 1.1,
   },
   ttGenerator: {
     id: 10,
