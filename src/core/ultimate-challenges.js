@@ -37,6 +37,7 @@ class UltimateChallengeState extends GameMechanicState {
     if (PlayerProgress.realityUnlocked()) return true;
     if (this.id === 1) return PlayerProgress.eternityUnlocked();
     if (this.id === 2) return player.records.thisEternity.maxAM.gte(DC.E3_6E6) || (Achievement(133).isUnlocked && !Pelle.isDoomed);
+    if (this.id === 3) return player.records.thisEternity.maxAM.gte(DC.E3E9);
     return PlayerProgress.realityUnlocked();
   }
 
