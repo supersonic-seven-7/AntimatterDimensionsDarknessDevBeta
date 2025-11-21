@@ -271,7 +271,7 @@ export function addRealityTime(time, realTime, rm, level, realities, ampFactor, 
 }
 
 export function gainedInfinities() {
-  if (EternityChallenge(4).isRunning || Pelle.isDisabled("InfinitiedMults")) {
+  if (EternityChallenge(4).isRunning || UltimateChallenge(3).isRunning || Pelle.isDisabled("InfinitiedMults")) {
     return DC.D1;
   }
   let infGain = Effects.max(
@@ -327,7 +327,7 @@ export function getGameSpeedupFactor(effectsToConsider, blackHolesActiveOverride
   }
 
   if (effects.includes(GAME_SPEED_EFFECT.FIXED_SPEED)) {
-    if (EternityChallenge(12).isRunning) {
+    if (EternityChallenge(12).isRunning || UltimateChallenge(3).isRunning) {
       return 1 / 1000;
     }
   }
@@ -497,7 +497,7 @@ export function gameLoop(passDiff, options = {}) {
   GameCache.totalIPMult.invalidate();
 
   const blackHoleDiff = realDiff;
-  const fixedSpeedActive = EternityChallenge(12).isRunning;
+  const fixedSpeedActive = EternityChallenge(12).isRunning || UltimateChallenge(3).isRunning;
   if (!Enslaved.isReleaseTick && !fixedSpeedActive) {
     let speedFactor;
     if (options.blackHoleSpeedup === undefined) {
@@ -548,7 +548,7 @@ export function gameLoop(passDiff, options = {}) {
     player.records.thisInfinity.realTime += realDiff;
     player.records.thisInfinity.time += diff;
     player.records.thisEternity.realTime += realDiff;
-    if (Enslaved.isRunning && Enslaved.feltEternity && !EternityChallenge(12).isRunning) {
+    if (Enslaved.isRunning && Enslaved.feltEternity && !EternityChallenge(12).isRunning && !UltimateChallenge(3).isRunning) {
       player.records.thisEternity.time += diff * (1 + Currency.eternities.value.clampMax(1e66).toNumber());
     } else {
       player.records.thisEternity.time += diff;
@@ -702,7 +702,7 @@ function passivePrestigeGen() {
     player.reality.partEternitied = player.reality.partEternitied.sub(player.reality.partEternitied.floor());
   }
 
-  if (!EternityChallenge(4).isRunning) {
+  if (!EternityChallenge(4).isRunning && !UltimateChallenge(3).isRunning) {
     let infGen = DC.D0;
     if (BreakInfinityUpgrade.infinitiedGen.isBought) {
       // Multipliers are done this way to explicitly exclude ach87 and TS32
