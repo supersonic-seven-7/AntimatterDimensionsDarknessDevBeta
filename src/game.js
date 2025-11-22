@@ -600,6 +600,10 @@ export function gameLoop(passDiff, options = {}) {
     Currency.dilatedTime.add(getDilationGainPerSecond().times(diff / 1000));
   }
 
+  if (UltimateChallenge(3).isRunning) {
+    player.records.thisReality.bestAMUC3 = Decimal.max(player.antimatter, player.records.thisReality.bestAMUC3);
+  }
+
   updateTachyonGalaxies();
   Currency.timeTheorems.add(getTTPerSecond().times(diff / 1000));
   InfinityDimensions.tryAutoUnlock();
