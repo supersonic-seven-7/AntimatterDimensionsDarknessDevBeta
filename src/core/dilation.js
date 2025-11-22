@@ -116,7 +116,7 @@ export function getTachyonGalaxyMult(thresholdUpgrade) {
 }
 
 export function getTachyonAmplifierPower() {
-  let base = 1.01;
+  let base = 1.01 + UltimateChallenge(3).reward;
   let strength = 1;
   return base ** strength;
 }
