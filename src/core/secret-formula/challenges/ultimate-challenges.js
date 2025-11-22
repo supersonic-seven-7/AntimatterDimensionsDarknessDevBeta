@@ -36,8 +36,8 @@ export const ultimateChallenges = [
     reward: {
       description:
         "Coming soon...",
-      //effect: () => something based on Dilated Time idk,
-      //formatEffect: value => formatX(value, 2, 2)
+      effect: () => (Decimal.log10(player.records.thisReality.bestAMUC3) / Decimal.log10(Decimal.NUMBER_MAX_VALUE)) / 100,
+      formatEffect: value => `+${format(value, 2, 3)}`
     },
     unlockReq: DC.E3E9,
   }
