@@ -58,14 +58,19 @@ class UltimateChallengeState extends GameMechanicState {
 
   start() {
     if (!this.isUnlocked || this.isRunning) return;
-    // Forces big crunch reset but ensures IP gain, if any.
-    bigCrunchReset(true, true);
+    if (this.id === 1 || this.id === 2) {
+      // Forces big crunch reset but ensures IP gain, if any.
+      bigCrunchReset(true, true);
+    }
+    if (this.id === 3) {
+      eternity(true);
+    }
     player.challenge.normal.current = 0;
     player.challenge.infinity.current = 0;
     player.challenge.eternity.current = 0;
     player.challenge.ultimate.current = this.id;
     if (!Enslaved.isRunning) Tab.dimensions.antimatter.show();
-    player.break = true;
+    if (this.id !== 1) player.break = true;
   }
 
   get isCompleted() {
