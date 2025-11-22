@@ -328,6 +328,7 @@ window.player = {
       maxDT: DC.D0,
       bestRSmin: 0,
       bestRSminVal: 0,
+      maxAMUC3: DC.D0,
     },
     bestReality: {
       time: Number.MAX_VALUE,
