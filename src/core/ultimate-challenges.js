@@ -90,7 +90,7 @@ class UltimateChallengeState extends GameMechanicState {
   get goal() {
     if (this.id === 1) return Decimal.NUMBER_MAX_VALUE;
     if (this.id === 2) return DC.E1_6E6;
-    if (this.id === 3) return Decimal.NUMBER_MAX_VALUE;
+    if (this.id === 3) return DC.E1E15;
   }
 
   get reward() {
