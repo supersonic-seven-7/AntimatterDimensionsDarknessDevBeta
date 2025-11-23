@@ -36,7 +36,7 @@ export const ultimateChallenges = [
     reward: {
       description:
         "Increase Tachyon Amplifier Power based on record Antimatter inside this challenge",
-      effect: () => (Decimal.log10(player.records.thisReality.bestAMUC3) / Decimal.log10(Decimal.NUMBER_MAX_VALUE)) / 100,
+      effect: () => (Decimal.log10(player.records.thisReality.bestAMUC3) / Decimal.log10(Decimal.NUMBER_MAX_VALUE)) / 1000,
       formatEffect: value => `+${format(value, 2, 3)}`
     },
     unlockReq: DC.E3E9,
