@@ -931,7 +931,7 @@ export const Player = {
   },
 
   get isInAntimatterChallenge() {
-    return NormalChallenge.isRunning || InfinityChallenge.isRunning || UltimateChallenge.isRunning;
+    return (NormalChallenge.isRunning || InfinityChallenge.isRunning || UltimateChallenge.isRunning) && !UltimateChallenge(3).isRunning;
   },
 
   get antimatterChallenge() {
@@ -939,7 +939,7 @@ export const Player = {
   },
 
   get isInAnyChallenge() {
-    return this.isInAntimatterChallenge || EternityChallenge.isRunning;
+    return this.isInAntimatterChallenge || EternityChallenge.isRunning || UltimateChallenge(3).isRunning;
   },
 
   get anyChallenge() {
