@@ -35,7 +35,7 @@ export const ultimateChallenges = [
     isQuickResettable: true,
     reward: {
       description:
-        "Coming soon...",
+        "Increase Tachyon Amplifier Power based on record Antimatter inside this challenge",
       effect: () => (Decimal.log10(player.records.thisReality.bestAMUC3) / Decimal.log10(Decimal.NUMBER_MAX_VALUE)) / 100,
       formatEffect: value => `+${format(value, 2, 3)}`
     },
